@@ -1,10 +1,12 @@
-ips=`cat /etc/hosts|grep node|awk '{print $1}' | tr '\n' ',' `
+server=`cat /etc/hosts|grep node|awk '{print $1}' | tr '\n' ',' `
+client="172.17.73.228"
 if [[ $# == 1 ]];then
     if [[ $1 == "s" ]];then
-        echo -e "`date` $ips"
-        pdsh -w $ips
+	ip=$server
+        echo -e "`date` $ip"
+        pdsh -w $ip
     elif [[ $1 == "a" ]];then
-        ip="192.168.45.[11-14],192.168.48.[17,18]"
+        ip=$server$client
         echo -e "`date` $ip"
         pdsh -w $ip
     elif [[ $1 == m ]];then
@@ -12,7 +14,7 @@ if [[ $# == 1 ]];then
         echo -e "`date` $ip"
         pdsh -w $ip
     elif [[ $1 == c ]];then
-        ip="172.17.73.[228-229]"
+	ip=$client
         echo -e "`date` $ip"
         pdsh -w $ip
     else
@@ -29,4 +31,3 @@ else
    c: connect client ip\n
    m: connect mgmt node \033[0m\n"
 fi
-

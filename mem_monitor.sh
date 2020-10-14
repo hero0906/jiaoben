@@ -114,7 +114,7 @@ monitor(){
      line=1
 
      #开始监控
-     pids=(mds0 mds1 yrfs-storage yrfs-mgtmd yrfs-admon etcd)
+     pids=(mds0 mds1 yrfs-storage yrfs-mgmtd yrfs-admon etcd)
      echo -e ${pids[@]}
 
      while((1))
