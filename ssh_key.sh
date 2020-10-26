@@ -1,8 +1,5 @@
-USER=root
-PASSWORD=#@!1qaz@WSX3edc!@#
-
 usage(){
-    echo -e "\033[31m Usage:$0 <ip>\n \033[0m"
+    echo -e "\033[31m Usage:$0 <ip>\n"
 }
 
 if [[ $# != 1 ]]
@@ -12,16 +9,23 @@ then
 fi
 
 NET=$1
+USER=root
+PASSWORD=Passw0rd
 
 if [[ ! -f ~/.ssh/id_rsa ]];then
     ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa &> /dev/null
 fi
 
+#for i in {1..254} ; do
+#{
 expect <<EOF
-     spawn ssh-copy-id -i ${USER}@${NET}
-     expect {
-     "yes/no" { send "yes\n";exp_continue }
-     "password" { send "${PASSWORD}\n" }
-     }
+spawn ssh-copy-id -i ${USER}@${NET}
+expect {
+  "yes/no" { send "yes\n";exp_continue }
+  "password" { send "${PASSWORD}\n" }
+}
+expect eof
 EOF
-#expect eof
+#}&
+#done
+#wait
