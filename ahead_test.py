@@ -120,23 +120,23 @@ def md5_test():
 
 
 def all_test():
-   ssh(sync)
-   ssh(fio_run("4K","randread","1"))
-   ssh(sync)
-   ssh(fio_run("4K","randread","32"))
-   ssh(sync)
-   ssh(fio_run("1M","randread","1"))
-
-   ssh(sync)
-   ssh(fio_run("4K","read","1"))
-   ssh(sync)
-   ssh(dd_run("4K","read"))
-
-   ssh(sync)
-   ssh(fio_run("1M","read","1"))
-   ssh(sync)
-   ssh(dd_run("1M","read"))
-
+#   ssh(sync)
+#   ssh(fio_run("4K","randread","1"))
+#   ssh(sync)
+#   ssh(fio_run("4K","randread","32"))
+#   ssh(sync)
+#   ssh(fio_run("1M","randread","1"))
+#
+#   ssh(sync)
+#   ssh(fio_run("4K","read","1"))
+#   ssh(sync)
+#   ssh(dd_run("4K","read"))
+#
+#   ssh(sync)
+#   ssh(fio_run("1M","read","1"))
+#   ssh(sync)
+#   ssh(dd_run("1M","read"))
+#
    ssh(sync)
    ssh(fio_run("4K","write","1"))
    #md5_test()
