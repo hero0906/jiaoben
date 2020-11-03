@@ -4,6 +4,9 @@ PASSWORD="Passw0rd"
 SSHP="sshpass -p $password ssh -o StrictHostKeyChecking=no"
 LOG="logs/crash"_`date +%m%d%H%M`".log"
 
+if [[ ! -d "logs" ]];then
+    mkdir logs
+fi
 log(){
     echo -e "`date "+%Y-%m-%d %H:%M:%S"`: $1" | tee -a $LOG        
 }
@@ -119,7 +122,7 @@ kill_mgmt(){
 
    log "kill mgmt test running....."
 
-   stop_mgmt="ps axu|grep yrfs-mgmtd|grep -v grep|awk '{print \$2}'|xargs kill -9" 
+   stop_mgmt="ps axu|grep yrfs-mgmtd|grep -v grep|awk '{print \$2}'|xargs kill -11" 
    start_mgmt="systemctl start yrfs-mgmtd"
    ip=`yrcli --node --type=mgmt|grep master|awk '{print $1}'`
 
@@ -182,7 +185,8 @@ fsck_test(){
    log "cluster fsck test running."
 
    ips=`yrcli --osd --type=mds|awk 'NR>=2{print $2}'`
-   fsck="yrcli --fsck /data/mds --thread=32"
+   #fsck="yrcli --fsck /data/mds --thread=8"
+   fsck="yrcli --fsck /data/mds0/replica  --cfg=/etc/yrfs/mds0.d/yrfs-meta.conf  --thread=8&&yrcli --fsck /data/mds1/replica  --cfg=/etc/yrfs/mds1.d/yrfs-meta.conf  --thread=8"
    for ip in $ips;
    do
        log "node:$ip fsck running."
@@ -204,7 +208,7 @@ run(){
         	
         #cases=("kill_meta 2" kill_mgmt kill_oss crash_node)
         #cases=("kill_meta 2" kill_mgmt "kill_oss 1")
-        cases=(crash_node)
+        cases=(kill_mgmt)
 	for cas in "${cases[@]}";do
 	    $cas &
             #Sleep 3600
@@ -213,5 +217,5 @@ run(){
         ((time++))
     done 
 }
-
-run
+fsck_test
+#run

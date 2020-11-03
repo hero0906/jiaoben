@@ -7,7 +7,7 @@ if [[ $# == 1 ]];then
         echo -e "`date` $ip"
         pdsh -w $ip
     elif [[ $1 == "a" ]];then
-        ip=$server$client
+        ip=$server,$client
         echo -e "`date` $ip"
         pdsh -w $ip
     elif [[ $1 == m ]];then
