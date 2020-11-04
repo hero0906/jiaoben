@@ -206,7 +206,7 @@ run(){
         log "run test loops $time"
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         	
-        #cases=("kill_meta 2" kill_mgmt kill_oss crash_node)
+        cases=(kill_meta kill_mgmt kill_oss crash_node)
         #cases=("kill_meta 2" kill_mgmt "kill_oss 1")
         cases=(kill_mgmt)
 	for cas in "${cases[@]}";do
@@ -217,5 +217,5 @@ run(){
         ((time++))
     done 
 }
-fsck_test
-#run
+#fsck_test
+run

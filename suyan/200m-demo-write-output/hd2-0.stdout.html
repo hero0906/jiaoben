@@ -1,0 +1,114 @@
+<title>Vdbench 200m-demo-write-output/hd2-0.stdout.html</title><pre>
+stdout/stderr for slave=hd2-0
+
+11:41:24.084 22:42:51.172 SlaveJvm execution parameter:  '-m 192.168.48.17'
+11:41:24.084 22:42:51.174 SlaveJvm execution parameter:  '-n client18-11-201104-11.41.22.554'
+11:41:24.084 22:42:51.174 SlaveJvm execution parameter:  '-l hd2-0'
+11:41:24.084 22:42:51.174 SlaveJvm execution parameter:  '-p 5570'
+11:41:24.084 22:42:51.174 SlaveJvm positional parameter: 'SlaveJvm'
+11:41:24.311 22:42:51.400 successfully connected to master 192.168.48.17
+11:41:24.311 22:42:51.402 Connection to 192.168.48.17 using port 5570 successful
+11:41:24.603 22:42:51.693 ticks_per_second: 100
+11:41:24.630 22:42:51.721 execute(): ls -l /mnt/client/test200M
+
+Link to Run Definitions:         <A HREF="#_1490180672">format_for_rd1 For loops: None</A>
+                                 <A HREF="#_460332449">rd1 For loops: None</A>
+
+11:41:24.727 22:42:51.817 Configuration interpretation took 0.11 seconds
+11:41:24.900 22:42:51.991 Beginning of run setup
+11:41:24.900 22:42:51.991 **********************
+11:41:24.900 
+11:41:24.901 
+11:41:24.998 22:42:52.088 Starting initializeFileAnchor for fsd1
+11:41:25.016 22:42:52.107 Completed the creation of the directory list for /mnt/client/test200M: 1 directories.
+11:41:25.022 22:42:52.113 Generated 5 file names; total anchor size: 10m (10,485,760)
+11:41:25.023 22:42:52.113 During anchor creation for anchor=/mnt/client/test200M there were 1 directories and 5 files
+11:41:25.023 22:42:52.114 Completed initializeFileAnchor for fsd1: 0.03
+11:41:25.073 22:42:52.163 File '/var/log/messages.1' does not exist. Monitoring bypassed
+11:41:25.341 22:42:52.431 Started 128 threads for fwd=format,fsd=fsd1
+11:41:25.341 22:42:52.432 Started 128 FwgThreads
+11:41:25.342 22:42:52.432 Waiting for task synchronization
+11:41:25.342 22:42:52.432 Requesting full garbage collection
+11:41:25.342 22:42:52.433 GcTracker: cum:   1 intv:  1 ms:       8 mss:  0.00% Heap_MB max:   911 curr:   123 used:    41 free:    82 
+11:41:25.452 22:42:52.542 GcTracker: cum:   3 intv:  2 ms:     106 mss:  0.00% Heap_MB max:   911 curr:   123 used:    21 free:   102 
+11:41:25.452 22:42:52.542 task_wait_start_complete() end
+
+<a name="_1490180672"></a><i><b>11:41:26.002 Starting RD=format_for_rd1</b></i>
+
+11:41:26.046 22:42:53.137 task_run_all(): 129 tasks
+11:41:26.342 22:42:53.432 Message to master: anchor=/mnt/client/test200M mkdir complete.
+11:41:26.345 22:42:53.436 Message to master: anchor=/mnt/client/test200M create complete.
+11:41:26.353 22:42:53.444 catch (InterruptedException) tasknum FwgWaiter
+11:41:26.458 22:42:53.548 
+11:41:26.458 22:42:53.548 Miscellaneous statistics:
+11:41:26.458 22:42:53.549 DIR_EXISTS          Directory may not exist (yet):                   64
+11:41:26.458 22:42:53.549 FILE_MAY_NOT_EXIST  File may not exist (yet):                         5
+11:41:26.458 22:42:53.549 
+11:41:26.459 22:42:53.549 Java Heap in MB. max:  910.500; current:  123.000; used:   26.758; free:   96.242
+11:41:26.459 22:42:53.550 Maximum native memory allocation:  134,217,728; Current allocation:  134,217,728
+11:41:27.158 22:42:54.248 End of run
+11:41:27.158 22:42:54.249 **********
+11:41:27.158 
+11:41:27.158 
+11:41:27.314 22:42:54.405 Beginning of run setup
+11:41:27.315 22:42:54.405 **********************
+11:41:27.315 
+11:41:27.315 
+11:41:27.382 22:42:54.473 Starting initializeFileAnchor for fsd1
+11:41:27.384 22:42:54.475 Completed the creation of the directory list for /mnt/client/test200M: 1 directories.
+11:41:27.389 22:42:54.480 Generated 5 file names; total anchor size: 10m (10,485,760)
+11:41:27.389 22:42:54.480 During anchor creation for anchor=/mnt/client/test200M there were 1 directories and 5 files
+11:41:27.389 22:42:54.480 Completed initializeFileAnchor for fsd1: 0.01
+11:41:27.767 22:42:54.858 Started 128 threads for fwd=fwd2,fsd=fsd1,operation=write
+11:41:27.768 22:42:54.858 Started 128 FwgThreads
+11:41:27.768 22:42:54.858 Waiting for task synchronization
+11:41:27.768 22:42:54.858 Requesting full garbage collection
+11:41:27.768 22:42:54.859 GcTracker: cum:   3 intv:  0 ms:       0 mss:  0.00% Heap_MB max:   911 curr:   123 used:    32 free:    91 
+11:41:27.898 22:42:54.988 GcTracker: cum:   5 intv:  2 ms:     127 mss:  0.00% Heap_MB max:   911 curr:   123 used:    22 free:   101 
+11:41:27.898 22:42:54.988 task_wait_start_complete() end
+
+<a name="_460332449"></a><i><b>11:41:29.000 Starting RD=rd1; elapsed=6; fwdrate=max. For loops: None</b></i>
+
+11:41:29.042 22:42:56.132 task_run_all(): 129 tasks
+11:41:30.136 22:42:57.226 sendMessageToConsole: New messages found on /var/adm/messages. Do they belong to you?
+11:41:30.136 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:__msglib_exchange_with_args_comm line:620 comm:yrfs_sla_mgmt pid:1386): failed from node: yrfs-mgmt node14.yanrong [ID: 3065] / 19.45.12.5:7000, expected resp type: 2120 ret: -104
+11:41:30.136 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:__msglib_exchange_with_args_comm line:620 comm:yrfs_core_mgmt pid:1382): failed from node: yrfs-mgmt node14.yanrong [ID: 3065] / 19.45.12.5:7000, expected resp type: 1018 ret: -104
+11:41:30.136 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_core_mgmt pid:1382): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.136 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_sla_mgmt pid:1386): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.136 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: error (func:pro_quota_msg_get_pro_quota_datas line:65 comm:yrfs_sla_mgmt pid:1386): filed to comm Communication error from node node14.yanrong
+11:41:30.136 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: error (func:pro_quota_mgmt_get_pro_quota_datas line:587 comm:yrfs_sla_mgmt pid:1386): get pro quota data failed
+11:41:30.137 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:__msglib_exchange_with_args_comm line:620 comm:yrfs_qos_mgmt pid:1385): failed from node: yrfs-mgmt node14.yanrong [ID: 3065] / 19.45.12.5:7000, expected resp type: 2128 ret: -104
+11:41:30.137 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_qos_mgmt pid:1385): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.137 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: error (func:qos_msg_get_qos_datas line:60 comm:yrfs_qos_mgmt pid:1385): filed to comm Communication error from node node14.yanrong
+11:41:30.137 22:42:57.227 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:node_conn_pool_acquire_sock_ex line:351 comm:yrfs_core_mgmt pid:1382): fail ro conn to all routes: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.141 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_core_mgmt pid:1382): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.141 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: error (func:qos_mgmt_get_qos_global_datas line:844 comm:yrfs_qos_mgmt pid:1385): get qos data failed
+11:41:30.141 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:__msglib_exchange_with_args_comm line:620 comm:yrfs_quota_mgmt pid:1384): failed from node: yrfs-mgmt node14.yanrong [ID: 3065] / 19.45.12.5:7000, expected resp type: 2120 ret: -104
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_quota_mgmt pid:1384): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: error (func:pro_quota_msg_get_pro_quota_datas line:65 comm:yrfs_quota_mgmt pid:1384): filed to comm Communication error from node node14.yanrong
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: error (func:pro_quota_mgmt_get_pro_quota_datas line:587 comm:yrfs_quota_mgmt pid:1384): get pro quota data failed
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_core_mgmt pid:1382): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_core_mgmt pid:1382): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:_core_sync_loop line:265 comm:yrfs_core_mgmt pid:1382): elapsed: 5629 ms
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_core_mgmt pid:1382): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.142 22:42:57.228 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_core_mgmt pid:1382): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.142 22:42:57.229 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:msglib_exchange_with_args line:51 comm:yrfs_core_mgmt pid:1382): fail to comm with node: yrfs-mgmt node14.yanrong [ID: 3065]
+11:41:30.142 22:42:57.229 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:_core_sync_loop line:278 comm:yrfs_core_mgmt pid:1382): elapsed: 5630 ms
+11:41:30.143 22:42:57.229 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:_core_sync_loop line:289 comm:yrfs_core_mgmt pid:1382): elapsed: 5630 ms
+11:41:30.143 22:42:57.229 sendMessageToConsole: /var/log/messages: Nov  3 22:42:53 client18 kernel: yrfs: warn (func:_core_sync_loop line:298 comm:yrfs_core_mgmt pid:1382): elapsed: 5630 ms
+11:41:30.143 22:42:57.229 sendMessageToConsole: /var/log/messages: Nov  3 22:42:55 client18 kernel: yrfs: warn (func:_core_sync_loop line:198 comm:yrfs_core_mgmt pid:1382): expectMS: 3000  but real elapsedMS: 6963
+11:41:30.143 22:42:57.229 sendMessageToConsole: 
+11:41:35.509 22:43:02.599 
+11:41:35.509 22:43:02.599 Miscellaneous statistics:
+11:41:35.509 22:43:02.600 WRITE_OPENS         Files opened for write activity:                180
+11:41:35.509 22:43:02.600 FILE_BUSY           File busy:                                  653,762
+11:41:35.509 22:43:02.600 FILE_CLOSES         Close requests:                                 180
+11:41:35.509 22:43:02.600 
+11:41:35.510 22:43:02.600 Java Heap in MB. max:  910.500; current:  123.000; used:   43.591; free:   79.409
+11:41:35.510 22:43:02.600 Maximum native memory allocation:  402,653,184; Current allocation:  268,435,456
+11:41:35.510 22:43:02.601 End of run
+11:41:35.510 22:43:02.601 **********
+11:41:35.510 
+11:41:35.510 
+11:41:35.757 22:43:02.848 Master is requesting slave shutdown
+11:41:35.757 22:43:02.848 Java Heap in MB. max:  910.500; current:  123.000; used:   43.591; free:   79.409

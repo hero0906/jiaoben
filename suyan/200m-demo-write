@@ -1,0 +1,9 @@
+hd=default,vdbench=/home/vdbench,user=root,shell=ssh
+hd=hd1,system=client17
+hd=hd2,system=client18
+fsd=fsd1,anchor=/mnt/client/test200M,depth=1,width=1,openflag=o_direct,files=10,size=2m,shared=yes
+fwd=format,threads=128,xfersize=1m
+fwd=default,xfersize=1m,fileio=random,fileselect=random,operation=write,threads=128
+fwd=fwd1,fsd=fsd1,host=hd1
+fwd=fwd2,fsd=fsd1,host=hd2
+rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=6,interval=1
