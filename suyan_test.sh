@@ -1,5 +1,5 @@
 mount_dir=/mnt/yrfs
-client=(192.168.48.17 192.168.48.18)
+client=(192.168.48.17)
 #client2=192.168.48.18
 
 FIO(){
@@ -26,14 +26,15 @@ FIO(){
 
 vdbench(){
 
+     rootdir=/home/vdbench
      files=1000
      size="64KB"
      threads=8
-     elapsed=6000
+     elapsed=6000000
      len=${#client[@]}
      config1="
          messagescan=no
-         \nhd=default,vdbench=/home/vdbench,user=root,shell=ssh\n"
+         \nhd=default,vdbench=$rootdir,user=root,shell=ssh\n"
 
      config2=""
      for hd in `seq $len`;do
@@ -44,7 +45,7 @@ vdbench(){
      config3="fsd=fsd1,anchor=$mount_dir/test64KB,depth=1,width=10,openflag=o_direct,files=$files,size=$size,shared=yes
          \nfwd=format,threads=$threads,xfersize=32k
          \nfwd=default,xfersize=32k,fileio=random,fileselect=random,rdpct=60,threads=$threads\n"
-     
+
      config4=""
      for hd in `seq $len`;do
          tmp="fwd=fwd$hd,fsd=fsd1,host=hd$hd"
@@ -56,9 +57,7 @@ vdbench(){
      config=$config1$config2$config3$config4$config5
 
      echo -e $config > 64k-demo
-     cat 64k-demo
-# echo -e $config >> 64k-demo
-#     /home/vdbench/vdbench  -f 64k-demo -o output/output.tod
+     ${rootdir}/vdbench  -f 64k-demo -o output/output.tod
 
 #    /home/vdbench/vdbench -f 200m-demo-read -o 200m-demo-read-output
 

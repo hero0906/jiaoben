@@ -18,5 +18,5 @@ rw=rw
 [test001]
 #rate_iops=10,10
 nrfiles=1
-directory=/mnt/testC/
+directory=/mnt/yrfs/
 bs=4K

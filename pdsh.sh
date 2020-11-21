@@ -1,6 +1,6 @@
 server=`cat /etc/hosts|grep node|awk '{print $1}' | tr '\n' ',' `
 server="192.168.45.[11-14]"
-client="192.168.48.17"
+client="192.168.48.[17-18]"
 if [[ $# == 1 ]];then
     if [[ $1 == "s" ]];then
 	ip=$server

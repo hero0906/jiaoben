@@ -1,0 +1,2665 @@
+2020-11-13 14:09:51: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:09:51: run test loops 1!!!!!!
+2020-11-13 14:09:51: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:09:51: 19.45.12.2 mgmt service status health.
+2020-11-13 14:09:52: 19.45.12.3 mgmt service status health.
+2020-11-13 14:09:52: 19.45.12.4 mgmt service status health.
+2020-11-13 14:09:52: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-13 14:09:52: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 4.172504ms
+2020-11-13 14:09:52: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 09:46:24 CST; 4h 24min ago
+2020-11-13 14:09:52: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 3.667761ms
+2020-11-13 14:09:53: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 11:41:54 CST; 2h 28min ago
+2020-11-13 14:09:53: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 3.525894ms
+2020-11-13 14:09:53: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 11:42:26 CST; 2h 28min ago
+Sleep 30s:2020-11-13 14:09:53: kill mgmt test running.....
+2020-11-13 14:09:53: kill oss test running......
+2020-11-13 14:09:53: kill meta test running.....
+2020-11-13 14:09:53: oss node 19.45.12.4 stop
+2020-11-13 14:09:53: mgmt node 19.45.12.3 stop
+2020-11-13 14:09:53: mds node 19.45.12.3 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 14:10:24: oss node 19.45.12.4 start
+
+2020-11-13 14:10:24: mds node 19.45.12.3 start
+
+2020-11-13 14:10:24: mgmt node 19.45.12.3 start
+2020-11-13 14:10:24: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:10:24: run test loops 2!!!!!!
+2020-11-13 14:10:24: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:10:24: 19.45.12.2 mgmt service status health.
+2020-11-13 14:10:24: 19.45.12.3 mgmt service status health.
+2020-11-13 14:10:24: 19.45.12.4 mgmt service status health.
+2020-11-13 14:10:24: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2 Probably-offline         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001 Probably-offline         Good        3
+    3002 Probably-offline         Good        3
+    3003 Probably-offline         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-13 14:10:24: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.705264ms
+2020-11-13 14:10:25: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 09:46:24 CST; 4h 24min ago
+2020-11-13 14:10:25: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.77307ms
+2020-11-13 14:10:25: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:11:21 CST; 1s ago
+2020-11-13 14:10:25: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.916316ms
+2020-11-13 14:10:25: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 11:42:26 CST; 2h 28min ago
+Sleep 30s:2020-11-13 14:10:26: kill mgmt test running.....
+2020-11-13 14:10:26: kill oss test running......
+2020-11-13 14:10:26: kill meta test running.....
+2020-11-13 14:10:26: mgmt node 19.45.12.2 stop
+2020-11-13 14:10:26: oss node 19.45.12.3 stop
+2020-11-13 14:10:26: mds node 19.45.12.3 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 14:10:56: mgmt node 19.45.12.2 start
+
+
+2020-11-13 14:10:56: mds node 19.45.12.3 start
+2020-11-13 14:10:56: oss node 19.45.12.3 start
+2020-11-13 14:10:56: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:10:56: run test loops 3!!!!!!
+2020-11-13 14:10:56: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:10:57: 19.45.12.2 mgmt service status health.
+2020-11-13 14:10:57: 19.45.12.3 mgmt service status health.
+2020-11-13 14:10:57: 19.45.12.4 mgmt service status health.
+2020-11-13 14:10:57: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2 Probably-offline         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001 Probably-offline         Good        2
+    2002 Probably-offline         Good        2
+    2003 Probably-offline         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-13 14:10:57: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.890873ms
+2020-11-13 14:10:57: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:11:54 CST; 1s ago
+2020-11-13 14:10:57: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.063317ms
+2020-11-13 14:10:58: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:11:21 CST; 33s ago
+2020-11-13 14:10:58: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.499841ms
+2020-11-13 14:10:58: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 11:42:26 CST; 2h 29min ago
+Sleep 30s:2020-11-13 14:10:58: kill mgmt test running.....
+2020-11-13 14:10:58: kill oss test running......
+2020-11-13 14:10:58: kill meta test running.....
+2020-11-13 14:10:58: mgmt node 19.45.12.4 stop
+2020-11-13 14:10:58: oss node 19.45.12.2 stop
+2020-11-13 14:10:58: mds node 19.45.12.3 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 14:11:29: mgmt node 19.45.12.4 start
+
+2020-11-13 14:11:29: mds node 19.45.12.3 start
+
+2020-11-13 14:11:29: oss node 19.45.12.2 start
+2020-11-13 14:11:29: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:11:29: run test loops 4!!!!!!
+2020-11-13 14:11:29: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:11:29: 19.45.12.2 mgmt service status health.
+2020-11-13 14:11:29: 19.45.12.3 mgmt service status health.
+2020-11-13 14:11:29: 19.45.12.4 mgmt service status health.
+2020-11-13 14:11:29: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2 Probably-offline         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001 Probably-offline         Good        1
+    1002 Probably-offline         Good        1
+    1003 Probably-offline         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-13 14:11:29: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.663975ms
+2020-11-13 14:11:30: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:11:54 CST; 33s ago
+2020-11-13 14:11:30: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.64019ms
+2020-11-13 14:11:30: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:11:21 CST; 1min 6s ago
+2020-11-13 14:11:30: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.482957ms
+2020-11-13 14:11:30: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:26 CST; 1s ago
+Sleep 30s:2020-11-13 14:11:31: kill mgmt test running.....
+2020-11-13 14:11:31: kill oss test running......
+2020-11-13 14:11:31: kill meta test running.....
+2020-11-13 14:11:31: mds node 19.45.12.4 stop
+2020-11-13 14:11:31: mgmt node 19.45.12.3 stop
+2020-11-13 14:11:31: oss node 19.45.12.3 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+
+
+2020-11-13 14:12:01: mds node 19.45.12.4 start
+2020-11-13 14:12:01: oss node 19.45.12.3 start
+2020-11-13 14:12:01: mgmt node 19.45.12.3 start
+2020-11-13 14:12:01: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:12:01: run test loops 5!!!!!!
+2020-11-13 14:12:01: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:12:01: 19.45.12.2 mgmt service status health.
+2020-11-13 14:12:02: 19.45.12.3 mgmt service status health.
+2020-11-13 14:12:02: 19.45.12.4 mgmt service status health.
+2020-11-13 14:12:02: cluster rebuilding,mds dirty: 0,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:12:32: cluster check health times: 1
+2020-11-13 14:12:32: 19.45.12.2 mgmt service status health.
+2020-11-13 14:12:33: 19.45.12.3 mgmt service status health.
+2020-11-13 14:12:33: 19.45.12.4 mgmt service status health.
+2020-11-13 14:12:33: cluster rebuilding,mds dirty: 2,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:13:03: cluster check health times: 2
+2020-11-13 14:13:03: 19.45.12.2 mgmt service status health.
+2020-11-13 14:13:03: 19.45.12.3 mgmt service status health.
+2020-11-13 14:13:04: 19.45.12.4 mgmt service status health.
+2020-11-13 14:13:04: cluster rebuilding,mds dirty: 2,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:13:34: cluster check health times: 3
+2020-11-13 14:13:34: 19.45.12.2 mgmt service status health.
+2020-11-13 14:13:34: 19.45.12.3 mgmt service status health.
+2020-11-13 14:13:34: 19.45.12.4 mgmt service status health.
+2020-11-13 14:13:34: cluster rebuilding,mds dirty: 2,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:14:05: cluster check health times: 4
+2020-11-13 14:14:05: 19.45.12.2 mgmt service status health.
+2020-11-13 14:14:05: 19.45.12.3 mgmt service status health.
+2020-11-13 14:14:05: 19.45.12.4 mgmt service status health.
+2020-11-13 14:14:05: cluster rebuilding,mds dirty: 2,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:14:35: cluster check health times: 5
+2020-11-13 14:14:36: 19.45.12.2 mgmt service status health.
+2020-11-13 14:14:36: 19.45.12.3 mgmt service status health.
+2020-11-13 14:14:36: 19.45.12.4 mgmt service status health.
+2020-11-13 14:14:36: cluster rebuilding,mds dirty: 2,oss dirty: 2,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:15:06: cluster check health times: 6
+2020-11-13 14:15:07: 19.45.12.2 mgmt service status health.
+2020-11-13 14:15:07: 19.45.12.3 mgmt service status health.
+2020-11-13 14:15:07: 19.45.12.4 mgmt service status health.
+2020-11-13 14:15:07: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:15:37: cluster check health times: 7
+2020-11-13 14:15:37: 19.45.12.2 mgmt service status health.
+2020-11-13 14:15:38: 19.45.12.3 mgmt service status health.
+2020-11-13 14:15:38: 19.45.12.4 mgmt service status health.
+2020-11-13 14:15:38: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:16:08: cluster check health times: 8
+2020-11-13 14:16:08: 19.45.12.2 mgmt service status health.
+2020-11-13 14:16:08: 19.45.12.3 mgmt service status health.
+2020-11-13 14:16:09: 19.45.12.4 mgmt service status health.
+2020-11-13 14:16:09: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:16:39: cluster check health times: 9
+2020-11-13 14:16:39: 19.45.12.2 mgmt service status health.
+2020-11-13 14:16:39: 19.45.12.3 mgmt service status health.
+2020-11-13 14:16:39: 19.45.12.4 mgmt service status health.
+2020-11-13 14:16:39: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:17:10: cluster check health times: 10
+2020-11-13 14:17:10: 19.45.12.2 mgmt service status health.
+2020-11-13 14:17:10: 19.45.12.3 mgmt service status health.
+2020-11-13 14:17:10: 19.45.12.4 mgmt service status health.
+2020-11-13 14:17:10: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:17:41: cluster check health times: 11
+2020-11-13 14:17:41: 19.45.12.2 mgmt service status health.
+2020-11-13 14:17:41: 19.45.12.3 mgmt service status health.
+2020-11-13 14:17:41: 19.45.12.4 mgmt service status health.
+2020-11-13 14:17:41: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:18:11: cluster check health times: 12
+2020-11-13 14:18:12: 19.45.12.2 mgmt service status health.
+2020-11-13 14:18:12: 19.45.12.3 mgmt service status health.
+2020-11-13 14:18:12: 19.45.12.4 mgmt service status health.
+2020-11-13 14:18:12: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:18:42: cluster check health times: 13
+2020-11-13 14:18:42: 19.45.12.2 mgmt service status health.
+2020-11-13 14:18:43: 19.45.12.3 mgmt service status health.
+2020-11-13 14:18:43: 19.45.12.4 mgmt service status health.
+2020-11-13 14:18:43: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:19:13: cluster check health times: 14
+2020-11-13 14:19:13: 19.45.12.2 mgmt service status health.
+2020-11-13 14:19:13: 19.45.12.3 mgmt service status health.
+2020-11-13 14:19:14: 19.45.12.4 mgmt service status health.
+2020-11-13 14:19:14: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:19:44: cluster check health times: 15
+2020-11-13 14:19:44: 19.45.12.2 mgmt service status health.
+2020-11-13 14:19:44: 19.45.12.3 mgmt service status health.
+2020-11-13 14:19:45: 19.45.12.4 mgmt service status health.
+2020-11-13 14:19:45: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:20:15: cluster check health times: 16
+2020-11-13 14:20:15: 19.45.12.2 mgmt service status health.
+2020-11-13 14:20:15: 19.45.12.3 mgmt service status health.
+2020-11-13 14:20:15: 19.45.12.4 mgmt service status health.
+2020-11-13 14:20:15: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:20:46: cluster check health times: 17
+2020-11-13 14:20:46: 19.45.12.2 mgmt service status health.
+2020-11-13 14:20:46: 19.45.12.3 mgmt service status health.
+2020-11-13 14:20:46: 19.45.12.4 mgmt service status health.
+2020-11-13 14:20:46: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:21:16: cluster check health times: 18
+2020-11-13 14:21:17: 19.45.12.2 mgmt service status health.
+2020-11-13 14:21:17: 19.45.12.3 mgmt service status health.
+2020-11-13 14:21:17: 19.45.12.4 mgmt service status health.
+2020-11-13 14:21:17: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:21:47: cluster check health times: 19
+2020-11-13 14:21:49: 19.45.12.2 mgmt service status health.
+2020-11-13 14:21:49: 19.45.12.3 mgmt service status health.
+2020-11-13 14:21:49: 19.45.12.4 mgmt service status health.
+2020-11-13 14:21:49: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:22:19: cluster check health times: 20
+2020-11-13 14:22:19: 19.45.12.2 mgmt service status health.
+2020-11-13 14:22:20: 19.45.12.3 mgmt service status health.
+2020-11-13 14:22:20: 19.45.12.4 mgmt service status health.
+2020-11-13 14:22:20: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:22:50: cluster check health times: 21
+2020-11-13 14:22:50: 19.45.12.2 mgmt service status health.
+2020-11-13 14:22:50: 19.45.12.3 mgmt service status health.
+2020-11-13 14:22:51: 19.45.12.4 mgmt service status health.
+2020-11-13 14:22:51: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:23:21: cluster check health times: 22
+2020-11-13 14:23:22: 19.45.12.2 mgmt service status health.
+2020-11-13 14:23:22: 19.45.12.3 mgmt service status health.
+2020-11-13 14:23:23: 19.45.12.4 mgmt service status health.
+2020-11-13 14:23:23: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:23:53: cluster check health times: 23
+2020-11-13 14:23:53: 19.45.12.2 mgmt service status health.
+2020-11-13 14:23:53: 19.45.12.3 mgmt service status health.
+2020-11-13 14:23:53: 19.45.12.4 mgmt service status health.
+2020-11-13 14:23:53: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-13 14:23:53: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.665989ms
+2020-11-13 14:23:54: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:11:54 CST; 12min ago
+2020-11-13 14:23:54: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.920563ms
+2020-11-13 14:23:54: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:59 CST; 11min ago
+2020-11-13 14:23:54: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 2.4214ms
+2020-11-13 14:23:54: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:26 CST; 12min ago
+Sleep 30s:2020-11-13 14:23:55: kill mgmt test running.....
+2020-11-13 14:23:55: kill oss test running......
+2020-11-13 14:23:55: kill meta test running.....
+2020-11-13 14:23:55: oss node 19.45.12.3 stop
+2020-11-13 14:23:55: mds node 19.45.12.2 stop
+2020-11-13 14:23:55: mgmt node 19.45.12.2 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 14:24:25: oss node 19.45.12.3 start
+
+
+2020-11-13 14:24:25: mgmt node 19.45.12.2 start
+2020-11-13 14:24:25: mds node 19.45.12.2 start
+2020-11-13 14:24:25: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:24:25: run test loops 6!!!!!!
+2020-11-13 14:24:25: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:24:26: 19.45.12.2 mgmt service status health.
+2020-11-13 14:24:26: 19.45.12.3 mgmt service status health.
+2020-11-13 14:24:26: 19.45.12.4 mgmt service status health.
+2020-11-13 14:24:26: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1 Probably-offline         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001 Probably-offline         Good        2
+    2002 Probably-offline         Good        2
+    2003 Probably-offline         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-13 14:24:26: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.086679ms
+2020-11-13 14:24:26: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:25:23 CST; 1s ago
+2020-11-13 14:24:26: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.046114ms
+2020-11-13 14:24:27: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:59 CST; 12min ago
+2020-11-13 14:24:27: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.701969ms
+2020-11-13 14:24:27: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:26 CST; 12min ago
+Sleep 30s:2020-11-13 14:24:27: kill mgmt test running.....
+2020-11-13 14:24:27: kill oss test running......
+2020-11-13 14:24:27: kill meta test running.....
+2020-11-13 14:24:27: mgmt node 19.45.12.4 stop
+2020-11-13 14:24:27: oss node 19.45.12.4 stop
+2020-11-13 14:24:27: mds node 19.45.12.3 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+
+
+2020-11-13 14:24:58: mgmt node 19.45.12.4 start
+2020-11-13 14:24:58: oss node 19.45.12.4 start
+2020-11-13 14:24:58: mds node 19.45.12.3 start
+2020-11-13 14:24:58: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:24:58: run test loops 7!!!!!!
+2020-11-13 14:24:58: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:24:58: 19.45.12.2 mgmt service status health.
+2020-11-13 14:24:58: 19.45.12.3 mgmt service status health.
+2020-11-13 14:24:58: 19.45.12.4 mgmt service status health.
+2020-11-13 14:24:58: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1 Probably-offline         Good        1
+       2 Probably-offline         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001 Probably-offline         Good        3
+    3002 Probably-offline         Good        3
+    3003 Probably-offline         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-13 14:24:58: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.724067ms
+2020-11-13 14:24:59: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:25:23 CST; 33s ago
+2020-11-13 14:24:59: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.64765ms
+2020-11-13 14:24:59: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:59 CST; 12min ago
+2020-11-13 14:24:59: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.593723ms
+2020-11-13 14:24:59: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:25:55 CST; 1s ago
+Sleep 30s:2020-11-13 14:25:00: kill mgmt test running.....
+2020-11-13 14:25:00: kill meta test running.....
+2020-11-13 14:25:00: kill oss test running......
+2020-11-13 14:25:00: mgmt node 19.45.12.2 stop
+2020-11-13 14:25:00: mds node 19.45.12.2 stop
+2020-11-13 14:25:00: oss node 19.45.12.3 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 14:25:30: mgmt node 19.45.12.2 start
+
+
+2020-11-13 14:25:30: mds node 19.45.12.2 start
+2020-11-13 14:25:30: oss node 19.45.12.3 start
+2020-11-13 14:25:30: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:25:30: run test loops 8!!!!!!
+2020-11-13 14:25:30: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:25:31: 19.45.12.2 mgmt service status health.
+2020-11-13 14:25:31: 19.45.12.3 mgmt service status health.
+2020-11-13 14:25:31: 19.45.12.4 mgmt service status health.
+2020-11-13 14:25:31: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:26:01: cluster check health times: 1
+2020-11-13 14:26:01: 19.45.12.2 mgmt service status health.
+2020-11-13 14:26:02: 19.45.12.3 mgmt service status health.
+2020-11-13 14:26:02: 19.45.12.4 mgmt service status health.
+2020-11-13 14:26:02: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:26:32: cluster check health times: 2
+2020-11-13 14:26:32: 19.45.12.2 mgmt service status health.
+2020-11-13 14:26:32: 19.45.12.3 mgmt service status health.
+2020-11-13 14:26:33: 19.45.12.4 mgmt service status health.
+2020-11-13 14:26:33: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:27:03: cluster check health times: 3
+2020-11-13 14:27:03: 19.45.12.2 mgmt service status health.
+2020-11-13 14:27:03: 19.45.12.3 mgmt service status health.
+2020-11-13 14:27:03: 19.45.12.4 mgmt service status health.
+2020-11-13 14:27:03: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:27:34: cluster check health times: 4
+2020-11-13 14:27:34: 19.45.12.2 mgmt service status health.
+2020-11-13 14:27:34: 19.45.12.3 mgmt service status health.
+2020-11-13 14:27:34: 19.45.12.4 mgmt service status health.
+2020-11-13 14:27:34: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:28:04: cluster check health times: 5
+2020-11-13 14:28:05: 19.45.12.2 mgmt service status health.
+2020-11-13 14:28:05: 19.45.12.3 mgmt service status health.
+2020-11-13 14:28:05: 19.45.12.4 mgmt service status health.
+2020-11-13 14:28:05: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:28:35: cluster check health times: 6
+2020-11-13 14:28:35: 19.45.12.2 mgmt service status health.
+2020-11-13 14:28:36: 19.45.12.3 mgmt service status health.
+2020-11-13 14:28:36: 19.45.12.4 mgmt service status health.
+2020-11-13 14:28:36: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:29:06: cluster check health times: 7
+2020-11-13 14:29:06: 19.45.12.2 mgmt service status health.
+2020-11-13 14:29:07: 19.45.12.3 mgmt service status health.
+2020-11-13 14:29:07: 19.45.12.4 mgmt service status health.
+2020-11-13 14:29:07: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:29:37: cluster check health times: 8
+2020-11-13 14:29:37: 19.45.12.2 mgmt service status health.
+2020-11-13 14:29:37: 19.45.12.3 mgmt service status health.
+2020-11-13 14:29:38: 19.45.12.4 mgmt service status health.
+2020-11-13 14:29:38: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:30:08: cluster check health times: 9
+2020-11-13 14:30:08: 19.45.12.2 mgmt service status health.
+2020-11-13 14:30:08: 19.45.12.3 mgmt service status health.
+2020-11-13 14:30:08: 19.45.12.4 mgmt service status health.
+2020-11-13 14:30:08: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:30:39: cluster check health times: 10
+2020-11-13 14:30:39: 19.45.12.2 mgmt service status health.
+2020-11-13 14:30:39: 19.45.12.3 mgmt service status health.
+2020-11-13 14:30:39: 19.45.12.4 mgmt service status health.
+2020-11-13 14:30:39: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:31:09: cluster check health times: 11
+2020-11-13 14:31:10: 19.45.12.2 mgmt service status health.
+2020-11-13 14:31:10: 19.45.12.3 mgmt service status health.
+2020-11-13 14:31:10: 19.45.12.4 mgmt service status health.
+2020-11-13 14:31:10: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:31:40: cluster check health times: 12
+2020-11-13 14:31:40: 19.45.12.2 mgmt service status health.
+2020-11-13 14:31:41: 19.45.12.3 mgmt service status health.
+2020-11-13 14:31:41: 19.45.12.4 mgmt service status health.
+2020-11-13 14:31:41: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:32:11: cluster check health times: 13
+2020-11-13 14:32:11: 19.45.12.2 mgmt service status health.
+2020-11-13 14:32:12: 19.45.12.3 mgmt service status health.
+2020-11-13 14:32:12: 19.45.12.4 mgmt service status health.
+2020-11-13 14:32:12: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:32:42: cluster check health times: 14
+2020-11-13 14:32:42: 19.45.12.2 mgmt service status health.
+2020-11-13 14:32:42: 19.45.12.3 mgmt service status health.
+2020-11-13 14:32:43: 19.45.12.4 mgmt service status health.
+2020-11-13 14:32:43: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:33:13: cluster check health times: 15
+2020-11-13 14:33:13: 19.45.12.2 mgmt service status health.
+2020-11-13 14:33:13: 19.45.12.3 mgmt service status health.
+2020-11-13 14:33:13: 19.45.12.4 mgmt service status health.
+2020-11-13 14:33:13: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:33:44: cluster check health times: 16
+2020-11-13 14:33:44: 19.45.12.2 mgmt service status health.
+2020-11-13 14:33:44: 19.45.12.3 mgmt service status health.
+2020-11-13 14:33:44: 19.45.12.4 mgmt service status health.
+2020-11-13 14:33:44: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:34:14: cluster check health times: 17
+2020-11-13 14:34:15: 19.45.12.2 mgmt service status health.
+2020-11-13 14:34:15: 19.45.12.3 mgmt service status health.
+2020-11-13 14:34:15: 19.45.12.4 mgmt service status health.
+2020-11-13 14:34:15: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:34:45: cluster check health times: 18
+2020-11-13 14:34:46: 19.45.12.2 mgmt service status health.
+2020-11-13 14:34:46: 19.45.12.3 mgmt service status health.
+2020-11-13 14:34:46: 19.45.12.4 mgmt service status health.
+2020-11-13 14:34:46: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:35:16: cluster check health times: 19
+2020-11-13 14:35:16: 19.45.12.2 mgmt service status health.
+2020-11-13 14:35:17: 19.45.12.3 mgmt service status health.
+2020-11-13 14:35:17: 19.45.12.4 mgmt service status health.
+2020-11-13 14:35:17: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:35:47: cluster check health times: 20
+2020-11-13 14:35:47: 19.45.12.2 mgmt service status health.
+2020-11-13 14:35:47: 19.45.12.3 mgmt service status health.
+2020-11-13 14:35:48: 19.45.12.4 mgmt service status health.
+2020-11-13 14:35:48: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:36:18: cluster check health times: 21
+2020-11-13 14:36:18: 19.45.12.2 mgmt service status health.
+2020-11-13 14:36:18: 19.45.12.3 mgmt service status health.
+2020-11-13 14:36:18: 19.45.12.4 mgmt service status health.
+2020-11-13 14:36:18: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:36:49: cluster check health times: 22
+2020-11-13 14:36:49: 19.45.12.2 mgmt service status health.
+2020-11-13 14:36:49: 19.45.12.3 mgmt service status health.
+2020-11-13 14:36:49: 19.45.12.4 mgmt service status health.
+2020-11-13 14:36:49: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:37:19: cluster check health times: 23
+2020-11-13 14:37:20: 19.45.12.2 mgmt service status health.
+2020-11-13 14:37:20: 19.45.12.3 mgmt service status health.
+2020-11-13 14:37:20: 19.45.12.4 mgmt service status health.
+2020-11-13 14:37:20: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-13 14:37:20: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.811136ms
+2020-11-13 14:37:20: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:26:28 CST; 11min ago
+2020-11-13 14:37:21: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.047743ms
+2020-11-13 14:37:21: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:59 CST; 25min ago
+2020-11-13 14:37:21: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.514317ms
+2020-11-13 14:37:21: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:25:55 CST; 12min ago
+Sleep 30s:2020-11-13 14:37:21: kill mgmt test running.....
+2020-11-13 14:37:21: kill oss test running......
+2020-11-13 14:37:21: kill meta test running.....
+2020-11-13 14:37:21: mgmt node 19.45.12.4 stop
+2020-11-13 14:37:21: mds node 19.45.12.3 stop
+2020-11-13 14:37:21: oss node 19.45.12.4 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 14:37:52: mgmt node 19.45.12.4 start
+
+
+2020-11-13 14:37:52: mds node 19.45.12.3 start
+2020-11-13 14:37:52: oss node 19.45.12.4 start
+2020-11-13 14:37:52: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:37:52: run test loops 9!!!!!!
+2020-11-13 14:37:52: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:37:52: 19.45.12.2 mgmt service status health.
+2020-11-13 14:37:52: 19.45.12.3 mgmt service status health.
+2020-11-13 14:37:53: 19.45.12.4 mgmt service status health.
+2020-11-13 14:37:53: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:38:23: cluster check health times: 1
+2020-11-13 14:38:23: 19.45.12.2 mgmt service status health.
+2020-11-13 14:38:23: 19.45.12.3 mgmt service status health.
+2020-11-13 14:38:23: 19.45.12.4 mgmt service status health.
+2020-11-13 14:38:23: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:38:54: cluster check health times: 2
+2020-11-13 14:38:54: 19.45.12.2 mgmt service status health.
+2020-11-13 14:38:54: 19.45.12.3 mgmt service status health.
+2020-11-13 14:38:54: 19.45.12.4 mgmt service status health.
+2020-11-13 14:38:54: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:39:24: cluster check health times: 3
+2020-11-13 14:39:25: 19.45.12.2 mgmt service status health.
+2020-11-13 14:39:25: 19.45.12.3 mgmt service status health.
+2020-11-13 14:39:25: 19.45.12.4 mgmt service status health.
+2020-11-13 14:39:25: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:39:55: cluster check health times: 4
+2020-11-13 14:39:55: 19.45.12.2 mgmt service status health.
+2020-11-13 14:39:56: 19.45.12.3 mgmt service status health.
+2020-11-13 14:39:56: 19.45.12.4 mgmt service status health.
+2020-11-13 14:39:56: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:40:26: cluster check health times: 5
+2020-11-13 14:40:26: 19.45.12.2 mgmt service status health.
+2020-11-13 14:40:27: 19.45.12.3 mgmt service status health.
+2020-11-13 14:40:27: 19.45.12.4 mgmt service status health.
+2020-11-13 14:40:27: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:40:57: cluster check health times: 6
+2020-11-13 14:40:57: 19.45.12.2 mgmt service status health.
+2020-11-13 14:40:57: 19.45.12.3 mgmt service status health.
+2020-11-13 14:40:58: 19.45.12.4 mgmt service status health.
+2020-11-13 14:40:58: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:41:28: cluster check health times: 7
+2020-11-13 14:41:28: 19.45.12.2 mgmt service status health.
+2020-11-13 14:41:28: 19.45.12.3 mgmt service status health.
+2020-11-13 14:41:28: 19.45.12.4 mgmt service status health.
+2020-11-13 14:41:28: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:41:59: cluster check health times: 8
+2020-11-13 14:41:59: 19.45.12.2 mgmt service status health.
+2020-11-13 14:41:59: 19.45.12.3 mgmt service status health.
+2020-11-13 14:41:59: 19.45.12.4 mgmt service status health.
+2020-11-13 14:41:59: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:42:29: cluster check health times: 9
+2020-11-13 14:42:30: 19.45.12.2 mgmt service status health.
+2020-11-13 14:42:30: 19.45.12.3 mgmt service status health.
+2020-11-13 14:42:30: 19.45.12.4 mgmt service status health.
+2020-11-13 14:42:30: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:43:00: cluster check health times: 10
+2020-11-13 14:43:00: 19.45.12.2 mgmt service status health.
+2020-11-13 14:43:01: 19.45.12.3 mgmt service status health.
+2020-11-13 14:43:01: 19.45.12.4 mgmt service status health.
+2020-11-13 14:43:01: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:43:31: cluster check health times: 11
+2020-11-13 14:43:31: 19.45.12.2 mgmt service status health.
+2020-11-13 14:43:31: 19.45.12.3 mgmt service status health.
+2020-11-13 14:43:32: 19.45.12.4 mgmt service status health.
+2020-11-13 14:43:32: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:44:02: cluster check health times: 12
+2020-11-13 14:44:02: 19.45.12.2 mgmt service status health.
+2020-11-13 14:44:02: 19.45.12.3 mgmt service status health.
+2020-11-13 14:44:02: 19.45.12.4 mgmt service status health.
+2020-11-13 14:44:02: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:44:33: cluster check health times: 13
+2020-11-13 14:44:33: 19.45.12.2 mgmt service status health.
+2020-11-13 14:44:33: 19.45.12.3 mgmt service status health.
+2020-11-13 14:44:33: 19.45.12.4 mgmt service status health.
+2020-11-13 14:44:33: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:45:04: cluster check health times: 14
+2020-11-13 14:45:04: 19.45.12.2 mgmt service status health.
+2020-11-13 14:45:04: 19.45.12.3 mgmt service status health.
+2020-11-13 14:45:04: 19.45.12.4 mgmt service status health.
+2020-11-13 14:45:04: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:45:34: cluster check health times: 15
+2020-11-13 14:45:35: 19.45.12.2 mgmt service status health.
+2020-11-13 14:45:35: 19.45.12.3 mgmt service status health.
+2020-11-13 14:45:35: 19.45.12.4 mgmt service status health.
+2020-11-13 14:45:35: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:46:05: cluster check health times: 16
+2020-11-13 14:46:05: 19.45.12.2 mgmt service status health.
+2020-11-13 14:46:06: 19.45.12.3 mgmt service status health.
+2020-11-13 14:46:06: 19.45.12.4 mgmt service status health.
+2020-11-13 14:46:06: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:46:36: cluster check health times: 17
+2020-11-13 14:46:36: 19.45.12.2 mgmt service status health.
+2020-11-13 14:46:36: 19.45.12.3 mgmt service status health.
+2020-11-13 14:46:37: 19.45.12.4 mgmt service status health.
+2020-11-13 14:46:37: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:47:07: cluster check health times: 18
+2020-11-13 14:47:07: 19.45.12.2 mgmt service status health.
+2020-11-13 14:47:07: 19.45.12.3 mgmt service status health.
+2020-11-13 14:47:07: 19.45.12.4 mgmt service status health.
+2020-11-13 14:47:07: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:47:38: cluster check health times: 19
+2020-11-13 14:47:38: 19.45.12.2 mgmt service status health.
+2020-11-13 14:47:38: 19.45.12.3 mgmt service status health.
+2020-11-13 14:47:38: 19.45.12.4 mgmt service status health.
+2020-11-13 14:47:38: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:48:09: cluster check health times: 20
+2020-11-13 14:48:09: 19.45.12.2 mgmt service status health.
+2020-11-13 14:48:09: 19.45.12.3 mgmt service status health.
+2020-11-13 14:48:09: 19.45.12.4 mgmt service status health.
+2020-11-13 14:48:09: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:48:39: cluster check health times: 21
+2020-11-13 14:48:40: 19.45.12.2 mgmt service status health.
+2020-11-13 14:48:40: 19.45.12.3 mgmt service status health.
+2020-11-13 14:48:40: 19.45.12.4 mgmt service status health.
+2020-11-13 14:48:40: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:49:10: cluster check health times: 22
+2020-11-13 14:49:10: 19.45.12.2 mgmt service status health.
+2020-11-13 14:49:11: 19.45.12.3 mgmt service status health.
+2020-11-13 14:49:11: 19.45.12.4 mgmt service status health.
+2020-11-13 14:49:11: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:49:41: cluster check health times: 23
+2020-11-13 14:49:41: 19.45.12.2 mgmt service status health.
+2020-11-13 14:49:41: 19.45.12.3 mgmt service status health.
+2020-11-13 14:49:42: 19.45.12.4 mgmt service status health.
+2020-11-13 14:49:42: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:50:12: cluster check health times: 24
+2020-11-13 14:50:12: 19.45.12.2 mgmt service status health.
+2020-11-13 14:50:12: 19.45.12.3 mgmt service status health.
+2020-11-13 14:50:12: 19.45.12.4 mgmt service status health.
+2020-11-13 14:50:12: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:50:43: cluster check health times: 25
+2020-11-13 14:50:43: 19.45.12.2 mgmt service status health.
+2020-11-13 14:50:43: 19.45.12.3 mgmt service status health.
+2020-11-13 14:50:43: 19.45.12.4 mgmt service status health.
+2020-11-13 14:50:43: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:51:14: cluster check health times: 26
+2020-11-13 14:51:14: 19.45.12.2 mgmt service status health.
+2020-11-13 14:51:14: 19.45.12.3 mgmt service status health.
+2020-11-13 14:51:14: 19.45.12.4 mgmt service status health.
+2020-11-13 14:51:14: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:51:44: cluster check health times: 27
+2020-11-13 14:51:45: 19.45.12.2 mgmt service status health.
+2020-11-13 14:51:45: 19.45.12.3 mgmt service status health.
+2020-11-13 14:51:45: 19.45.12.4 mgmt service status health.
+2020-11-13 14:51:45: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:52:15: cluster check health times: 28
+2020-11-13 14:52:15: 19.45.12.2 mgmt service status health.
+2020-11-13 14:52:16: 19.45.12.3 mgmt service status health.
+2020-11-13 14:52:16: 19.45.12.4 mgmt service status health.
+2020-11-13 14:52:16: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:52:46: cluster check health times: 29
+2020-11-13 14:52:46: 19.45.12.2 mgmt service status health.
+2020-11-13 14:52:47: 19.45.12.3 mgmt service status health.
+2020-11-13 14:52:47: 19.45.12.4 mgmt service status health.
+2020-11-13 14:52:47: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:53:17: cluster check health times: 30
+2020-11-13 14:53:17: 19.45.12.2 mgmt service status health.
+2020-11-13 14:53:17: 19.45.12.3 mgmt service status health.
+2020-11-13 14:53:18: 19.45.12.4 mgmt service status health.
+2020-11-13 14:53:18: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-13 14:53:18: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.970082ms
+2020-11-13 14:53:18: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:26:28 CST; 27min ago
+2020-11-13 14:53:18: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.045816ms
+2020-11-13 14:53:18: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:59 CST; 41min ago
+2020-11-13 14:53:18: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.487878ms
+2020-11-13 14:53:19: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:38:50 CST; 15min ago
+Sleep 30s:2020-11-13 14:53:19: kill mgmt test running.....
+2020-11-13 14:53:19: kill oss test running......
+2020-11-13 14:53:19: kill meta test running.....
+2020-11-13 14:53:19: mds node 19.45.12.4 stop
+2020-11-13 14:53:19: mgmt node 19.45.12.2 stop
+2020-11-13 14:53:19: oss node 19.45.12.2 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 14:53:49: mds node 19.45.12.4 start
+
+
+2020-11-13 14:53:49: oss node 19.45.12.2 start
+2020-11-13 14:53:49: mgmt node 19.45.12.2 start
+2020-11-13 14:53:49: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:53:49: run test loops 10!!!!!!
+2020-11-13 14:53:49: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 14:53:50: 19.45.12.2 mgmt service status health.
+2020-11-13 14:53:50: 19.45.12.3 mgmt service status health.
+2020-11-13 14:53:50: 19.45.12.4 mgmt service status health.
+2020-11-13 14:53:50: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:54:20: cluster check health times: 1
+2020-11-13 14:54:21: 19.45.12.2 mgmt service status health.
+2020-11-13 14:54:21: 19.45.12.3 mgmt service status health.
+2020-11-13 14:54:21: 19.45.12.4 mgmt service status health.
+2020-11-13 14:54:21: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:54:51: cluster check health times: 2
+2020-11-13 14:54:51: 19.45.12.2 mgmt service status health.
+2020-11-13 14:54:52: 19.45.12.3 mgmt service status health.
+2020-11-13 14:54:52: 19.45.12.4 mgmt service status health.
+2020-11-13 14:54:52: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:55:22: cluster check health times: 3
+2020-11-13 14:55:22: 19.45.12.2 mgmt service status health.
+2020-11-13 14:55:22: 19.45.12.3 mgmt service status health.
+2020-11-13 14:55:23: 19.45.12.4 mgmt service status health.
+2020-11-13 14:55:23: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:55:53: cluster check health times: 4
+2020-11-13 14:55:53: 19.45.12.2 mgmt service status health.
+2020-11-13 14:55:53: 19.45.12.3 mgmt service status health.
+2020-11-13 14:55:53: 19.45.12.4 mgmt service status health.
+2020-11-13 14:55:53: cluster rebuilding,mds dirty: 1,oss dirty: 1,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:56:24: cluster check health times: 5
+2020-11-13 14:56:24: 19.45.12.2 mgmt service status health.
+2020-11-13 14:56:24: 19.45.12.3 mgmt service status health.
+2020-11-13 14:56:24: 19.45.12.4 mgmt service status health.
+2020-11-13 14:56:24: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:56:54: cluster check health times: 6
+2020-11-13 14:56:55: 19.45.12.2 mgmt service status health.
+2020-11-13 14:56:55: 19.45.12.3 mgmt service status health.
+2020-11-13 14:56:55: 19.45.12.4 mgmt service status health.
+2020-11-13 14:56:55: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:57:25: cluster check health times: 7
+2020-11-13 14:57:26: 19.45.12.2 mgmt service status health.
+2020-11-13 14:57:26: 19.45.12.3 mgmt service status health.
+2020-11-13 14:57:26: 19.45.12.4 mgmt service status health.
+2020-11-13 14:57:26: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:57:56: cluster check health times: 8
+2020-11-13 14:57:56: 19.45.12.2 mgmt service status health.
+2020-11-13 14:57:57: 19.45.12.3 mgmt service status health.
+2020-11-13 14:57:57: 19.45.12.4 mgmt service status health.
+2020-11-13 14:57:57: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:58:27: cluster check health times: 9
+2020-11-13 14:58:27: 19.45.12.2 mgmt service status health.
+2020-11-13 14:58:27: 19.45.12.3 mgmt service status health.
+2020-11-13 14:58:28: 19.45.12.4 mgmt service status health.
+2020-11-13 14:58:28: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:58:58: cluster check health times: 10
+2020-11-13 14:58:58: 19.45.12.2 mgmt service status health.
+2020-11-13 14:58:58: 19.45.12.3 mgmt service status health.
+2020-11-13 14:58:58: 19.45.12.4 mgmt service status health.
+2020-11-13 14:58:58: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:59:29: cluster check health times: 11
+2020-11-13 14:59:29: 19.45.12.2 mgmt service status health.
+2020-11-13 14:59:29: 19.45.12.3 mgmt service status health.
+2020-11-13 14:59:29: 19.45.12.4 mgmt service status health.
+2020-11-13 14:59:29: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 14:59:59: cluster check health times: 12
+2020-11-13 15:00:00: 19.45.12.2 mgmt service status health.
+2020-11-13 15:00:00: 19.45.12.3 mgmt service status health.
+2020-11-13 15:00:00: 19.45.12.4 mgmt service status health.
+2020-11-13 15:00:00: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:00:30: cluster check health times: 13
+2020-11-13 15:00:31: 19.45.12.2 mgmt service status health.
+2020-11-13 15:00:31: 19.45.12.3 mgmt service status health.
+2020-11-13 15:00:31: 19.45.12.4 mgmt service status health.
+2020-11-13 15:00:31: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:01:01: cluster check health times: 14
+2020-11-13 15:01:01: 19.45.12.2 mgmt service status health.
+2020-11-13 15:01:02: 19.45.12.3 mgmt service status health.
+2020-11-13 15:01:02: 19.45.12.4 mgmt service status health.
+2020-11-13 15:01:02: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:01:32: cluster check health times: 15
+2020-11-13 15:01:32: 19.45.12.2 mgmt service status health.
+2020-11-13 15:01:32: 19.45.12.3 mgmt service status health.
+2020-11-13 15:01:33: 19.45.12.4 mgmt service status health.
+2020-11-13 15:01:33: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:02:03: cluster check health times: 16
+2020-11-13 15:02:03: 19.45.12.2 mgmt service status health.
+2020-11-13 15:02:03: 19.45.12.3 mgmt service status health.
+2020-11-13 15:02:03: 19.45.12.4 mgmt service status health.
+2020-11-13 15:02:03: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:02:34: cluster check health times: 17
+2020-11-13 15:02:34: 19.45.12.2 mgmt service status health.
+2020-11-13 15:02:34: 19.45.12.3 mgmt service status health.
+2020-11-13 15:02:34: 19.45.12.4 mgmt service status health.
+2020-11-13 15:02:34: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:03:04: cluster check health times: 18
+2020-11-13 15:03:05: 19.45.12.2 mgmt service status health.
+2020-11-13 15:03:05: 19.45.12.3 mgmt service status health.
+2020-11-13 15:03:05: 19.45.12.4 mgmt service status health.
+2020-11-13 15:03:05: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:03:35: cluster check health times: 19
+2020-11-13 15:03:36: 19.45.12.2 mgmt service status health.
+2020-11-13 15:03:36: 19.45.12.3 mgmt service status health.
+2020-11-13 15:03:36: 19.45.12.4 mgmt service status health.
+2020-11-13 15:03:36: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:04:06: cluster check health times: 20
+2020-11-13 15:04:06: 19.45.12.2 mgmt service status health.
+2020-11-13 15:04:07: 19.45.12.3 mgmt service status health.
+2020-11-13 15:04:07: 19.45.12.4 mgmt service status health.
+2020-11-13 15:04:07: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:04:37: cluster check health times: 21
+2020-11-13 15:04:37: 19.45.12.2 mgmt service status health.
+2020-11-13 15:04:37: 19.45.12.3 mgmt service status health.
+2020-11-13 15:04:38: 19.45.12.4 mgmt service status health.
+2020-11-13 15:04:38: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:05:08: cluster check health times: 22
+2020-11-13 15:05:08: 19.45.12.2 mgmt service status health.
+2020-11-13 15:05:08: 19.45.12.3 mgmt service status health.
+2020-11-13 15:05:08: 19.45.12.4 mgmt service status health.
+2020-11-13 15:05:08: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:05:39: cluster check health times: 23
+2020-11-13 15:05:39: 19.45.12.2 mgmt service status health.
+2020-11-13 15:05:39: 19.45.12.3 mgmt service status health.
+2020-11-13 15:05:39: 19.45.12.4 mgmt service status health.
+2020-11-13 15:05:39: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:06:09: cluster check health times: 24
+2020-11-13 15:06:10: 19.45.12.2 mgmt service status health.
+2020-11-13 15:06:10: 19.45.12.3 mgmt service status health.
+2020-11-13 15:06:10: 19.45.12.4 mgmt service status health.
+2020-11-13 15:06:10: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:06:40: cluster check health times: 25
+2020-11-13 15:06:41: 19.45.12.2 mgmt service status health.
+2020-11-13 15:06:41: 19.45.12.3 mgmt service status health.
+2020-11-13 15:06:41: 19.45.12.4 mgmt service status health.
+2020-11-13 15:06:41: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:07:11: cluster check health times: 26
+2020-11-13 15:07:11: 19.45.12.2 mgmt service status health.
+2020-11-13 15:07:12: 19.45.12.3 mgmt service status health.
+2020-11-13 15:07:12: 19.45.12.4 mgmt service status health.
+2020-11-13 15:07:12: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:07:42: cluster check health times: 27
+2020-11-13 15:07:42: 19.45.12.2 mgmt service status health.
+2020-11-13 15:07:42: 19.45.12.3 mgmt service status health.
+2020-11-13 15:07:43: 19.45.12.4 mgmt service status health.
+2020-11-13 15:07:43: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:08:13: cluster check health times: 28
+2020-11-13 15:08:13: 19.45.12.2 mgmt service status health.
+2020-11-13 15:08:13: 19.45.12.3 mgmt service status health.
+2020-11-13 15:08:13: 19.45.12.4 mgmt service status health.
+2020-11-13 15:08:13: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:08:44: cluster check health times: 29
+2020-11-13 15:08:44: 19.45.12.2 mgmt service status health.
+2020-11-13 15:08:44: 19.45.12.3 mgmt service status health.
+2020-11-13 15:08:44: 19.45.12.4 mgmt service status health.
+2020-11-13 15:08:44: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:09:14: cluster check health times: 30
+2020-11-13 15:09:15: 19.45.12.2 mgmt service status health.
+2020-11-13 15:09:15: 19.45.12.3 mgmt service status health.
+2020-11-13 15:09:15: 19.45.12.4 mgmt service status health.
+2020-11-13 15:09:15: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:09:45: cluster check health times: 31
+2020-11-13 15:09:46: 19.45.12.2 mgmt service status health.
+2020-11-13 15:09:46: 19.45.12.3 mgmt service status health.
+2020-11-13 15:09:46: 19.45.12.4 mgmt service status health.
+2020-11-13 15:09:46: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:10:16: cluster check health times: 32
+2020-11-13 15:10:16: 19.45.12.2 mgmt service status health.
+2020-11-13 15:10:17: 19.45.12.3 mgmt service status health.
+2020-11-13 15:10:17: 19.45.12.4 mgmt service status health.
+2020-11-13 15:10:17: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:10:47: cluster check health times: 33
+2020-11-13 15:10:49: 19.45.12.2 mgmt service status health.
+2020-11-13 15:10:49: 19.45.12.3 mgmt service status health.
+2020-11-13 15:10:50: 19.45.12.4 mgmt service status health.
+2020-11-13 15:10:50: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:11:20: cluster check health times: 34
+2020-11-13 15:11:20: 19.45.12.2 mgmt service status health.
+2020-11-13 15:11:20: 19.45.12.3 mgmt service status health.
+2020-11-13 15:11:20: 19.45.12.4 mgmt service status health.
+2020-11-13 15:11:20: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-13 15:11:20: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.771639ms
+2020-11-13 15:11:21: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:54:47 CST; 17min ago
+2020-11-13 15:11:21: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.971451ms
+2020-11-13 15:11:21: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:12:59 CST; 59min ago
+2020-11-13 15:11:21: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.586513ms
+2020-11-13 15:11:21: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:38:50 CST; 33min ago
+Sleep 30s:2020-11-13 15:11:22: kill mgmt test running.....
+2020-11-13 15:11:22: kill oss test running......
+2020-11-13 15:11:22: kill meta test running.....
+2020-11-13 15:11:22: oss node 19.45.12.2 stop
+2020-11-13 15:11:22: mds node 19.45.12.4 stop
+2020-11-13 15:11:22: mgmt node 19.45.12.3 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 15:11:52: mds node 19.45.12.4 start
+
+2020-11-13 15:11:52: oss node 19.45.12.2 start
+
+2020-11-13 15:11:52: mgmt node 19.45.12.3 start
+2020-11-13 15:11:52: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:11:52: run test loops 11!!!!!!
+2020-11-13 15:11:52: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:11:53: 19.45.12.2 mgmt service status health.
+2020-11-13 15:11:53: 19.45.12.3 mgmt service status health.
+2020-11-13 15:11:53: 19.45.12.4 mgmt service status health.
+2020-11-13 15:11:53: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:12:23: cluster check health times: 1
+2020-11-13 15:12:23: 19.45.12.2 mgmt service status health.
+2020-11-13 15:12:24: 19.45.12.3 mgmt service status health.
+2020-11-13 15:12:24: 19.45.12.4 mgmt service status health.
+2020-11-13 15:12:24: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:12:54: cluster check health times: 2
+2020-11-13 15:12:54: 19.45.12.2 mgmt service status health.
+2020-11-13 15:12:54: 19.45.12.3 mgmt service status health.
+2020-11-13 15:12:55: 19.45.12.4 mgmt service status health.
+2020-11-13 15:12:55: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:13:25: cluster check health times: 3
+2020-11-13 15:13:25: 19.45.12.2 mgmt service status health.
+2020-11-13 15:13:25: 19.45.12.3 mgmt service status health.
+2020-11-13 15:13:25: 19.45.12.4 mgmt service status health.
+2020-11-13 15:13:25: cluster rebuilding,mds dirty: 1,oss dirty: 1,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:13:56: cluster check health times: 4
+2020-11-13 15:13:56: 19.45.12.2 mgmt service status health.
+2020-11-13 15:13:56: 19.45.12.3 mgmt service status health.
+2020-11-13 15:13:56: 19.45.12.4 mgmt service status health.
+2020-11-13 15:13:56: cluster rebuilding,mds dirty: 1,oss dirty: 1,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:14:26: cluster check health times: 5
+2020-11-13 15:14:27: 19.45.12.2 mgmt service status health.
+2020-11-13 15:14:27: 19.45.12.3 mgmt service status health.
+2020-11-13 15:14:27: 19.45.12.4 mgmt service status health.
+2020-11-13 15:14:27: cluster rebuilding,mds dirty: 1,oss dirty: 1,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:14:57: cluster check health times: 6
+2020-11-13 15:14:58: 19.45.12.2 mgmt service status health.
+2020-11-13 15:14:58: 19.45.12.3 mgmt service status health.
+2020-11-13 15:14:58: 19.45.12.4 mgmt service status health.
+2020-11-13 15:14:58: cluster rebuilding,mds dirty: 1,oss dirty: 1,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:15:28: cluster check health times: 7
+2020-11-13 15:15:28: 19.45.12.2 mgmt service status health.
+2020-11-13 15:15:29: 19.45.12.3 mgmt service status health.
+2020-11-13 15:15:29: 19.45.12.4 mgmt service status health.
+2020-11-13 15:15:29: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:15:59: cluster check health times: 8
+2020-11-13 15:15:59: 19.45.12.2 mgmt service status health.
+2020-11-13 15:15:59: 19.45.12.3 mgmt service status health.
+2020-11-13 15:16:00: 19.45.12.4 mgmt service status health.
+2020-11-13 15:16:00: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:16:30: cluster check health times: 9
+2020-11-13 15:16:30: 19.45.12.2 mgmt service status health.
+2020-11-13 15:16:30: 19.45.12.3 mgmt service status health.
+2020-11-13 15:16:30: 19.45.12.4 mgmt service status health.
+2020-11-13 15:16:30: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:17:01: cluster check health times: 10
+2020-11-13 15:17:01: 19.45.12.2 mgmt service status health.
+2020-11-13 15:17:01: 19.45.12.3 mgmt service status health.
+2020-11-13 15:17:01: 19.45.12.4 mgmt service status health.
+2020-11-13 15:17:01: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:17:31: cluster check health times: 11
+2020-11-13 15:17:32: 19.45.12.2 mgmt service status health.
+2020-11-13 15:17:32: 19.45.12.3 mgmt service status health.
+2020-11-13 15:17:32: 19.45.12.4 mgmt service status health.
+2020-11-13 15:17:32: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:18:02: cluster check health times: 12
+2020-11-13 15:18:03: 19.45.12.2 mgmt service status health.
+2020-11-13 15:18:03: 19.45.12.3 mgmt service status health.
+2020-11-13 15:18:03: 19.45.12.4 mgmt service status health.
+2020-11-13 15:18:03: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:18:33: cluster check health times: 13
+2020-11-13 15:18:33: 19.45.12.2 mgmt service status health.
+2020-11-13 15:18:34: 19.45.12.3 mgmt service status health.
+2020-11-13 15:18:34: 19.45.12.4 mgmt service status health.
+2020-11-13 15:18:34: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:19:04: cluster check health times: 14
+2020-11-13 15:19:04: 19.45.12.2 mgmt service status health.
+2020-11-13 15:19:04: 19.45.12.3 mgmt service status health.
+2020-11-13 15:19:05: 19.45.12.4 mgmt service status health.
+2020-11-13 15:19:05: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:19:35: cluster check health times: 15
+2020-11-13 15:19:35: 19.45.12.2 mgmt service status health.
+2020-11-13 15:19:35: 19.45.12.3 mgmt service status health.
+2020-11-13 15:19:35: 19.45.12.4 mgmt service status health.
+2020-11-13 15:19:35: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:20:06: cluster check health times: 16
+2020-11-13 15:20:06: 19.45.12.2 mgmt service status health.
+2020-11-13 15:20:06: 19.45.12.3 mgmt service status health.
+2020-11-13 15:20:06: 19.45.12.4 mgmt service status health.
+2020-11-13 15:20:06: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:20:36: cluster check health times: 17
+2020-11-13 15:20:37: 19.45.12.2 mgmt service status health.
+2020-11-13 15:20:37: 19.45.12.3 mgmt service status health.
+2020-11-13 15:20:37: 19.45.12.4 mgmt service status health.
+2020-11-13 15:20:37: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:21:07: cluster check health times: 18
+2020-11-13 15:21:08: 19.45.12.2 mgmt service status health.
+2020-11-13 15:21:08: 19.45.12.3 mgmt service status health.
+2020-11-13 15:21:08: 19.45.12.4 mgmt service status health.
+2020-11-13 15:21:08: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:21:38: cluster check health times: 19
+2020-11-13 15:21:38: 19.45.12.2 mgmt service status health.
+2020-11-13 15:21:39: 19.45.12.3 mgmt service status health.
+2020-11-13 15:21:39: 19.45.12.4 mgmt service status health.
+2020-11-13 15:21:39: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:22:09: cluster check health times: 20
+2020-11-13 15:22:09: 19.45.12.2 mgmt service status health.
+2020-11-13 15:22:09: 19.45.12.3 mgmt service status health.
+2020-11-13 15:22:10: 19.45.12.4 mgmt service status health.
+2020-11-13 15:22:10: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:22:40: cluster check health times: 21
+2020-11-13 15:22:40: 19.45.12.2 mgmt service status health.
+2020-11-13 15:22:40: 19.45.12.3 mgmt service status health.
+2020-11-13 15:22:40: 19.45.12.4 mgmt service status health.
+2020-11-13 15:22:40: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:23:11: cluster check health times: 22
+2020-11-13 15:23:11: 19.45.12.2 mgmt service status health.
+2020-11-13 15:23:11: 19.45.12.3 mgmt service status health.
+2020-11-13 15:23:11: 19.45.12.4 mgmt service status health.
+2020-11-13 15:23:11: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:23:41: cluster check health times: 23
+2020-11-13 15:23:42: 19.45.12.2 mgmt service status health.
+2020-11-13 15:23:42: 19.45.12.3 mgmt service status health.
+2020-11-13 15:23:42: 19.45.12.4 mgmt service status health.
+2020-11-13 15:23:42: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:24:12: cluster check health times: 24
+2020-11-13 15:24:13: 19.45.12.2 mgmt service status health.
+2020-11-13 15:24:13: 19.45.12.3 mgmt service status health.
+2020-11-13 15:24:13: 19.45.12.4 mgmt service status health.
+2020-11-13 15:24:13: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-13 15:24:13: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.227513ms
+2020-11-13 15:24:13: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:54:47 CST; 30min ago
+2020-11-13 15:24:13: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.941292ms
+2020-11-13 15:24:14: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:12:50 CST; 12min ago
+2020-11-13 15:24:14: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.651621ms
+2020-11-13 15:24:14: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:38:50 CST; 46min ago
+Sleep 30s:2020-11-13 15:24:14: kill mgmt test running.....
+2020-11-13 15:24:14: kill oss test running......
+2020-11-13 15:24:14: kill meta test running.....
+2020-11-13 15:24:14: mds node 19.45.12.3 stop
+2020-11-13 15:24:14: oss node 19.45.12.4 stop
+2020-11-13 15:24:14: mgmt node 19.45.12.4 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+
+
+2020-11-13 15:24:45: mgmt node 19.45.12.4 start
+2020-11-13 15:24:45: oss node 19.45.12.4 start
+2020-11-13 15:24:45: mds node 19.45.12.3 start
+2020-11-13 15:24:45: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:24:45: run test loops 12!!!!!!
+2020-11-13 15:24:45: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:24:45: 19.45.12.2 mgmt service status health.
+2020-11-13 15:24:45: 19.45.12.3 mgmt service status health.
+2020-11-13 15:24:45: 19.45.12.4 mgmt service status health.
+2020-11-13 15:24:45: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:25:16: cluster check health times: 1
+2020-11-13 15:25:16: 19.45.12.2 mgmt service status health.
+2020-11-13 15:25:16: 19.45.12.3 mgmt service status health.
+2020-11-13 15:25:16: 19.45.12.4 mgmt service status health.
+2020-11-13 15:25:16: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:25:47: cluster check health times: 2
+2020-11-13 15:25:47: 19.45.12.2 mgmt service status health.
+2020-11-13 15:25:47: 19.45.12.3 mgmt service status health.
+2020-11-13 15:25:47: 19.45.12.4 mgmt service status health.
+2020-11-13 15:25:47: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:26:17: cluster check health times: 3
+2020-11-13 15:26:18: 19.45.12.2 mgmt service status health.
+2020-11-13 15:26:18: 19.45.12.3 mgmt service status health.
+2020-11-13 15:26:18: 19.45.12.4 mgmt service status health.
+2020-11-13 15:26:18: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:26:48: cluster check health times: 4
+2020-11-13 15:26:48: 19.45.12.2 mgmt service status health.
+2020-11-13 15:26:49: 19.45.12.3 mgmt service status health.
+2020-11-13 15:26:49: 19.45.12.4 mgmt service status health.
+2020-11-13 15:26:49: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:27:19: cluster check health times: 5
+2020-11-13 15:27:19: 19.45.12.2 mgmt service status health.
+2020-11-13 15:27:19: 19.45.12.3 mgmt service status health.
+2020-11-13 15:27:20: 19.45.12.4 mgmt service status health.
+2020-11-13 15:27:20: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:27:50: cluster check health times: 6
+2020-11-13 15:27:50: 19.45.12.2 mgmt service status health.
+2020-11-13 15:27:50: 19.45.12.3 mgmt service status health.
+2020-11-13 15:27:50: 19.45.12.4 mgmt service status health.
+2020-11-13 15:27:50: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:28:21: cluster check health times: 7
+2020-11-13 15:28:21: 19.45.12.2 mgmt service status health.
+2020-11-13 15:28:21: 19.45.12.3 mgmt service status health.
+2020-11-13 15:28:21: 19.45.12.4 mgmt service status health.
+2020-11-13 15:28:21: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:28:52: cluster check health times: 8
+2020-11-13 15:28:52: 19.45.12.2 mgmt service status health.
+2020-11-13 15:28:52: 19.45.12.3 mgmt service status health.
+2020-11-13 15:28:52: 19.45.12.4 mgmt service status health.
+2020-11-13 15:28:52: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:29:22: cluster check health times: 9
+2020-11-13 15:29:23: 19.45.12.2 mgmt service status health.
+2020-11-13 15:29:23: 19.45.12.3 mgmt service status health.
+2020-11-13 15:29:23: 19.45.12.4 mgmt service status health.
+2020-11-13 15:29:23: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:29:53: cluster check health times: 10
+2020-11-13 15:29:53: 19.45.12.2 mgmt service status health.
+2020-11-13 15:29:54: 19.45.12.3 mgmt service status health.
+2020-11-13 15:29:54: 19.45.12.4 mgmt service status health.
+2020-11-13 15:29:54: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:30:24: cluster check health times: 11
+2020-11-13 15:30:24: 19.45.12.2 mgmt service status health.
+2020-11-13 15:30:25: 19.45.12.3 mgmt service status health.
+2020-11-13 15:30:25: 19.45.12.4 mgmt service status health.
+2020-11-13 15:30:25: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:30:55: cluster check health times: 12
+2020-11-13 15:30:55: 19.45.12.2 mgmt service status health.
+2020-11-13 15:30:55: 19.45.12.3 mgmt service status health.
+2020-11-13 15:30:56: 19.45.12.4 mgmt service status health.
+2020-11-13 15:30:56: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:31:26: cluster check health times: 13
+2020-11-13 15:31:26: 19.45.12.2 mgmt service status health.
+2020-11-13 15:31:26: 19.45.12.3 mgmt service status health.
+2020-11-13 15:31:26: 19.45.12.4 mgmt service status health.
+2020-11-13 15:31:26: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:31:57: cluster check health times: 14
+2020-11-13 15:31:57: 19.45.12.2 mgmt service status health.
+2020-11-13 15:31:57: 19.45.12.3 mgmt service status health.
+2020-11-13 15:31:57: 19.45.12.4 mgmt service status health.
+2020-11-13 15:31:57: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:32:27: cluster check health times: 15
+2020-11-13 15:32:28: 19.45.12.2 mgmt service status health.
+2020-11-13 15:32:28: 19.45.12.3 mgmt service status health.
+2020-11-13 15:32:28: 19.45.12.4 mgmt service status health.
+2020-11-13 15:32:28: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:32:58: cluster check health times: 16
+2020-11-13 15:32:59: 19.45.12.2 mgmt service status health.
+2020-11-13 15:32:59: 19.45.12.3 mgmt service status health.
+2020-11-13 15:32:59: 19.45.12.4 mgmt service status health.
+2020-11-13 15:32:59: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:33:29: cluster check health times: 17
+2020-11-13 15:33:29: 19.45.12.2 mgmt service status health.
+2020-11-13 15:33:30: 19.45.12.3 mgmt service status health.
+2020-11-13 15:33:30: 19.45.12.4 mgmt service status health.
+2020-11-13 15:33:30: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:34:00: cluster check health times: 18
+2020-11-13 15:34:00: 19.45.12.2 mgmt service status health.
+2020-11-13 15:34:00: 19.45.12.3 mgmt service status health.
+2020-11-13 15:34:01: 19.45.12.4 mgmt service status health.
+2020-11-13 15:34:01: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:34:31: cluster check health times: 19
+2020-11-13 15:34:31: 19.45.12.2 mgmt service status health.
+2020-11-13 15:34:31: 19.45.12.3 mgmt service status health.
+2020-11-13 15:34:31: 19.45.12.4 mgmt service status health.
+2020-11-13 15:34:31: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:35:02: cluster check health times: 20
+2020-11-13 15:35:02: 19.45.12.2 mgmt service status health.
+2020-11-13 15:35:02: 19.45.12.3 mgmt service status health.
+2020-11-13 15:35:02: 19.45.12.4 mgmt service status health.
+2020-11-13 15:35:02: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:35:33: cluster check health times: 21
+2020-11-13 15:35:33: 19.45.12.2 mgmt service status health.
+2020-11-13 15:35:33: 19.45.12.3 mgmt service status health.
+2020-11-13 15:35:33: 19.45.12.4 mgmt service status health.
+2020-11-13 15:35:33: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:36:03: cluster check health times: 22
+2020-11-13 15:36:04: 19.45.12.2 mgmt service status health.
+2020-11-13 15:36:04: 19.45.12.3 mgmt service status health.
+2020-11-13 15:36:04: 19.45.12.4 mgmt service status health.
+2020-11-13 15:36:04: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:36:34: cluster check health times: 23
+2020-11-13 15:36:35: 19.45.12.2 mgmt service status health.
+2020-11-13 15:36:35: 19.45.12.3 mgmt service status health.
+2020-11-13 15:36:35: 19.45.12.4 mgmt service status health.
+2020-11-13 15:36:35: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:37:05: cluster check health times: 24
+2020-11-13 15:37:05: 19.45.12.2 mgmt service status health.
+2020-11-13 15:37:06: 19.45.12.3 mgmt service status health.
+2020-11-13 15:37:06: 19.45.12.4 mgmt service status health.
+2020-11-13 15:37:06: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-13 15:37:06: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.872514ms
+2020-11-13 15:37:06: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 14:54:47 CST; 43min ago
+2020-11-13 15:37:06: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 3.822303ms
+2020-11-13 15:37:06: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:12:50 CST; 25min ago
+2020-11-13 15:37:07: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 5.602645ms
+2020-11-13 15:37:07: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:25:43 CST; 12min ago
+Sleep 30s:2020-11-13 15:37:07: kill mgmt test running.....
+2020-11-13 15:37:07: kill oss test running......
+2020-11-13 15:37:07: kill meta test running.....
+2020-11-13 15:37:07: mgmt node 19.45.12.2 stop
+2020-11-13 15:37:07: oss node 19.45.12.2 stop
+2020-11-13 15:37:07: mds node 19.45.12.2 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+
+
+2020-11-13 15:37:37: mds node 19.45.12.2 start
+2020-11-13 15:37:37: mgmt node 19.45.12.2 start
+2020-11-13 15:37:37: oss node 19.45.12.2 start
+2020-11-13 15:37:38: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:37:38: run test loops 13!!!!!!
+2020-11-13 15:37:38: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:37:38: 19.45.12.2 mgmt service status health.
+2020-11-13 15:37:38: 19.45.12.3 mgmt service status health.
+2020-11-13 15:37:38: 19.45.12.4 mgmt service status health.
+2020-11-13 15:37:38: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1 Probably-offline         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001 Probably-offline         Good        1
+    1002 Probably-offline         Good        1
+    1003 Probably-offline         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-13 15:37:38: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.8146ms
+2020-11-13 15:37:39: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:38:36 CST; 1s ago
+2020-11-13 15:37:39: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.807195ms
+2020-11-13 15:37:39: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:12:50 CST; 25min ago
+2020-11-13 15:37:39: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 2.02556ms
+2020-11-13 15:37:39: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:25:43 CST; 12min ago
+Sleep 30s:2020-11-13 15:37:39: kill mgmt test running.....
+2020-11-13 15:37:39: kill oss test running......
+2020-11-13 15:37:39: kill meta test running.....
+2020-11-13 15:37:40: oss node 19.45.12.2 stop
+2020-11-13 15:37:40: mds node 19.45.12.4 stop
+2020-11-13 15:37:40: mgmt node 19.45.12.4 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+
+
+2020-11-13 15:38:10: mgmt node 19.45.12.4 start
+2020-11-13 15:38:10: mds node 19.45.12.4 start
+2020-11-13 15:38:10: oss node 19.45.12.2 start
+2020-11-13 15:38:10: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:38:10: run test loops 14!!!!!!
+2020-11-13 15:38:10: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 15:38:10: 19.45.12.2 mgmt service status health.
+2020-11-13 15:38:11: 19.45.12.3 mgmt service status health.
+2020-11-13 15:38:11: 19.45.12.4 mgmt service status health.
+2020-11-13 15:38:11: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:38:41: cluster check health times: 1
+2020-11-13 15:38:41: 19.45.12.2 mgmt service status health.
+2020-11-13 15:38:41: 19.45.12.3 mgmt service status health.
+2020-11-13 15:38:42: 19.45.12.4 mgmt service status health.
+2020-11-13 15:38:42: cluster rebuilding,mds dirty: 2,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:39:12: cluster check health times: 2
+2020-11-13 15:39:12: 19.45.12.2 mgmt service status health.
+2020-11-13 15:39:12: 19.45.12.3 mgmt service status health.
+2020-11-13 15:39:13: 19.45.12.4 mgmt service status health.
+2020-11-13 15:39:13: cluster rebuilding,mds dirty: 2,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:39:43: cluster check health times: 3
+2020-11-13 15:39:43: 19.45.12.2 mgmt service status health.
+2020-11-13 15:39:43: 19.45.12.3 mgmt service status health.
+2020-11-13 15:39:43: 19.45.12.4 mgmt service status health.
+2020-11-13 15:39:43: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:40:14: cluster check health times: 4
+2020-11-13 15:40:14: 19.45.12.2 mgmt service status health.
+2020-11-13 15:40:14: 19.45.12.3 mgmt service status health.
+2020-11-13 15:40:14: 19.45.12.4 mgmt service status health.
+2020-11-13 15:40:14: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:40:44: cluster check health times: 5
+2020-11-13 15:40:45: 19.45.12.2 mgmt service status health.
+2020-11-13 15:40:45: 19.45.12.3 mgmt service status health.
+2020-11-13 15:40:45: 19.45.12.4 mgmt service status health.
+2020-11-13 15:40:45: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:41:15: cluster check health times: 6
+2020-11-13 15:41:16: 19.45.12.2 mgmt service status health.
+2020-11-13 15:41:16: 19.45.12.3 mgmt service status health.
+2020-11-13 15:41:16: 19.45.12.4 mgmt service status health.
+2020-11-13 15:41:16: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:41:46: cluster check health times: 7
+2020-11-13 15:41:46: 19.45.12.2 mgmt service status health.
+2020-11-13 15:41:47: 19.45.12.3 mgmt service status health.
+2020-11-13 15:41:47: 19.45.12.4 mgmt service status health.
+2020-11-13 15:41:47: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:42:17: cluster check health times: 8
+2020-11-13 15:42:17: 19.45.12.2 mgmt service status health.
+2020-11-13 15:42:17: 19.45.12.3 mgmt service status health.
+2020-11-13 15:42:18: 19.45.12.4 mgmt service status health.
+2020-11-13 15:42:18: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:42:48: cluster check health times: 9
+2020-11-13 15:42:48: 19.45.12.2 mgmt service status health.
+2020-11-13 15:42:48: 19.45.12.3 mgmt service status health.
+2020-11-13 15:42:48: 19.45.12.4 mgmt service status health.
+2020-11-13 15:42:48: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:43:19: cluster check health times: 10
+2020-11-13 15:43:19: 19.45.12.2 mgmt service status health.
+2020-11-13 15:43:19: 19.45.12.3 mgmt service status health.
+2020-11-13 15:43:19: 19.45.12.4 mgmt service status health.
+2020-11-13 15:43:19: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:43:50: cluster check health times: 11
+2020-11-13 15:43:50: 19.45.12.2 mgmt service status health.
+2020-11-13 15:43:50: 19.45.12.3 mgmt service status health.
+2020-11-13 15:43:50: 19.45.12.4 mgmt service status health.
+2020-11-13 15:43:50: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:44:20: cluster check health times: 12
+2020-11-13 15:44:21: 19.45.12.2 mgmt service status health.
+2020-11-13 15:44:21: 19.45.12.3 mgmt service status health.
+2020-11-13 15:44:21: 19.45.12.4 mgmt service status health.
+2020-11-13 15:44:21: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:44:51: cluster check health times: 13
+2020-11-13 15:44:52: 19.45.12.2 mgmt service status health.
+2020-11-13 15:44:52: 19.45.12.3 mgmt service status health.
+2020-11-13 15:44:52: 19.45.12.4 mgmt service status health.
+2020-11-13 15:44:52: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:45:22: cluster check health times: 14
+2020-11-13 15:45:22: 19.45.12.2 mgmt service status health.
+2020-11-13 15:45:23: 19.45.12.3 mgmt service status health.
+2020-11-13 15:45:23: 19.45.12.4 mgmt service status health.
+2020-11-13 15:45:23: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:45:53: cluster check health times: 15
+2020-11-13 15:45:53: 19.45.12.2 mgmt service status health.
+2020-11-13 15:45:53: 19.45.12.3 mgmt service status health.
+2020-11-13 15:45:54: 19.45.12.4 mgmt service status health.
+2020-11-13 15:45:54: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:46:24: cluster check health times: 16
+2020-11-13 15:46:24: 19.45.12.2 mgmt service status health.
+2020-11-13 15:46:24: 19.45.12.3 mgmt service status health.
+2020-11-13 15:46:24: 19.45.12.4 mgmt service status health.
+2020-11-13 15:46:24: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:46:55: cluster check health times: 17
+2020-11-13 15:46:55: 19.45.12.2 mgmt service status health.
+2020-11-13 15:46:55: 19.45.12.3 mgmt service status health.
+2020-11-13 15:46:55: 19.45.12.4 mgmt service status health.
+2020-11-13 15:46:55: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:47:25: cluster check health times: 18
+2020-11-13 15:47:26: 19.45.12.2 mgmt service status health.
+2020-11-13 15:47:26: 19.45.12.3 mgmt service status health.
+2020-11-13 15:47:26: 19.45.12.4 mgmt service status health.
+2020-11-13 15:47:26: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:47:56: cluster check health times: 19
+2020-11-13 15:47:57: 19.45.12.2 mgmt service status health.
+2020-11-13 15:47:57: 19.45.12.3 mgmt service status health.
+2020-11-13 15:47:57: 19.45.12.4 mgmt service status health.
+2020-11-13 15:47:57: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:48:27: cluster check health times: 20
+2020-11-13 15:48:27: 19.45.12.2 mgmt service status health.
+2020-11-13 15:48:28: 19.45.12.3 mgmt service status health.
+2020-11-13 15:48:28: 19.45.12.4 mgmt service status health.
+2020-11-13 15:48:28: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:48:58: cluster check health times: 21
+2020-11-13 15:48:58: 19.45.12.2 mgmt service status health.
+2020-11-13 15:48:59: 19.45.12.3 mgmt service status health.
+2020-11-13 15:48:59: 19.45.12.4 mgmt service status health.
+2020-11-13 15:48:59: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:49:29: cluster check health times: 22
+2020-11-13 15:49:29: 19.45.12.2 mgmt service status health.
+2020-11-13 15:49:29: 19.45.12.3 mgmt service status health.
+2020-11-13 15:49:30: 19.45.12.4 mgmt service status health.
+2020-11-13 15:49:30: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:50:00: cluster check health times: 23
+2020-11-13 15:50:00: 19.45.12.2 mgmt service status health.
+2020-11-13 15:50:00: 19.45.12.3 mgmt service status health.
+2020-11-13 15:50:00: 19.45.12.4 mgmt service status health.
+2020-11-13 15:50:01: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:50:31: cluster check health times: 24
+2020-11-13 15:50:31: 19.45.12.2 mgmt service status health.
+2020-11-13 15:50:31: 19.45.12.3 mgmt service status health.
+2020-11-13 15:50:31: 19.45.12.4 mgmt service status health.
+2020-11-13 15:50:31: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:51:02: cluster check health times: 25
+2020-11-13 15:51:02: 19.45.12.2 mgmt service status health.
+2020-11-13 15:51:02: 19.45.12.3 mgmt service status health.
+2020-11-13 15:51:02: 19.45.12.4 mgmt service status health.
+2020-11-13 15:51:02: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:51:32: cluster check health times: 26
+2020-11-13 15:51:33: 19.45.12.2 mgmt service status health.
+2020-11-13 15:51:33: 19.45.12.3 mgmt service status health.
+2020-11-13 15:51:33: 19.45.12.4 mgmt service status health.
+2020-11-13 15:51:33: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:52:03: cluster check health times: 27
+2020-11-13 15:52:03: 19.45.12.2 mgmt service status health.
+2020-11-13 15:52:04: 19.45.12.3 mgmt service status health.
+2020-11-13 15:52:04: 19.45.12.4 mgmt service status health.
+2020-11-13 15:52:04: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:52:34: cluster check health times: 28
+2020-11-13 15:52:34: 19.45.12.2 mgmt service status health.
+2020-11-13 15:52:35: 19.45.12.3 mgmt service status health.
+2020-11-13 15:52:35: 19.45.12.4 mgmt service status health.
+2020-11-13 15:52:35: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:53:05: cluster check health times: 29
+2020-11-13 15:53:05: 19.45.12.2 mgmt service status health.
+2020-11-13 15:53:05: 19.45.12.3 mgmt service status health.
+2020-11-13 15:53:06: 19.45.12.4 mgmt service status health.
+2020-11-13 15:53:06: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:53:36: cluster check health times: 30
+2020-11-13 15:53:36: 19.45.12.2 mgmt service status health.
+2020-11-13 15:53:36: 19.45.12.3 mgmt service status health.
+2020-11-13 15:53:36: 19.45.12.4 mgmt service status health.
+2020-11-13 15:53:36: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:54:07: cluster check health times: 31
+2020-11-13 15:54:07: 19.45.12.2 mgmt service status health.
+2020-11-13 15:54:07: 19.45.12.3 mgmt service status health.
+2020-11-13 15:54:07: 19.45.12.4 mgmt service status health.
+2020-11-13 15:54:07: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:54:37: cluster check health times: 32
+2020-11-13 15:54:38: 19.45.12.2 mgmt service status health.
+2020-11-13 15:54:38: 19.45.12.3 mgmt service status health.
+2020-11-13 15:54:38: 19.45.12.4 mgmt service status health.
+2020-11-13 15:54:38: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:55:08: cluster check health times: 33
+2020-11-13 15:55:09: 19.45.12.2 mgmt service status health.
+2020-11-13 15:55:09: 19.45.12.3 mgmt service status health.
+2020-11-13 15:55:09: 19.45.12.4 mgmt service status health.
+2020-11-13 15:55:09: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:55:39: cluster check health times: 34
+2020-11-13 15:55:39: 19.45.12.2 mgmt service status health.
+2020-11-13 15:55:40: 19.45.12.3 mgmt service status health.
+2020-11-13 15:55:40: 19.45.12.4 mgmt service status health.
+2020-11-13 15:55:40: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:56:10: cluster check health times: 35
+2020-11-13 15:56:10: 19.45.12.2 mgmt service status health.
+2020-11-13 15:56:10: 19.45.12.3 mgmt service status health.
+2020-11-13 15:56:11: 19.45.12.4 mgmt service status health.
+2020-11-13 15:56:11: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:56:41: cluster check health times: 36
+2020-11-13 15:56:41: 19.45.12.2 mgmt service status health.
+2020-11-13 15:56:41: 19.45.12.3 mgmt service status health.
+2020-11-13 15:56:41: 19.45.12.4 mgmt service status health.
+2020-11-13 15:56:41: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:57:12: cluster check health times: 37
+2020-11-13 15:57:12: 19.45.12.2 mgmt service status health.
+2020-11-13 15:57:12: 19.45.12.3 mgmt service status health.
+2020-11-13 15:57:12: 19.45.12.4 mgmt service status health.
+2020-11-13 15:57:12: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:57:42: cluster check health times: 38
+2020-11-13 15:57:43: 19.45.12.2 mgmt service status health.
+2020-11-13 15:57:43: 19.45.12.3 mgmt service status health.
+2020-11-13 15:57:43: 19.45.12.4 mgmt service status health.
+2020-11-13 15:57:43: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:58:13: cluster check health times: 39
+2020-11-13 15:58:14: 19.45.12.2 mgmt service status health.
+2020-11-13 15:58:14: 19.45.12.3 mgmt service status health.
+2020-11-13 15:58:14: 19.45.12.4 mgmt service status health.
+2020-11-13 15:58:14: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:58:44: cluster check health times: 40
+2020-11-13 15:58:44: 19.45.12.2 mgmt service status health.
+2020-11-13 15:58:45: 19.45.12.3 mgmt service status health.
+2020-11-13 15:58:45: 19.45.12.4 mgmt service status health.
+2020-11-13 15:58:45: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:59:15: cluster check health times: 41
+2020-11-13 15:59:15: 19.45.12.2 mgmt service status health.
+2020-11-13 15:59:15: 19.45.12.3 mgmt service status health.
+2020-11-13 15:59:16: 19.45.12.4 mgmt service status health.
+2020-11-13 15:59:16: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 15:59:46: cluster check health times: 42
+2020-11-13 15:59:46: 19.45.12.2 mgmt service status health.
+2020-11-13 15:59:46: 19.45.12.3 mgmt service status health.
+2020-11-13 15:59:46: 19.45.12.4 mgmt service status health.
+2020-11-13 15:59:46: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:00:17: cluster check health times: 43
+2020-11-13 16:00:17: 19.45.12.2 mgmt service status health.
+2020-11-13 16:00:17: 19.45.12.3 mgmt service status health.
+2020-11-13 16:00:17: 19.45.12.4 mgmt service status health.
+2020-11-13 16:00:17: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:00:47: cluster check health times: 44
+2020-11-13 16:00:48: 19.45.12.2 mgmt service status health.
+2020-11-13 16:00:48: 19.45.12.3 mgmt service status health.
+2020-11-13 16:00:48: 19.45.12.4 mgmt service status health.
+2020-11-13 16:00:48: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:01:18: cluster check health times: 45
+2020-11-13 16:01:19: 19.45.12.2 mgmt service status health.
+2020-11-13 16:01:19: 19.45.12.3 mgmt service status health.
+2020-11-13 16:01:19: 19.45.12.4 mgmt service status health.
+2020-11-13 16:01:19: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:01:49: cluster check health times: 46
+2020-11-13 16:01:49: 19.45.12.2 mgmt service status health.
+2020-11-13 16:01:50: 19.45.12.3 mgmt service status health.
+2020-11-13 16:01:50: 19.45.12.4 mgmt service status health.
+2020-11-13 16:01:50: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:02:20: cluster check health times: 47
+2020-11-13 16:02:20: 19.45.12.2 mgmt service status health.
+2020-11-13 16:02:20: 19.45.12.3 mgmt service status health.
+2020-11-13 16:02:21: 19.45.12.4 mgmt service status health.
+2020-11-13 16:02:21: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:02:51: cluster check health times: 48
+2020-11-13 16:02:51: 19.45.12.2 mgmt service status health.
+2020-11-13 16:02:51: 19.45.12.3 mgmt service status health.
+2020-11-13 16:02:51: 19.45.12.4 mgmt service status health.
+2020-11-13 16:02:51: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:03:22: cluster check health times: 49
+2020-11-13 16:03:22: 19.45.12.2 mgmt service status health.
+2020-11-13 16:03:22: 19.45.12.3 mgmt service status health.
+2020-11-13 16:03:22: 19.45.12.4 mgmt service status health.
+2020-11-13 16:03:22: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:03:52: cluster check health times: 50
+2020-11-13 16:03:53: 19.45.12.2 mgmt service status health.
+2020-11-13 16:03:53: 19.45.12.3 mgmt service status health.
+2020-11-13 16:03:53: 19.45.12.4 mgmt service status health.
+2020-11-13 16:03:53: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:04:23: cluster check health times: 51
+2020-11-13 16:04:24: 19.45.12.2 mgmt service status health.
+2020-11-13 16:04:24: 19.45.12.3 mgmt service status health.
+2020-11-13 16:04:24: 19.45.12.4 mgmt service status health.
+2020-11-13 16:04:24: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:04:54: cluster check health times: 52
+2020-11-13 16:04:54: 19.45.12.2 mgmt service status health.
+2020-11-13 16:04:55: 19.45.12.3 mgmt service status health.
+2020-11-13 16:04:55: 19.45.12.4 mgmt service status health.
+2020-11-13 16:04:55: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:05:25: cluster check health times: 53
+2020-11-13 16:05:25: 19.45.12.2 mgmt service status health.
+2020-11-13 16:05:25: 19.45.12.3 mgmt service status health.
+2020-11-13 16:05:26: 19.45.12.4 mgmt service status health.
+2020-11-13 16:05:26: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-13 16:05:26: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.286727ms
+2020-11-13 16:05:26: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:38:36 CST; 27min ago
+2020-11-13 16:05:26: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.994911ms
+2020-11-13 16:05:26: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:12:50 CST; 53min ago
+2020-11-13 16:05:26: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.586433ms
+2020-11-13 16:05:27: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:39:08 CST; 27min ago
+Sleep 30s:2020-11-13 16:05:27: kill mgmt test running.....
+2020-11-13 16:05:27: kill oss test running......
+2020-11-13 16:05:27: kill meta test running.....
+2020-11-13 16:05:27: mgmt node 19.45.12.2 stop
+2020-11-13 16:05:27: oss node 19.45.12.4 stop
+2020-11-13 16:05:27: mds node 19.45.12.4 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+
+2020-11-13 16:05:57: mds node 19.45.12.4 start
+2020-11-13 16:05:57: oss node 19.45.12.4 start
+
+2020-11-13 16:05:57: mgmt node 19.45.12.2 start
+2020-11-13 16:05:57: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:05:57: run test loops 15!!!!!!
+2020-11-13 16:05:57: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:05:58: 19.45.12.2 mgmt service status health.
+2020-11-13 16:05:58: 19.45.12.3 mgmt service status health.
+2020-11-13 16:05:58: 19.45.12.4 mgmt service status health.
+2020-11-13 16:05:58: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:06:28: cluster check health times: 1
+2020-11-13 16:06:29: 19.45.12.2 mgmt service status health.
+2020-11-13 16:06:29: 19.45.12.3 mgmt service status health.
+2020-11-13 16:06:29: 19.45.12.4 mgmt service status health.
+2020-11-13 16:06:29: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:06:59: cluster check health times: 2
+2020-11-13 16:06:59: 19.45.12.2 mgmt service status health.
+2020-11-13 16:07:00: 19.45.12.3 mgmt service status health.
+2020-11-13 16:07:00: 19.45.12.4 mgmt service status health.
+2020-11-13 16:07:00: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:07:30: cluster check health times: 3
+2020-11-13 16:07:30: 19.45.12.2 mgmt service status health.
+2020-11-13 16:07:30: 19.45.12.3 mgmt service status health.
+2020-11-13 16:07:31: 19.45.12.4 mgmt service status health.
+2020-11-13 16:07:31: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:08:01: cluster check health times: 4
+2020-11-13 16:08:01: 19.45.12.2 mgmt service status health.
+2020-11-13 16:08:01: 19.45.12.3 mgmt service status health.
+2020-11-13 16:08:01: 19.45.12.4 mgmt service status health.
+2020-11-13 16:08:01: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:08:32: cluster check health times: 5
+2020-11-13 16:08:32: 19.45.12.2 mgmt service status health.
+2020-11-13 16:08:32: 19.45.12.3 mgmt service status health.
+2020-11-13 16:08:32: 19.45.12.4 mgmt service status health.
+2020-11-13 16:08:32: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:09:02: cluster check health times: 6
+2020-11-13 16:09:03: 19.45.12.2 mgmt service status health.
+2020-11-13 16:09:03: 19.45.12.3 mgmt service status health.
+2020-11-13 16:09:03: 19.45.12.4 mgmt service status health.
+2020-11-13 16:09:03: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:09:33: cluster check health times: 7
+2020-11-13 16:09:33: 19.45.12.2 mgmt service status health.
+2020-11-13 16:09:34: 19.45.12.3 mgmt service status health.
+2020-11-13 16:09:34: 19.45.12.4 mgmt service status health.
+2020-11-13 16:09:34: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:10:04: cluster check health times: 8
+2020-11-13 16:10:04: 19.45.12.2 mgmt service status health.
+2020-11-13 16:10:05: 19.45.12.3 mgmt service status health.
+2020-11-13 16:10:05: 19.45.12.4 mgmt service status health.
+2020-11-13 16:10:05: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:10:35: cluster check health times: 9
+2020-11-13 16:10:35: 19.45.12.2 mgmt service status health.
+2020-11-13 16:10:35: 19.45.12.3 mgmt service status health.
+2020-11-13 16:10:36: 19.45.12.4 mgmt service status health.
+2020-11-13 16:10:36: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:11:06: cluster check health times: 10
+2020-11-13 16:11:06: 19.45.12.2 mgmt service status health.
+2020-11-13 16:11:06: 19.45.12.3 mgmt service status health.
+2020-11-13 16:11:06: 19.45.12.4 mgmt service status health.
+2020-11-13 16:11:06: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:11:37: cluster check health times: 11
+2020-11-13 16:11:37: 19.45.12.2 mgmt service status health.
+2020-11-13 16:11:37: 19.45.12.3 mgmt service status health.
+2020-11-13 16:11:37: 19.45.12.4 mgmt service status health.
+2020-11-13 16:11:37: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:12:07: cluster check health times: 12
+2020-11-13 16:12:08: 19.45.12.2 mgmt service status health.
+2020-11-13 16:12:08: 19.45.12.3 mgmt service status health.
+2020-11-13 16:12:08: 19.45.12.4 mgmt service status health.
+2020-11-13 16:12:08: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:12:38: cluster check health times: 13
+2020-11-13 16:12:38: 19.45.12.2 mgmt service status health.
+2020-11-13 16:12:39: 19.45.12.3 mgmt service status health.
+2020-11-13 16:12:39: 19.45.12.4 mgmt service status health.
+2020-11-13 16:12:39: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:13:09: cluster check health times: 14
+2020-11-13 16:13:09: 19.45.12.2 mgmt service status health.
+2020-11-13 16:13:09: 19.45.12.3 mgmt service status health.
+2020-11-13 16:13:10: 19.45.12.4 mgmt service status health.
+2020-11-13 16:13:10: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:13:40: cluster check health times: 15
+2020-11-13 16:13:40: 19.45.12.2 mgmt service status health.
+2020-11-13 16:13:40: 19.45.12.3 mgmt service status health.
+2020-11-13 16:13:40: 19.45.12.4 mgmt service status health.
+2020-11-13 16:13:40: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:14:11: cluster check health times: 16
+2020-11-13 16:14:11: 19.45.12.2 mgmt service status health.
+2020-11-13 16:14:11: 19.45.12.3 mgmt service status health.
+2020-11-13 16:14:11: 19.45.12.4 mgmt service status health.
+2020-11-13 16:14:11: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:14:42: cluster check health times: 17
+2020-11-13 16:14:42: 19.45.12.2 mgmt service status health.
+2020-11-13 16:14:42: 19.45.12.3 mgmt service status health.
+2020-11-13 16:14:42: 19.45.12.4 mgmt service status health.
+2020-11-13 16:14:42: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:15:12: cluster check health times: 18
+2020-11-13 16:15:13: 19.45.12.2 mgmt service status health.
+2020-11-13 16:15:13: 19.45.12.3 mgmt service status health.
+2020-11-13 16:15:13: 19.45.12.4 mgmt service status health.
+2020-11-13 16:15:13: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:15:43: cluster check health times: 19
+2020-11-13 16:15:43: 19.45.12.2 mgmt service status health.
+2020-11-13 16:15:44: 19.45.12.3 mgmt service status health.
+2020-11-13 16:15:44: 19.45.12.4 mgmt service status health.
+2020-11-13 16:15:44: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:16:14: cluster check health times: 20
+2020-11-13 16:16:14: 19.45.12.2 mgmt service status health.
+2020-11-13 16:16:14: 19.45.12.3 mgmt service status health.
+2020-11-13 16:16:15: 19.45.12.4 mgmt service status health.
+2020-11-13 16:16:15: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:16:45: cluster check health times: 21
+2020-11-13 16:16:45: 19.45.12.2 mgmt service status health.
+2020-11-13 16:16:45: 19.45.12.3 mgmt service status health.
+2020-11-13 16:16:46: 19.45.12.4 mgmt service status health.
+2020-11-13 16:16:46: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:17:16: cluster check health times: 22
+2020-11-13 16:17:16: 19.45.12.2 mgmt service status health.
+2020-11-13 16:17:16: 19.45.12.3 mgmt service status health.
+2020-11-13 16:17:16: 19.45.12.4 mgmt service status health.
+2020-11-13 16:17:16: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:17:47: cluster check health times: 23
+2020-11-13 16:17:47: 19.45.12.2 mgmt service status health.
+2020-11-13 16:17:47: 19.45.12.3 mgmt service status health.
+2020-11-13 16:17:47: 19.45.12.4 mgmt service status health.
+2020-11-13 16:17:47: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:18:17: cluster check health times: 24
+2020-11-13 16:18:18: 19.45.12.2 mgmt service status health.
+2020-11-13 16:18:18: 19.45.12.3 mgmt service status health.
+2020-11-13 16:18:18: 19.45.12.4 mgmt service status health.
+2020-11-13 16:18:18: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:18:48: cluster check health times: 25
+2020-11-13 16:18:48: 19.45.12.2 mgmt service status health.
+2020-11-13 16:18:49: 19.45.12.3 mgmt service status health.
+2020-11-13 16:18:49: 19.45.12.4 mgmt service status health.
+2020-11-13 16:18:49: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-13 16:18:49: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.638911ms
+2020-11-13 16:18:49: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 16:06:56 CST; 12min ago
+2020-11-13 16:18:49: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.755571ms
+2020-11-13 16:18:49: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:12:50 CST; 1h 6min ago
+2020-11-13 16:18:50: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.595947ms
+2020-11-13 16:18:50: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:39:08 CST; 40min ago
+Sleep 30s:2020-11-13 16:18:50: kill oss test running......
+2020-11-13 16:18:50: kill mgmt test running.....
+2020-11-13 16:18:50: kill meta test running.....
+2020-11-13 16:18:50: mgmt node 19.45.12.3 stop
+2020-11-13 16:18:50: mds node 19.45.12.4 stop
+2020-11-13 16:18:50: oss node 19.45.12.4 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+
+
+2020-11-13 16:19:20: mds node 19.45.12.4 start
+2020-11-13 16:19:20: mgmt node 19.45.12.3 start
+2020-11-13 16:19:20: oss node 19.45.12.4 start
+2020-11-13 16:19:21: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:19:21: run test loops 16!!!!!!
+2020-11-13 16:19:21: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:19:21: 19.45.12.2 mgmt service status health.
+2020-11-13 16:19:21: 19.45.12.3 mgmt service status health.
+2020-11-13 16:19:21: 19.45.12.4 mgmt service status health.
+2020-11-13 16:19:21: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:19:51: cluster check health times: 1
+2020-11-13 16:19:52: 19.45.12.2 mgmt service status health.
+2020-11-13 16:19:52: 19.45.12.3 mgmt service status health.
+2020-11-13 16:19:52: 19.45.12.4 mgmt service status health.
+2020-11-13 16:19:52: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:20:22: cluster check health times: 2
+2020-11-13 16:20:23: 19.45.12.2 mgmt service status health.
+2020-11-13 16:20:23: 19.45.12.3 mgmt service status health.
+2020-11-13 16:20:23: 19.45.12.4 mgmt service status health.
+2020-11-13 16:20:23: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:20:53: cluster check health times: 3
+2020-11-13 16:20:53: 19.45.12.2 mgmt service status health.
+2020-11-13 16:20:54: 19.45.12.3 mgmt service status health.
+2020-11-13 16:20:54: 19.45.12.4 mgmt service status health.
+2020-11-13 16:20:54: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:21:24: cluster check health times: 4
+2020-11-13 16:21:24: 19.45.12.2 mgmt service status health.
+2020-11-13 16:21:24: 19.45.12.3 mgmt service status health.
+2020-11-13 16:21:25: 19.45.12.4 mgmt service status health.
+2020-11-13 16:21:25: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:21:55: cluster check health times: 5
+2020-11-13 16:21:55: 19.45.12.2 mgmt service status health.
+2020-11-13 16:21:55: 19.45.12.3 mgmt service status health.
+2020-11-13 16:21:55: 19.45.12.4 mgmt service status health.
+2020-11-13 16:21:55: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:22:26: cluster check health times: 6
+2020-11-13 16:22:26: 19.45.12.2 mgmt service status health.
+2020-11-13 16:22:26: 19.45.12.3 mgmt service status health.
+2020-11-13 16:22:26: 19.45.12.4 mgmt service status health.
+2020-11-13 16:22:26: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:22:56: cluster check health times: 7
+2020-11-13 16:22:57: 19.45.12.2 mgmt service status health.
+2020-11-13 16:22:57: 19.45.12.3 mgmt service status health.
+2020-11-13 16:22:57: 19.45.12.4 mgmt service status health.
+2020-11-13 16:22:57: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:23:27: cluster check health times: 8
+2020-11-13 16:23:28: 19.45.12.2 mgmt service status health.
+2020-11-13 16:23:28: 19.45.12.3 mgmt service status health.
+2020-11-13 16:23:28: 19.45.12.4 mgmt service status health.
+2020-11-13 16:23:28: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:23:58: cluster check health times: 9
+2020-11-13 16:23:58: 19.45.12.2 mgmt service status health.
+2020-11-13 16:23:59: 19.45.12.3 mgmt service status health.
+2020-11-13 16:23:59: 19.45.12.4 mgmt service status health.
+2020-11-13 16:23:59: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:24:29: cluster check health times: 10
+2020-11-13 16:24:29: 19.45.12.2 mgmt service status health.
+2020-11-13 16:24:29: 19.45.12.3 mgmt service status health.
+2020-11-13 16:24:30: 19.45.12.4 mgmt service status health.
+2020-11-13 16:24:30: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:25:00: cluster check health times: 11
+2020-11-13 16:25:00: 19.45.12.2 mgmt service status health.
+2020-11-13 16:25:00: 19.45.12.3 mgmt service status health.
+2020-11-13 16:25:00: 19.45.12.4 mgmt service status health.
+2020-11-13 16:25:00: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:25:31: cluster check health times: 12
+2020-11-13 16:25:31: 19.45.12.2 mgmt service status health.
+2020-11-13 16:25:31: 19.45.12.3 mgmt service status health.
+2020-11-13 16:25:31: 19.45.12.4 mgmt service status health.
+2020-11-13 16:25:31: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:26:01: cluster check health times: 13
+2020-11-13 16:26:02: 19.45.12.2 mgmt service status health.
+2020-11-13 16:26:02: 19.45.12.3 mgmt service status health.
+2020-11-13 16:26:02: 19.45.12.4 mgmt service status health.
+2020-11-13 16:26:02: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:26:32: cluster check health times: 14
+2020-11-13 16:26:33: 19.45.12.2 mgmt service status health.
+2020-11-13 16:26:33: 19.45.12.3 mgmt service status health.
+2020-11-13 16:26:33: 19.45.12.4 mgmt service status health.
+2020-11-13 16:26:33: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:27:03: cluster check health times: 15
+2020-11-13 16:27:03: 19.45.12.2 mgmt service status health.
+2020-11-13 16:27:04: 19.45.12.3 mgmt service status health.
+2020-11-13 16:27:04: 19.45.12.4 mgmt service status health.
+2020-11-13 16:27:04: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:27:34: cluster check health times: 16
+2020-11-13 16:27:34: 19.45.12.2 mgmt service status health.
+2020-11-13 16:27:34: 19.45.12.3 mgmt service status health.
+2020-11-13 16:27:35: 19.45.12.4 mgmt service status health.
+2020-11-13 16:27:35: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:28:05: cluster check health times: 17
+2020-11-13 16:28:05: 19.45.12.2 mgmt service status health.
+2020-11-13 16:28:05: 19.45.12.3 mgmt service status health.
+2020-11-13 16:28:05: 19.45.12.4 mgmt service status health.
+2020-11-13 16:28:05: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:28:36: cluster check health times: 18
+2020-11-13 16:28:36: 19.45.12.2 mgmt service status health.
+2020-11-13 16:28:36: 19.45.12.3 mgmt service status health.
+2020-11-13 16:28:36: 19.45.12.4 mgmt service status health.
+2020-11-13 16:28:36: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:29:06: cluster check health times: 19
+2020-11-13 16:29:07: 19.45.12.2 mgmt service status health.
+2020-11-13 16:29:07: 19.45.12.3 mgmt service status health.
+2020-11-13 16:29:07: 19.45.12.4 mgmt service status health.
+2020-11-13 16:29:07: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:29:37: cluster check health times: 20
+2020-11-13 16:29:38: 19.45.12.2 mgmt service status health.
+2020-11-13 16:29:38: 19.45.12.3 mgmt service status health.
+2020-11-13 16:29:38: 19.45.12.4 mgmt service status health.
+2020-11-13 16:29:38: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:30:08: cluster check health times: 21
+2020-11-13 16:30:08: 19.45.12.2 mgmt service status health.
+2020-11-13 16:30:09: 19.45.12.3 mgmt service status health.
+2020-11-13 16:30:09: 19.45.12.4 mgmt service status health.
+2020-11-13 16:30:09: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:30:39: cluster check health times: 22
+2020-11-13 16:30:39: 19.45.12.2 mgmt service status health.
+2020-11-13 16:30:39: 19.45.12.3 mgmt service status health.
+2020-11-13 16:30:40: 19.45.12.4 mgmt service status health.
+2020-11-13 16:30:40: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:31:10: cluster check health times: 23
+2020-11-13 16:31:10: 19.45.12.2 mgmt service status health.
+2020-11-13 16:31:10: 19.45.12.3 mgmt service status health.
+2020-11-13 16:31:10: 19.45.12.4 mgmt service status health.
+2020-11-13 16:31:10: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:31:41: cluster check health times: 24
+2020-11-13 16:31:41: 19.45.12.2 mgmt service status health.
+2020-11-13 16:31:41: 19.45.12.3 mgmt service status health.
+2020-11-13 16:31:41: 19.45.12.4 mgmt service status health.
+2020-11-13 16:31:41: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:32:11: cluster check health times: 25
+2020-11-13 16:32:12: 19.45.12.2 mgmt service status health.
+2020-11-13 16:32:12: 19.45.12.3 mgmt service status health.
+2020-11-13 16:32:12: 19.45.12.4 mgmt service status health.
+2020-11-13 16:32:12: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:32:42: cluster check health times: 26
+2020-11-13 16:32:43: 19.45.12.2 mgmt service status health.
+2020-11-13 16:32:43: 19.45.12.3 mgmt service status health.
+2020-11-13 16:32:43: 19.45.12.4 mgmt service status health.
+2020-11-13 16:32:43: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:33:13: cluster check health times: 27
+2020-11-13 16:33:13: 19.45.12.2 mgmt service status health.
+2020-11-13 16:33:14: 19.45.12.3 mgmt service status health.
+2020-11-13 16:33:14: 19.45.12.4 mgmt service status health.
+2020-11-13 16:33:14: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:33:44: cluster check health times: 28
+2020-11-13 16:33:44: 19.45.12.2 mgmt service status health.
+2020-11-13 16:33:44: 19.45.12.3 mgmt service status health.
+2020-11-13 16:33:45: 19.45.12.4 mgmt service status health.
+2020-11-13 16:33:45: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:34:15: cluster check health times: 29
+2020-11-13 16:34:15: 19.45.12.2 mgmt service status health.
+2020-11-13 16:34:15: 19.45.12.3 mgmt service status health.
+2020-11-13 16:34:15: 19.45.12.4 mgmt service status health.
+2020-11-13 16:34:15: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-13 16:34:16: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.739095ms
+2020-11-13 16:34:16: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 16:06:56 CST; 28min ago
+2020-11-13 16:34:16: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 3.683734ms
+2020-11-13 16:34:16: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 16:20:19 CST; 14min ago
+2020-11-13 16:34:16: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.694306ms
+2020-11-13 16:34:17: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 15:39:08 CST; 56min ago
+Sleep 30s:2020-11-13 16:34:17: kill mgmt test running.....
+2020-11-13 16:34:17: kill oss test running......
+2020-11-13 16:34:17: kill meta test running.....
+2020-11-13 16:34:17: mgmt node 19.45.12.4 stop
+2020-11-13 16:34:17: oss node 19.45.12.2 stop
+2020-11-13 16:34:17: mds node 19.45.12.2 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 16:34:47: mgmt node 19.45.12.4 start
+
+
+2020-11-13 16:34:47: mds node 19.45.12.2 start
+2020-11-13 16:34:47: oss node 19.45.12.2 start
+2020-11-13 16:34:47: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:34:47: run test loops 17!!!!!!
+2020-11-13 16:34:47: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:34:48: 19.45.12.2 mgmt service status health.
+2020-11-13 16:34:48: 19.45.12.3 mgmt service status health.
+2020-11-13 16:34:48: 19.45.12.4 mgmt service status health.
+2020-11-13 16:34:48: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:35:18: cluster check health times: 1
+2020-11-13 16:35:18: 19.45.12.2 mgmt service status health.
+2020-11-13 16:35:19: 19.45.12.3 mgmt service status health.
+2020-11-13 16:35:19: 19.45.12.4 mgmt service status health.
+2020-11-13 16:35:19: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:35:49: cluster check health times: 2
+2020-11-13 16:35:49: 19.45.12.2 mgmt service status health.
+2020-11-13 16:35:49: 19.45.12.3 mgmt service status health.
+2020-11-13 16:35:50: 19.45.12.4 mgmt service status health.
+2020-11-13 16:35:50: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:36:20: cluster check health times: 3
+2020-11-13 16:36:20: 19.45.12.2 mgmt service status health.
+2020-11-13 16:36:20: 19.45.12.3 mgmt service status health.
+2020-11-13 16:36:20: 19.45.12.4 mgmt service status health.
+2020-11-13 16:36:21: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:36:51: cluster check health times: 4
+2020-11-13 16:36:51: 19.45.12.2 mgmt service status health.
+2020-11-13 16:36:51: 19.45.12.3 mgmt service status health.
+2020-11-13 16:36:51: 19.45.12.4 mgmt service status health.
+2020-11-13 16:36:51: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:37:22: cluster check health times: 5
+2020-11-13 16:37:22: 19.45.12.2 mgmt service status health.
+2020-11-13 16:37:22: 19.45.12.3 mgmt service status health.
+2020-11-13 16:37:22: 19.45.12.4 mgmt service status health.
+2020-11-13 16:37:22: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:37:52: cluster check health times: 6
+2020-11-13 16:37:53: 19.45.12.2 mgmt service status health.
+2020-11-13 16:37:53: 19.45.12.3 mgmt service status health.
+2020-11-13 16:37:53: 19.45.12.4 mgmt service status health.
+2020-11-13 16:37:53: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:38:23: cluster check health times: 7
+2020-11-13 16:38:23: 19.45.12.2 mgmt service status health.
+2020-11-13 16:38:24: 19.45.12.3 mgmt service status health.
+2020-11-13 16:38:24: 19.45.12.4 mgmt service status health.
+2020-11-13 16:38:24: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:38:54: cluster check health times: 8
+2020-11-13 16:38:54: 19.45.12.2 mgmt service status health.
+2020-11-13 16:38:54: 19.45.12.3 mgmt service status health.
+2020-11-13 16:38:55: 19.45.12.4 mgmt service status health.
+2020-11-13 16:38:55: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:39:25: cluster check health times: 9
+2020-11-13 16:39:25: 19.45.12.2 mgmt service status health.
+2020-11-13 16:39:25: 19.45.12.3 mgmt service status health.
+2020-11-13 16:39:26: 19.45.12.4 mgmt service status health.
+2020-11-13 16:39:26: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:39:56: cluster check health times: 10
+2020-11-13 16:39:56: 19.45.12.2 mgmt service status health.
+2020-11-13 16:39:56: 19.45.12.3 mgmt service status health.
+2020-11-13 16:39:56: 19.45.12.4 mgmt service status health.
+2020-11-13 16:39:56: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:40:27: cluster check health times: 11
+2020-11-13 16:40:27: 19.45.12.2 mgmt service status health.
+2020-11-13 16:40:27: 19.45.12.3 mgmt service status health.
+2020-11-13 16:40:27: 19.45.12.4 mgmt service status health.
+2020-11-13 16:40:27: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:40:57: cluster check health times: 12
+2020-11-13 16:40:58: 19.45.12.2 mgmt service status health.
+2020-11-13 16:40:58: 19.45.12.3 mgmt service status health.
+2020-11-13 16:40:58: 19.45.12.4 mgmt service status health.
+2020-11-13 16:40:58: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:41:28: cluster check health times: 13
+2020-11-13 16:41:28: 19.45.12.2 mgmt service status health.
+2020-11-13 16:41:29: 19.45.12.3 mgmt service status health.
+2020-11-13 16:41:29: 19.45.12.4 mgmt service status health.
+2020-11-13 16:41:29: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:41:59: cluster check health times: 14
+2020-11-13 16:41:59: 19.45.12.2 mgmt service status health.
+2020-11-13 16:42:00: 19.45.12.3 mgmt service status health.
+2020-11-13 16:42:00: 19.45.12.4 mgmt service status health.
+2020-11-13 16:42:00: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:42:30: cluster check health times: 15
+2020-11-13 16:42:30: 19.45.12.2 mgmt service status health.
+2020-11-13 16:42:30: 19.45.12.3 mgmt service status health.
+2020-11-13 16:42:31: 19.45.12.4 mgmt service status health.
+2020-11-13 16:42:31: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-13 16:42:31: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.74746ms
+2020-11-13 16:42:31: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 16:06:56 CST; 36min ago
+2020-11-13 16:42:31: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.016803ms
+2020-11-13 16:42:31: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 16:20:19 CST; 23min ago
+2020-11-13 16:42:31: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.624583ms
+2020-11-13 16:42:32: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Fri 2020-11-13 16:35:46 CST; 7min ago
+Sleep 30s:2020-11-13 16:42:32: kill mgmt test running.....
+2020-11-13 16:42:32: kill oss test running......
+2020-11-13 16:42:32: kill meta test running.....
+2020-11-13 16:42:32: mds node 19.45.12.2 stop
+2020-11-13 16:42:32: mgmt node 19.45.12.2 stop
+2020-11-13 16:42:32: oss node 19.45.12.2 stop
+Sleep 30s:Sleep 30s:Sleep 30s:
+
+2020-11-13 16:43:02: oss node 19.45.12.2 start
+
+
+2020-11-13 16:43:02: mds node 19.45.12.2 start
+2020-11-13 16:43:02: mgmt node 19.45.12.2 start
+2020-11-13 16:43:02: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:43:02: run test loops 18!!!!!!
+2020-11-13 16:43:02: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-13 16:43:03: 19.45.12.2 mgmt service status health.
+2020-11-13 16:43:03: 19.45.12.3 mgmt service status health.
+2020-11-13 16:43:03: 19.45.12.4 mgmt service status health.
+2020-11-13 16:43:03: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:43:33: cluster check health times: 1
+2020-11-13 16:43:34: 19.45.12.2 mgmt service status health.
+2020-11-13 16:43:34: 19.45.12.3 mgmt service status health.
+2020-11-13 16:43:34: 19.45.12.4 mgmt service status health.
+2020-11-13 16:43:34: cluster rebuilding,mds dirty: 1,oss dirty: 3,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:44:04: cluster check health times: 2
+2020-11-13 16:44:04: 19.45.12.2 mgmt service status health.
+2020-11-13 16:44:05: 19.45.12.3 mgmt service status health.
+2020-11-13 16:44:05: 19.45.12.4 mgmt service status health.
+2020-11-13 16:44:05: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:44:35: cluster check health times: 3
+2020-11-13 16:44:35: 19.45.12.2 mgmt service status health.
+2020-11-13 16:44:35: 19.45.12.3 mgmt service status health.
+2020-11-13 16:44:36: 19.45.12.4 mgmt service status health.
+2020-11-13 16:44:36: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:45:06: cluster check health times: 4
+2020-11-13 16:45:06: 19.45.12.2 mgmt service status health.
+2020-11-13 16:45:06: 19.45.12.3 mgmt service status health.
+2020-11-13 16:45:06: 19.45.12.4 mgmt service status health.
+2020-11-13 16:45:06: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:45:37: cluster check health times: 5
+2020-11-13 16:45:37: 19.45.12.2 mgmt service status health.
+2020-11-13 16:45:37: 19.45.12.3 mgmt service status health.
+2020-11-13 16:45:37: 19.45.12.4 mgmt service status health.
+2020-11-13 16:45:37: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:46:07: cluster check health times: 6
+2020-11-13 16:46:08: 19.45.12.2 mgmt service status health.
+2020-11-13 16:46:08: 19.45.12.3 mgmt service status health.
+2020-11-13 16:46:08: 19.45.12.4 mgmt service status health.
+2020-11-13 16:46:08: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-11-13 16:46:38: cluster check health times: 7
+2020-11-13 16:46:39: 19.45.12.2 mgmt service status health.
+2020-11-13 16:46:39: 19.45.12.3 mgmt service status health.
+2020-11-13 16:46:39: 19.45.12.4 mgmt service status health.
+2020-11-13 16:46:39: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:

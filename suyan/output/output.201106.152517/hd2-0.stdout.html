@@ -1,0 +1,74 @@
+<title>Vdbench output.201106.152517/hd2-0.stdout.html</title><pre>
+stdout/stderr for slave=hd2-0
+
+15:25:18.390 02:26:06.773 SlaveJvm execution parameter:  '-m 192.168.48.17'
+15:25:18.390 02:26:06.774 SlaveJvm execution parameter:  '-n 192.168.48.18-11-201106-15.25.17.375'
+15:25:18.390 02:26:06.774 SlaveJvm execution parameter:  '-l hd2-0'
+15:25:18.390 02:26:06.774 SlaveJvm execution parameter:  '-p 5570'
+15:25:18.390 02:26:06.774 SlaveJvm positional parameter: 'SlaveJvm'
+15:25:18.614 02:26:06.992 successfully connected to master 192.168.48.17
+15:25:18.614 02:26:06.999 Connection to 192.168.48.17 using port 5570 successful
+15:25:18.919 02:26:07.304 ticks_per_second: 100
+15:25:18.950 02:26:07.335 execute(): ls -l /mnt/yrfs/test64KB
+
+Link to Run Definitions:         <A HREF="#_1490180672">format_for_rd1 For loops: None</A>
+                                 <A HREF="#_460332449">rd1 For loops: None</A>
+
+15:25:19.013 02:26:07.398 Configuration interpretation took 0.08 seconds
+15:25:19.169 02:26:07.553 Beginning of run setup
+15:25:19.169 02:26:07.554 **********************
+15:25:19.169 
+15:25:19.169 
+15:25:19.268 02:26:07.653 Starting initializeFileAnchor for fsd1
+15:25:19.278 02:26:07.662 Completed the creation of the directory list for /mnt/yrfs/test64KB: 10 directories.
+15:25:20.219 02:26:08.603 Generated 5,000 file names; total anchor size: 312.500m (327,680,000)
+15:25:20.219 02:26:08.604 During anchor creation for anchor=/mnt/yrfs/test64KB there were 10 directories and 500 files
+15:25:20.219 02:26:08.604 Completed initializeFileAnchor for fsd1: 0.95
+15:25:20.263 02:26:08.647 Started 8 threads for fwd=format,fsd=fsd1
+15:25:20.263 02:26:08.648 Started 8 FwgThreads
+15:25:20.263 02:26:08.648 Waiting for task synchronization
+15:25:20.263 02:26:08.648 Requesting full garbage collection
+15:25:20.264 02:26:08.649 GcTracker: cum:   1 intv:  1 ms:      12 mss:  0.00% Heap_MB max:   911 curr:   123 used:    44 free:    79 
+15:25:20.313 02:26:08.698 GcTracker: cum:   3 intv:  2 ms:      47 mss:  0.00% Heap_MB max:   911 curr:   123 used:    17 free:   106 
+15:25:20.313 02:26:08.698 task_wait_start_complete() end
+
+<a name="_1490180672"></a><i><b>15:25:21.002 Starting RD=format_for_rd1</b></i>
+
+15:25:21.045 02:26:09.429 task_run_all(): 9 tasks
+15:25:21.263 02:26:09.648 Message to master: anchor=/mnt/yrfs/test64KB mkdir complete.
+15:25:24.887 02:26:13.272 Message to master: anchor=/mnt/yrfs/test64KB create complete.
+15:25:24.993 02:26:13.378 
+15:25:24.993 02:26:13.378 Miscellaneous statistics:
+15:25:24.993 02:26:13.379 FILE_CREATES        Files created:                                4,500
+15:25:24.994 02:26:13.379 WRITE_OPENS         Files opened for write activity:              4,500
+15:25:24.994 02:26:13.379 DIR_EXISTS          Directory may not exist (yet):                    8
+15:25:24.994 02:26:13.379 FILE_MAY_NOT_EXIST  File may not exist (yet):                       500
+15:25:24.994 02:26:13.379 FILE_CLOSES         Close requests:                               4,500
+15:25:24.994 02:26:13.379 
+15:25:24.995 02:26:13.380 Java Heap in MB. max:  910.500; current:  123.000; used:   46.327; free:   76.673
+15:25:24.995 02:26:13.380 Maximum native memory allocation:      262,144; Current allocation:      262,144
+15:25:27.099 02:26:15.485 End of run
+15:25:27.099 02:26:15.485 **********
+15:25:27.099 
+15:25:27.100 
+15:25:27.247 02:26:15.633 Beginning of run setup
+15:25:27.248 02:26:15.633 **********************
+15:25:27.248 
+15:25:27.248 
+15:25:27.370 02:26:15.755 Starting initializeFileAnchor for fsd1
+15:25:27.372 02:26:15.757 Completed the creation of the directory list for /mnt/yrfs/test64KB: 10 directories.
+15:25:27.618 02:26:16.003 Generated 5,000 file names; total anchor size: 312.500m (327,680,000)
+15:25:27.618 02:26:16.003 During anchor creation for anchor=/mnt/yrfs/test64KB there were 10 directories and 5000 files
+15:25:27.618 02:26:16.003 Completed initializeFileAnchor for fsd1: 0.25
+15:25:27.631 02:26:16.016 Started 8 threads for fwd=fwd2,fsd=fsd1,operation=read
+15:25:27.631 02:26:16.016 Started 8 FwgThreads
+15:25:27.631 02:26:16.017 Waiting for task synchronization
+15:25:27.631 02:26:16.017 Requesting full garbage collection
+15:25:27.632 02:26:16.017 GcTracker: cum:   4 intv:  1 ms:      11 mss:  0.00% Heap_MB max:   911 curr:   123 used:    50 free:    73 
+15:25:27.675 02:26:16.060 GcTracker: cum:   6 intv:  2 ms:      42 mss:  0.00% Heap_MB max:   911 curr:   123 used:    18 free:   105 
+15:25:27.675 02:26:16.060 task_wait_start_complete() end
+
+<a name="_460332449"></a><i><b>15:25:29.001 Starting RD=rd1; elapsed=6000; fwdrate=max. For loops: None</b></i>
+
+15:25:29.045 02:26:17.430 task_run_all(): 9 tasks
+15:25:34.479 Killed by signal 2.

@@ -1,0 +1,9 @@
+2020-11-05 17:16:56,711 fiotest.py[line:43] INFO 4.19.13 test is running
+2020-11-05 17:16:56,712 fiotest.py[line:43] INFO sync&&echo 3 > /proc/sys/vm/drop_caches;sleep 1   running
+2020-11-05 17:16:57,988 fiotest.py[line:43] INFO fio -engine=psync -name=test -filename=/mnt/yrfs/testfile -ramp_time=5 -size=50G -runtime=600 -group_reporting -bs=4K -rw=read -numjobs=1 -time_based -iodepth=1 -output=/home/cy/jiaoben/aheadtest/4.19.13_none/fio_4Kread1.log   running
+2020-11-05 17:27:04,243 fiotest.py[line:43] INFO sync&&echo 3 > /proc/sys/vm/drop_caches;sleep 1   running
+2020-11-05 17:27:05,390 fiotest.py[line:43] INFO dd if=/mnt/yrfs/testfile of=/dev/null bs=4K count=20000 status=progress 2>>/home/cy/jiaoben/aheadtest/4.19.13_none/dd_read4K.log   running
+2020-11-05 17:27:11,447 fiotest.py[line:43] INFO sync&&echo 3 > /proc/sys/vm/drop_caches;sleep 1   running
+2020-11-05 17:27:12,508 fiotest.py[line:43] INFO fio -engine=psync -name=test -filename=/mnt/yrfs/testfile -ramp_time=5 -size=50G -runtime=600 -group_reporting -bs=1M -rw=read -numjobs=1 -time_based -iodepth=1 -output=/home/cy/jiaoben/aheadtest/4.19.13_none/fio_1Mread1.log   running
+2020-11-05 17:37:18,730 fiotest.py[line:43] INFO sync&&echo 3 > /proc/sys/vm/drop_caches;sleep 1   running
+2020-11-05 17:37:19,900 fiotest.py[line:43] INFO dd if=/mnt/yrfs/testfile of=/dev/null bs=1M count=10000 status=progress 2>>/home/cy/jiaoben/aheadtest/4.19.13_none/dd_read1M.log   running

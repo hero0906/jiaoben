@@ -173,7 +173,7 @@ crash_node(){
    #ssh -o ServerAliveInterval=2 $ip $crash
    for ip in $ips;do
        log "node $ip crashed"
-       ssh -o ServerAliveInterval=2 $ip reboot
+       ssh -o ServerAliveInterval=2 $ip $crash
    done
    Sleep 60
 

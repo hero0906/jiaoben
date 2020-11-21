@@ -1,0 +1,33 @@
+<title>Vdbench output.201106.151729/logfile.html</title><pre>
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50406
+
+15:17:29.774 input argument scanned: '-f64k-demo'
+15:17:29.774 input argument scanned: '-ooutput.tod'
+15:17:29.774 java.vendor                   Oracle Corporation
+15:17:29.774 java.home                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64/jre
+15:17:29.774 java.vm.specification.version 1.8
+15:17:29.775 java.vm.version               25.262-b10
+15:17:29.775 java.vm.vendor                Oracle Corporation
+15:17:29.775 java.specification.version    1.8
+15:17:29.775 java.class.version            52.0
+15:17:29.775 user.name                     root
+15:17:29.775 user.dir                      /home/cy/jiaoben/suyan
+15:17:29.775 java.io.tmpdir                /tmp
+15:17:29.775 java.class.path               /home/vdbench/:/home/vdbench/classes:/home/vdbench/vdbench.jar
+15:17:29.775 os.name                       Linux
+15:17:29.775 os.arch                       amd64
+15:17:29.775 os.version                    3.10.0-957.el7.x86_64
+15:17:29.776 sun.arch.data.model           64
+15:17:29.836 Creating anchor for /mnt/yrfs/test64KB,fsd=fsd1
+15:17:29.848 'fwd=format' will be used only for 'format=' workloads.
+15:17:29.848 Only the 'threads=' and 'openflags=' and the first 'xfersize=' will be used.
+15:17:30.358 
+15:17:30.358 Unexpected EOF in parameter file.
+15:17:30.358 
+java.lang.RuntimeException: Unexpected EOF in parameter file.
+	at Vdb.common.failure(common.java:335)
+	at Vdb.Vdb_scan.parms_split(Vdb_scan.java:732)
+	at Vdb.FwdEntry.readParms(FwdEntry.java:97)
+	at Vdb.Vdbmain.parseParameterLines(Vdbmain.java:700)
+	at Vdb.Vdbmain.main(Vdbmain.java:578)

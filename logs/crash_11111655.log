@@ -1,0 +1,987 @@
+2020-11-11 16:55:42: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:55:42: run test loops 1!!!!!!
+2020-11-11 16:55:42: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:55:42: 19.45.12.2 mgmt service status health.
+2020-11-11 16:55:42: 19.45.12.3 mgmt service status health.
+2020-11-11 16:55:42: 19.45.12.4 mgmt service status health.
+2020-11-11 16:55:42: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-11 16:55:42: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.766522ms
+2020-11-11 16:55:43: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:55:20 CST; 1min 39s ago
+2020-11-11 16:55:43: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.821645ms
+2020-11-11 16:55:43: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:53:14 CST; 3min 45s ago
+2020-11-11 16:55:43: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.641091ms
+2020-11-11 16:55:43: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:56:22 CST; 38s ago
+2020-11-11 16:55:43: kill mgmt test running.....
+2020-11-11 16:55:44: mgmt node 19.45.12.3 stop
+Sleep 30s:
+2020-11-11 16:56:14: mgmt node 19.45.12.3 start
+Sleep 30s:
+2020-11-11 16:56:44: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:56:44: run test loops 2!!!!!!
+2020-11-11 16:56:44: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:56:45: 19.45.12.2 mgmt service status health.
+2020-11-11 16:56:45: 19.45.12.3 mgmt service status health.
+2020-11-11 16:56:45: 19.45.12.4 mgmt service status health.
+2020-11-11 16:56:45: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-11 16:56:45: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.741283ms
+2020-11-11 16:56:45: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:55:20 CST; 2min 42s ago
+2020-11-11 16:56:45: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.864476ms
+2020-11-11 16:56:46: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:57:31 CST; 31s ago
+2020-11-11 16:56:46: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.882699ms
+2020-11-11 16:56:46: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:56:22 CST; 1min 40s ago
+2020-11-11 16:56:46: kill mgmt test running.....
+2020-11-11 16:56:46: mgmt node 19.45.12.4 stop
+Sleep 30s:
+2020-11-11 16:57:17: mgmt node 19.45.12.4 start
+Sleep 30s:
+2020-11-11 16:57:47: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:57:47: run test loops 3!!!!!!
+2020-11-11 16:57:47: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:57:47: 19.45.12.2 mgmt service status health.
+2020-11-11 16:57:47: 19.45.12.3 mgmt service status health.
+2020-11-11 16:57:48: 19.45.12.4 mgmt service status health.
+2020-11-11 16:57:48: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-11 16:57:48: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.32206ms
+2020-11-11 16:57:48: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:55:20 CST; 3min 45s ago
+2020-11-11 16:57:48: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.375345ms
+2020-11-11 16:57:48: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:57:31 CST; 1min 34s ago
+2020-11-11 16:57:48: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.752042ms
+2020-11-11 16:57:49: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:58:34 CST; 32s ago
+2020-11-11 16:57:49: kill mgmt test running.....
+2020-11-11 16:57:49: mgmt node 19.45.12.3 stop
+Sleep 30s:
+2020-11-11 16:58:19: mgmt node 19.45.12.3 start
+Sleep 30s:
+2020-11-11 16:58:50: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:58:50: run test loops 4!!!!!!
+2020-11-11 16:58:50: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:58:50: 19.45.12.2 mgmt service status health.
+2020-11-11 16:58:50: 19.45.12.3 mgmt service status health.
+2020-11-11 16:58:50: 19.45.12.4 mgmt service status health.
+2020-11-11 16:58:50: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-11 16:58:50: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.699006ms
+2020-11-11 16:58:51: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:55:20 CST; 4min 47s ago
+2020-11-11 16:58:51: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.811324ms
+2020-11-11 16:58:51: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:59:36 CST; 31s ago
+2020-11-11 16:58:51: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 2.303275ms
+2020-11-11 16:58:51: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:58:34 CST; 1min 34s ago
+2020-11-11 16:58:51: kill mgmt test running.....
+2020-11-11 16:58:52: mgmt node 19.45.12.2 stop
+Sleep 30s:
+2020-11-11 16:59:22: mgmt node 19.45.12.2 start
+Sleep 30s:
+2020-11-11 16:59:52: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:59:52: run test loops 5!!!!!!
+2020-11-11 16:59:52: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 16:59:53: 19.45.12.2 mgmt service status health.
+2020-11-11 16:59:53: 19.45.12.3 mgmt service status health.
+2020-11-11 16:59:53: 19.45.12.4 mgmt service status health.
+2020-11-11 16:59:53: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-11 16:59:53: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.167923ms
+2020-11-11 16:59:53: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:00:39 CST; 31s ago
+2020-11-11 16:59:53: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.816055ms
+2020-11-11 16:59:54: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:59:36 CST; 1min 34s ago
+2020-11-11 16:59:54: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.625102ms
+2020-11-11 16:59:54: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:58:34 CST; 2min 37s ago
+2020-11-11 16:59:54: kill mgmt test running.....
+2020-11-11 16:59:54: mgmt node 19.45.12.4 stop
+Sleep 30s:
+2020-11-11 17:00:25: mgmt node 19.45.12.4 start
+Sleep 30s:
+2020-11-11 17:00:55: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:00:55: run test loops 6!!!!!!
+2020-11-11 17:00:55: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:00:55: 19.45.12.2 mgmt service status health.
+2020-11-11 17:00:55: 19.45.12.3 mgmt service status health.
+2020-11-11 17:00:56: 19.45.12.4 mgmt service status health.
+2020-11-11 17:00:56: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-11 17:00:56: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.646281ms
+2020-11-11 17:00:56: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:00:39 CST; 1min 33s ago
+2020-11-11 17:00:56: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.771736ms
+2020-11-11 17:00:56: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:59:36 CST; 2min 36s ago
+2020-11-11 17:00:56: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.792918ms
+2020-11-11 17:00:57: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:01:42 CST; 32s ago
+2020-11-11 17:00:57: kill mgmt test running.....
+2020-11-11 17:00:57: mgmt node 19.45.12.2 stop
+Sleep 30s:
+2020-11-11 17:01:27: mgmt node 19.45.12.2 start
+Sleep 30s:
+2020-11-11 17:01:58: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:01:58: run test loops 7!!!!!!
+2020-11-11 17:01:58: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:01:58: 19.45.12.2 mgmt service status health.
+2020-11-11 17:01:58: 19.45.12.3 mgmt service status health.
+2020-11-11 17:01:58: 19.45.12.4 mgmt service status health.
+2020-11-11 17:01:58: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-11 17:01:58: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.342778ms
+2020-11-11 17:01:58: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:02:44 CST; 31s ago
+2020-11-11 17:01:59: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.918643ms
+2020-11-11 17:01:59: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:59:36 CST; 3min 39s ago
+2020-11-11 17:01:59: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.540329ms
+2020-11-11 17:01:59: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:01:42 CST; 1min 34s ago
+2020-11-11 17:01:59: kill mgmt test running.....
+2020-11-11 17:01:59: mgmt node 19.45.12.4 stop
+Sleep 30s:
+2020-11-11 17:02:30: mgmt node 19.45.12.4 start
+Sleep 30s:
+2020-11-11 17:03:00: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:03:00: run test loops 8!!!!!!
+2020-11-11 17:03:00: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:03:00: 19.45.12.2 mgmt service status health.
+2020-11-11 17:03:01: 19.45.12.3 mgmt service status health.
+2020-11-11 17:03:01: 19.45.12.4 mgmt service status health.
+2020-11-11 17:03:01: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-11 17:03:01: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.731477ms
+2020-11-11 17:03:01: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:02:44 CST; 1min 33s ago
+2020-11-11 17:03:01: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.745463ms
+2020-11-11 17:03:01: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 16:59:36 CST; 4min 42s ago
+2020-11-11 17:03:02: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.629872ms
+2020-11-11 17:03:02: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:03:47 CST; 31s ago
+2020-11-11 17:03:02: kill mgmt test running.....
+2020-11-11 17:03:02: mgmt node 19.45.12.3 stop
+Sleep 30s:
+2020-11-11 17:03:32: mgmt node 19.45.12.3 start
+Sleep 30s:
+2020-11-11 17:04:03: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:04:03: run test loops 9!!!!!!
+2020-11-11 17:04:03: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:04:03: 19.45.12.2 mgmt service status health.
+2020-11-11 17:04:03: 19.45.12.3 mgmt service status health.
+2020-11-11 17:04:03: 19.45.12.4 mgmt service status health.
+2020-11-11 17:04:03: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-11 17:04:04: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.792251ms
+2020-11-11 17:04:04: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:02:44 CST; 2min 36s ago
+2020-11-11 17:04:04: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.665535ms
+2020-11-11 17:04:04: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:04:49 CST; 31s ago
+2020-11-11 17:04:04: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.892615ms
+2020-11-11 17:04:04: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:03:47 CST; 1min 34s ago
+2020-11-11 17:04:05: kill mgmt test running.....
+2020-11-11 17:04:05: mgmt node 19.45.12.2 stop
+Sleep 30s:
+2020-11-11 17:04:35: mgmt node 19.45.12.2 start
+Sleep 30s:
+2020-11-11 17:05:05: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:05:05: run test loops 10!!!!!!
+2020-11-11 17:05:05: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:05:06: 19.45.12.2 mgmt service status health.
+2020-11-11 17:05:06: 19.45.12.3 mgmt service status health.
+2020-11-11 17:05:06: 19.45.12.4 mgmt service status health.
+2020-11-11 17:05:06: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-11 17:05:06: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.765974ms
+2020-11-11 17:05:06: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:05:52 CST; 31s ago
+2020-11-11 17:05:07: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.891025ms
+2020-11-11 17:05:07: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:04:49 CST; 1min 34s ago
+2020-11-11 17:05:07: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.76957ms
+2020-11-11 17:05:07: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:03:47 CST; 2min 37s ago
+2020-11-11 17:05:07: kill mgmt test running.....
+2020-11-11 17:05:07: mgmt node 19.45.12.3 stop
+Sleep 30s:
+2020-11-11 17:05:38: mgmt node 19.45.12.3 start
+Sleep 30s:
+2020-11-11 17:06:08: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:06:08: run test loops 11!!!!!!
+2020-11-11 17:06:08: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:06:08: 19.45.12.2 mgmt service status health.
+2020-11-11 17:06:09: 19.45.12.3 mgmt service status health.
+2020-11-11 17:06:09: 19.45.12.4 mgmt service status health.
+2020-11-11 17:06:09: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-11 17:06:09: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.906822ms
+2020-11-11 17:06:09: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:05:52 CST; 1min 33s ago
+2020-11-11 17:06:09: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.999175ms
+2020-11-11 17:06:09: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:06:55 CST; 31s ago
+2020-11-11 17:06:10: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.869524ms
+2020-11-11 17:06:10: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:03:47 CST; 3min 39s ago
+2020-11-11 17:06:10: kill mgmt test running.....
+2020-11-11 17:06:10: mgmt node 19.45.12.4 stop
+Sleep 30s:
+2020-11-11 17:06:40: mgmt node 19.45.12.4 start
+Sleep 30s:
+2020-11-11 17:07:11: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:07:11: run test loops 12!!!!!!
+2020-11-11 17:07:11: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:07:11: 19.45.12.2 mgmt service status health.
+2020-11-11 17:07:11: 19.45.12.3 mgmt service status health.
+2020-11-11 17:07:11: 19.45.12.4 mgmt service status health.
+2020-11-11 17:07:11: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-11 17:07:11: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.621525ms
+2020-11-11 17:07:12: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:05:52 CST; 2min 36s ago
+2020-11-11 17:07:12: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.074005ms
+2020-11-11 17:07:12: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:06:55 CST; 1min 34s ago
+2020-11-11 17:07:12: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.926501ms
+2020-11-11 17:07:12: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:07:57 CST; 32s ago
+2020-11-11 17:07:13: kill mgmt test running.....
+2020-11-11 17:07:13: mgmt node 19.45.12.3 stop
+Sleep 30s:
+2020-11-11 17:07:43: mgmt node 19.45.12.3 start
+Sleep 30s:
+2020-11-11 17:08:13: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:08:13: run test loops 13!!!!!!
+2020-11-11 17:08:13: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:08:14: 19.45.12.2 mgmt service status health.
+2020-11-11 17:08:14: 19.45.12.3 mgmt service status health.
+2020-11-11 17:08:14: 19.45.12.4 mgmt service status health.
+2020-11-11 17:08:14: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-11 17:08:14: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.683799ms
+2020-11-11 17:08:14: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:05:52 CST; 3min 39s ago
+2020-11-11 17:08:14: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.911824ms
+2020-11-11 17:08:15: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:09:00 CST; 31s ago
+2020-11-11 17:08:15: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.659163ms
+2020-11-11 17:08:15: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:07:57 CST; 1min 34s ago
+2020-11-11 17:08:15: kill mgmt test running.....
+2020-11-11 17:08:15: mgmt node 19.45.12.4 stop
+Sleep 30s:
+2020-11-11 17:08:46: mgmt node 19.45.12.4 start
+Sleep 30s:
+2020-11-11 17:09:16: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:09:16: run test loops 14!!!!!!
+2020-11-11 17:09:16: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:09:16: 19.45.12.2 mgmt service status health.
+2020-11-11 17:09:16: 19.45.12.3 mgmt service status health.
+2020-11-11 17:09:17: 19.45.12.4 mgmt service status health.
+2020-11-11 17:09:17: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-11 17:09:17: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.184662ms
+2020-11-11 17:09:17: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:05:52 CST; 4min 41s ago
+2020-11-11 17:09:17: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.695775ms
+2020-11-11 17:09:17: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:09:00 CST; 1min 34s ago
+2020-11-11 17:09:18: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.692345ms
+2020-11-11 17:09:18: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:10:03 CST; 32s ago
+2020-11-11 17:09:18: kill mgmt test running.....
+2020-11-11 17:09:18: mgmt node 19.45.12.2 stop
+Sleep 30s:
+2020-11-11 17:09:48: mgmt node 19.45.12.2 start
+Sleep 30s:
+2020-11-11 17:10:19: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:10:19: run test loops 15!!!!!!
+2020-11-11 17:10:19: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:10:19: 19.45.12.2 mgmt service status health.
+2020-11-11 17:10:19: 19.45.12.3 mgmt service status health.
+2020-11-11 17:10:19: 19.45.12.4 mgmt service status health.
+2020-11-11 17:10:19: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-11 17:10:19: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.902516ms
+2020-11-11 17:10:20: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:11:05 CST; 31s ago
+2020-11-11 17:10:20: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.62466ms
+2020-11-11 17:10:20: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:09:00 CST; 2min 36s ago
+2020-11-11 17:10:20: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.503701ms
+2020-11-11 17:10:20: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:10:03 CST; 1min 34s ago
+2020-11-11 17:10:21: kill mgmt test running.....
+2020-11-11 17:10:21: mgmt node 19.45.12.3 stop
+Sleep 30s:
+2020-11-11 17:10:51: mgmt node 19.45.12.3 start
+Sleep 30s:
+2020-11-11 17:11:21: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:11:21: run test loops 16!!!!!!
+2020-11-11 17:11:21: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:11:22: 19.45.12.2 mgmt service status health.
+2020-11-11 17:11:22: 19.45.12.3 mgmt service status health.
+2020-11-11 17:11:22: 19.45.12.4 mgmt service status health.
+2020-11-11 17:11:22: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-11 17:11:22: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.728789ms
+2020-11-11 17:11:22: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:11:05 CST; 1min 33s ago
+2020-11-11 17:11:22: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.864899ms
+2020-11-11 17:11:23: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:12:08 CST; 31s ago
+2020-11-11 17:11:23: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.680554ms
+2020-11-11 17:11:23: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:10:03 CST; 2min 37s ago
+2020-11-11 17:11:23: kill mgmt test running.....
+2020-11-11 17:11:23: mgmt node 19.45.12.2 stop
+Sleep 30s:
+2020-11-11 17:11:54: mgmt node 19.45.12.2 start
+Sleep 30s:
+2020-11-11 17:12:24: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:12:24: run test loops 17!!!!!!
+2020-11-11 17:12:24: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:12:24: 19.45.12.2 mgmt service status health.
+2020-11-11 17:12:24: 19.45.12.3 mgmt service status health.
+2020-11-11 17:12:25: 19.45.12.4 mgmt service status health.
+2020-11-11 17:12:25: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 master
+19.45.12.4 slave
+2020-11-11 17:12:25: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.025764ms
+2020-11-11 17:12:25: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:13:11 CST; 31s ago
+2020-11-11 17:12:25: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.110267ms
+2020-11-11 17:12:25: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:12:08 CST; 1min 34s ago
+2020-11-11 17:12:26: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.623108ms
+2020-11-11 17:12:26: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:10:03 CST; 3min 40s ago
+2020-11-11 17:12:26: kill mgmt test running.....
+2020-11-11 17:12:26: mgmt node 19.45.12.3 stop
+Sleep 30s:
+2020-11-11 17:12:56: mgmt node 19.45.12.3 start
+Sleep 30s:
+2020-11-11 17:13:27: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:13:27: run test loops 18!!!!!!
+2020-11-11 17:13:27: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:13:27: 19.45.12.2 mgmt service status health.
+2020-11-11 17:13:27: 19.45.12.3 mgmt service status health.
+2020-11-11 17:13:27: 19.45.12.4 mgmt service status health.
+2020-11-11 17:13:27: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-11 17:13:27: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.131443ms
+2020-11-11 17:13:28: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:13:11 CST; 1min 33s ago
+2020-11-11 17:13:28: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 2.0542ms
+2020-11-11 17:13:28: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:14:13 CST; 31s ago
+2020-11-11 17:13:28: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.898371ms
+2020-11-11 17:13:28: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:10:03 CST; 4min 42s ago
+2020-11-11 17:13:29: kill mgmt test running.....
+2020-11-11 17:13:29: mgmt node 19.45.12.4 stop
+Sleep 30s:
+2020-11-11 17:13:59: mgmt node 19.45.12.4 start
+Sleep 30s:
+2020-11-11 17:14:29: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:14:29: run test loops 19!!!!!!
+2020-11-11 17:14:29: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:14:30: 19.45.12.2 mgmt service status health.
+2020-11-11 17:14:30: 19.45.12.3 mgmt service status health.
+2020-11-11 17:14:30: 19.45.12.4 mgmt service status health.
+2020-11-11 17:14:30: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-11 17:14:30: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.139523ms
+2020-11-11 17:14:30: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:13:11 CST; 2min 36s ago
+2020-11-11 17:14:30: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.738629ms
+2020-11-11 17:14:31: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:14:13 CST; 1min 34s ago
+2020-11-11 17:14:31: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.741753ms
+2020-11-11 17:14:31: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:15:16 CST; 32s ago
+2020-11-11 17:14:31: kill mgmt test running.....
+2020-11-11 17:14:31: mgmt node 19.45.12.2 stop
+Sleep 30s:
+2020-11-11 17:15:02: mgmt node 19.45.12.2 start
+Sleep 30s:
+2020-11-11 17:15:32: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:15:32: run test loops 20!!!!!!
+2020-11-11 17:15:32: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:15:32: 19.45.12.2 mgmt service status health.
+2020-11-11 17:15:32: 19.45.12.3 mgmt service status health.
+2020-11-11 17:15:33: 19.45.12.4 mgmt service status health.
+2020-11-11 17:15:33: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 slave
+19.45.12.3 slave
+19.45.12.4 master
+2020-11-11 17:15:33: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 1.752449ms
+2020-11-11 17:15:33: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:16:19 CST; 31s ago
+2020-11-11 17:15:33: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.727317ms
+2020-11-11 17:15:33: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:14:13 CST; 2min 36s ago
+2020-11-11 17:15:33: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.846009ms
+2020-11-11 17:15:34: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:15:16 CST; 1min 34s ago
+2020-11-11 17:15:34: kill mgmt test running.....
+2020-11-11 17:15:34: mgmt node 19.45.12.4 stop
+Sleep 30s:
+2020-11-11 17:16:04: mgmt node 19.45.12.4 start
+Sleep 30s:
+2020-11-11 17:16:35: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:16:35: run test loops 21!!!!!!
+2020-11-11 17:16:35: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-11 17:16:35: 19.45.12.2 mgmt service status health.
+2020-11-11 17:16:35: 19.45.12.3 mgmt service status health.
+2020-11-11 17:16:35: 19.45.12.4 mgmt service status health.
+2020-11-11 17:16:35: cluster present status record
+TargetID     Reachability  Consistency   NodeID
+========     ============  ===========   ======
+       1           Online         Good        1
+       2           Online         Good        2
+       3           Online         Good        3
+       4           Online         Good        4
+TargetID     Reachability  Consistency   NodeID   Type(TargetID)
+========     ============  ===========   ======   ==============
+    1001           Online         Good        1
+    1002           Online         Good        1
+    1003           Online         Good        1
+    2001           Online         Good        2
+    2002           Online         Good        2
+    2003           Online         Good        2
+    3001           Online         Good        3
+    3002           Online         Good        3
+    3003           Online         Good        3
+    4001           Online         Good        4
+    4002           Online         Good        4
+    4003           Online         Good        4
+19.45.12.2 master
+19.45.12.3 slave
+19.45.12.4 slave
+2020-11-11 17:16:35: 19.45.12.2 etcd service status:
+19.45.12.2:2379 is healthy: successfully committed proposal: took = 2.418542ms
+2020-11-11 17:16:35: 19.45.12.2 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:16:19 CST; 1min 33s ago
+2020-11-11 17:16:36: 19.45.12.3 etcd service status:
+19.45.12.3:2379 is healthy: successfully committed proposal: took = 1.798864ms
+2020-11-11 17:16:36: 19.45.12.3 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:14:13 CST; 3min 39s ago
+2020-11-11 17:16:36: 19.45.12.4 etcd service status:
+19.45.12.4:2379 is healthy: successfully committed proposal: took = 1.864152ms
+2020-11-11 17:16:36: 19.45.12.4 mgmtd service status:
+   Active: active (running) since Wed 2020-11-11 17:17:21 CST; 32s ago
+2020-11-11 17:16:36: kill mgmt test running.....
+2020-11-11 17:16:36: mgmt node 19.45.12.2 stop
+Sleep 30s:
+2020-11-11 17:17:07: mgmt node 19.45.12.2 start
+Sleep 30s:

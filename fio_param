@@ -19,7 +19,7 @@ log_avg_msec=5
 nrfiles=30000
 filesize=100k,500K
 write_iops_log
-directory=/mnt/testB/
+directory=/mnt/yrfs/
 bs=4k
 rw=randrw
 
