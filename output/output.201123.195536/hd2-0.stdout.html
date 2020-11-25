@@ -1,0 +1,97 @@
+<title>Vdbench output.201123.195536/hd2-0.stdout.html</title><pre>
+stdout/stderr for slave=hd2-0
+
+19:55:36.908 06:57:32.887 SlaveJvm execution parameter:  '-m 192.168.48.17'
+19:55:36.908 06:57:32.889 SlaveJvm execution parameter:  '-n 192.168.48.18-11-201123-19.55.36.067'
+19:55:36.908 06:57:32.889 SlaveJvm execution parameter:  '-l hd2-0'
+19:55:36.908 06:57:32.889 SlaveJvm execution parameter:  '-p 5570'
+19:55:36.909 06:57:32.889 SlaveJvm positional parameter: 'SlaveJvm'
+19:55:37.036 06:57:33.016 successfully connected to master 192.168.48.17
+19:55:37.036 06:57:33.017 Connection to 192.168.48.17 using port 5570 successful
+19:55:37.294 06:57:33.275 ticks_per_second: 100
+19:55:37.309 06:57:33.291 execute(): ls -l /mnt/yrfs/test64KB
+19:55:37.396 06:57:33.377 Configuration interpretation took 0.10 seconds
+
+Link to Run Definitions:         <A HREF="#_1490180672">format_for_rd1 For loops: None</A>
+                                 <A HREF="#_460332449">rd1 For loops: None</A>
+
+19:55:37.564 06:57:33.545 Beginning of run setup
+19:55:37.564 06:57:33.545 **********************
+19:55:37.564 
+19:55:37.564 
+19:55:37.662 06:57:33.643 Starting initializeFileAnchor for fsd1
+19:55:37.689 06:57:33.670 Completed the creation of the directory list for /mnt/yrfs/test64KB: 10 directories.
+19:55:48.229 06:57:44.210 Generated 500,000 file names; total anchor size: 30.518g (32,768,000,000)
+19:55:48.229 06:57:44.211 During anchor creation for anchor=/mnt/yrfs/test64KB there were 10 directories and 29499 files
+19:55:48.230 06:57:44.212 Completed initializeFileAnchor for fsd1: 10.57
+19:55:48.259 06:57:44.241 Started 8 threads for fwd=format,fsd=fsd1
+19:55:48.259 06:57:44.241 Started 8 FwgThreads
+19:55:48.259 06:57:44.241 Waiting for task synchronization
+19:55:48.260 06:57:44.241 Requesting full garbage collection
+19:55:48.261 06:57:44.243 GcTracker: cum:  12 intv: 12 ms:     509 mss:  0.00% Heap_MB max:   911 curr:   407 used:    74 free:   333 
+19:55:48.745 06:57:44.726 GcTracker: cum:  14 intv:  2 ms:     481 mss:  0.00% Heap_MB max:   911 curr:   407 used:    64 free:   342 
+19:55:48.745 06:57:44.726 task_wait_start_complete() end
+
+<a name="_1490180672"></a><i><b>19:55:49.001 Starting RD=format_for_rd1</b></i>
+
+19:55:49.044 06:57:45.026 task_run_all(): 9 tasks
+19:55:49.260 06:57:45.242 Message to master: anchor=/mnt/yrfs/test64KB mkdir complete.
+19:56:07.442 06:58:03.425 Message to master: anchor=/mnt/yrfs/test64KB: Created 55000 of 500000 files (11.00%)
+19:56:22.447 06:58:18.431 Message to master: anchor=/mnt/yrfs/test64KB: Created 75000 of 500000 files (15.00%)
+19:56:38.349 06:58:34.334 Message to master: anchor=/mnt/yrfs/test64KB: Created 95000 of 500000 files (19.00%)
+19:56:56.969 06:58:52.955 Message to master: anchor=/mnt/yrfs/test64KB: Created 120000 of 500000 files (24.00%)
+19:57:15.730 06:59:11.717 Message to master: anchor=/mnt/yrfs/test64KB: Created 145000 of 500000 files (29.00%)
+19:57:34.273 06:59:30.262 Message to master: anchor=/mnt/yrfs/test64KB: Created 170000 of 500000 files (34.00%)
+19:57:49.315 06:59:45.304 Message to master: anchor=/mnt/yrfs/test64KB: Created 190000 of 500000 files (38.00%)
+19:58:07.408 07:00:03.399 Message to master: anchor=/mnt/yrfs/test64KB: Created 215000 of 500000 files (43.00%)
+19:58:22.508 07:00:18.500 Message to master: anchor=/mnt/yrfs/test64KB: Created 235000 of 500000 files (47.00%)
+19:58:40.993 07:00:36.986 Message to master: anchor=/mnt/yrfs/test64KB: Created 260000 of 500000 files (52.00%)
+19:58:59.713 07:00:55.707 Message to master: anchor=/mnt/yrfs/test64KB: Created 285000 of 500000 files (57.00%)
+19:59:14.882 07:01:10.877 Message to master: anchor=/mnt/yrfs/test64KB: Created 305000 of 500000 files (61.00%)
+19:59:30.507 07:01:26.503 Message to master: anchor=/mnt/yrfs/test64KB: Created 325000 of 500000 files (65.00%)
+19:59:45.688 07:01:41.683 Message to master: anchor=/mnt/yrfs/test64KB: Created 345000 of 500000 files (69.00%)
+20:00:00.994 07:01:56.992 Message to master: anchor=/mnt/yrfs/test64KB: Created 365000 of 500000 files (73.00%)
+20:00:16.021 07:02:12.020 Message to master: anchor=/mnt/yrfs/test64KB: Created 385000 of 500000 files (77.00%)
+20:00:31.540 07:02:27.541 Message to master: anchor=/mnt/yrfs/test64KB: Created 405000 of 500000 files (81.00%)
+20:00:46.700 07:02:42.702 Message to master: anchor=/mnt/yrfs/test64KB: Created 425000 of 500000 files (85.00%)
+20:01:01.906 07:02:57.909 Message to master: anchor=/mnt/yrfs/test64KB: Created 445000 of 500000 files (89.00%)
+20:01:17.235 07:03:13.239 Message to master: anchor=/mnt/yrfs/test64KB: Created 465000 of 500000 files (93.00%)
+20:01:33.052 07:03:29.056 Message to master: anchor=/mnt/yrfs/test64KB: Created 485000 of 500000 files (97.00%)
+20:01:45.114 07:03:41.120 Message to master: anchor=/mnt/yrfs/test64KB create complete.
+20:01:45.227 07:03:41.233 
+20:01:45.227 07:03:41.233 Miscellaneous statistics:
+20:01:45.227 07:03:41.233 FILE_CREATES        Files created:                              470,501
+20:01:45.228 07:03:41.233 WRITE_OPENS         Files opened for write activity:            470,501
+20:01:45.228 07:03:41.233 DIR_EXISTS          Directory may not exist (yet):                    8
+20:01:45.228 07:03:41.233 FILE_MAY_NOT_EXIST  File may not exist (yet):                    29,499
+20:01:45.228 07:03:41.233 FILE_CLOSES         Close requests:                             470,501
+20:01:45.228 07:03:41.233 
+20:01:45.228 07:03:41.234 Java Heap in MB. max:  910.500; current:  338.500; used:  147.679; free:  190.821
+20:01:45.228 07:03:41.234 Maximum native memory allocation:      262,144; Current allocation:      262,144
+20:03:49.049 07:05:45.063 End of run
+20:03:49.049 07:05:45.063 **********
+20:03:49.049 
+20:03:49.050 
+20:03:49.200 07:05:45.213 Beginning of run setup
+20:03:49.200 07:05:45.214 **********************
+20:03:49.200 
+20:03:49.200 
+20:03:49.274 07:05:45.288 Starting initializeFileAnchor for fsd1
+20:03:49.275 07:05:45.289 Completed the creation of the directory list for /mnt/yrfs/test64KB: 10 directories.
+20:03:56.676 07:05:52.690 FileEntry queries: 1000000 529498 52
+20:03:56.676 07:05:52.691 Generated 500,000 file names; total anchor size: 30.518g (32,768,000,000)
+20:03:56.677 07:05:52.691 During anchor creation for anchor=/mnt/yrfs/test64KB there were 10 directories and 500000 files
+20:03:56.677 07:05:52.691 Completed initializeFileAnchor for fsd1: 7.40
+20:03:56.694 07:05:52.708 Started 8 threads for fwd=fwd2,fsd=fsd1,operation=read
+20:03:56.694 07:05:52.708 Started 8 FwgThreads
+20:03:56.694 07:05:52.708 Waiting for task synchronization
+20:03:56.694 07:05:52.708 task_wait_start_complete: FwgThread read /mnt/yrfs/test64KB 2
+20:03:56.894 07:05:52.909 Requesting full garbage collection
+20:03:56.895 07:05:52.909 GcTracker: cum:  33 intv:  5 ms:     205 mss:  0.00% Heap_MB max:   911 curr:   446 used:   129 free:   317 
+20:03:57.212 07:05:53.226 GcTracker: cum:  35 intv:  2 ms:     316 mss:  0.00% Heap_MB max:   911 curr:   446 used:    69 free:   377 
+20:03:57.212 07:05:53.226 task_wait_start_complete() end
+
+<a name="_460332449"></a><i><b>20:03:58.001 Starting RD=rd1; elapsed=6000000; fwdrate=max. For loops: None</b></i>
+
+20:03:58.042 07:05:54.057 task_run_all(): 9 tasks
+20:24:22.758 Killed by signal 2.

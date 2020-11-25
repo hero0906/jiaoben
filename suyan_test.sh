@@ -1,5 +1,6 @@
 mount_dir=/mnt/yrfs
-client=(192.168.48.17)
+client=(192.168.48.17 192.168.48.18)
+#client=(192.168.48.17)
 #client2=192.168.48.18
 
 FIO(){
@@ -27,7 +28,7 @@ FIO(){
 vdbench(){
 
      rootdir=/home/vdbench
-     files=1000
+     files=100000
      size="64KB"
      threads=8
      elapsed=6000000
