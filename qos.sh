@@ -7,7 +7,7 @@ add(){
         mkdir -p $dirs
     fi
     bps=200M
-    iops=500
+    iops=5000
     ops=5000
 
     # tbps=50M

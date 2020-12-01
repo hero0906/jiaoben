@@ -1,0 +1,48 @@
+2020-11-28 16:52:44: 192::11 mgmt service status health.
+2020-11-28 16:52:44: 192::12 mgmt service status health.
+2020-11-28 16:52:44: 192::13 mgmt service status health.
+2020-11-28 16:52:44: cluster present status record
+   osd         name   id   group       role        state   mode                  space|inode<free/total> 
+   101   node1-stor  101       1     master     up/clean     L0        <219.1GiB/219.5GiB|223.1M/223.6M> 
+   201   node2-stor  201       1      slave     up/clean     L0        <219.1GiB/219.5GiB|223.1M/223.6M> 
+   301   node3-stor  301       2     master     up/clean     L0        <442.2GiB/443.0GiB|446.5M/447.1M> 
+   401   node4-stor  401       2      slave     up/clean     L0        <219.1GiB/219.5GiB|222.9M/223.6M> 
+   osd         name   id   group       role        state   mode                  space|inode<free/total>    type  vol 
+  1001   node1-stor  101       1     master     up/clean     L1        <315.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+  1002   node1-stor  101       3     master     up/clean     L1        <317.9GiB/838.0GiB|419.0M/419.2M>   local    1 
+  1003   node1-stor  101       5     master     up/clean     L1        <338.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+  2001   node2-stor  201       1      slave     up/clean     L1        <315.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+  2002   node2-stor  201       3      slave     up/clean     L1        <317.9GiB/838.0GiB|419.0M/419.2M>   local    1 
+  2003   node2-stor  201       5      slave     up/clean     L1        <338.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+  3001   node3-stor  301       2     master     up/clean     L1        <248.8GiB/838.0GiB|419.0M/419.2M>   local    1 
+  3002   node3-stor  301       4     master     up/clean     L1        <341.0GiB/838.0GiB|419.0M/419.2M>   local    1 
+  3003   node3-stor  301       6     master     up/clean     L1        <304.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+  4001   node4-stor  401       2      slave     up/clean     L1        <248.8GiB/838.0GiB|419.0M/419.2M>   local    1 
+  4002   node4-stor  401       4      slave     up/clean     L1        <341.0GiB/838.0GiB|419.0M/419.2M>   local    1 
+  4003   node4-stor  401       6      slave     up/clean     L1        <304.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+192::11 master
+192::12 slave
+192::13 slave
+2020-11-28 16:52:44: 192::11 etcd service status:
+{"level":"warn","ts":"2020-11-28T16:54:11.798+0800","caller":"clientv3/retry_interceptor.go:61","msg":"retrying of unary invoker failed","target":"endpoint://client-85085dff-3ee2-45f0-8dba-972fbd3eba90/192::11:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest connection error: connection error: desc = \"transport: Error while dialing dial tcp: address 192::11:2379: too many colons in address\""}
+192::11:2379 is unhealthy: failed to commit proposal: context deadline exceeded
+Error: unhealthy cluster
+2020-11-28 16:52:50: 192::11 mgmtd service status:
+   Active: active (running) since Sat 2020-11-28 11:11:21 CST; 5h 42min ago
+2020-11-28 16:52:50: 192::12 etcd service status:
+{"level":"warn","ts":"2020-11-28T16:54:17.140+0800","caller":"clientv3/retry_interceptor.go:61","msg":"retrying of unary invoker failed","target":"endpoint://client-1cb3b884-acb0-4d4f-ad5f-2b7a865861d5/192::12:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest connection error: connection error: desc = \"transport: Error while dialing dial tcp: address 192::12:2379: too many colons in address\""}
+192::12:2379 is unhealthy: failed to commit proposal: context deadline exceeded
+Error: unhealthy cluster
+2020-11-28 16:52:55: 192::12 mgmtd service status:
+   Active: active (running) since Sat 2020-11-28 11:11:21 CST; 5h 42min ago
+2020-11-28 16:52:55: 192::13 etcd service status:
+{"level":"warn","ts":"2020-11-28T16:54:22.658+0800","caller":"clientv3/retry_interceptor.go:61","msg":"retrying of unary invoker failed","target":"endpoint://client-f9753456-3790-4026-b5df-575fee320b12/192::13:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest connection error: connection error: desc = \"transport: Error while dialing dial tcp: address 192::13:2379: too many colons in address\""}
+192::13:2379 is unhealthy: failed to commit proposal: context deadline exceeded
+Error: unhealthy cluster
+2020-11-28 16:53:00: 192::13 mgmtd service status:
+   Active: active (running) since Sat 2020-11-28 11:11:21 CST; 5h 43min ago
+2020-11-28 16:53:01: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-28 16:53:01: run test loops 1
+2020-11-28 16:53:01: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-28 16:53:01: kill meta test running.....
+2020-11-28 16:53:01: kill_meta parameter error test exit

@@ -77,7 +77,8 @@ check_status(){
            date;yrcli --node --type=mgmt |tee -a  $LOG
            for ip in `yrcli --node --type=mgmt|awk '{print $1}'`;do
 	       log "$ip etcd service status:"
-               ssh $ip etcdctl --endpoints=$ip:2379 endpoint health 2>&1 | tee -a $LOG
+               ssh $ip systemctl status yrfs-mgmtd|grep Active 2>&1 |tee -a $LOG
+               #ssh $ip etcdctl --endpoints=$ip:2379 endpoint health 2>&1 | tee -a $LOG
 	       log "$ip mgmtd service status:"
                ssh $ip systemctl status yrfs-mgmtd|grep Active 2>&1 |tee -a $LOG
            done
@@ -91,7 +92,8 @@ kill_meta(){
 
    log "kill meta test running....."
    stop_meta="ps axu|grep -w yrfs-meta|grep -v grep|awk '{print \$2}'|xargs -I {} kill -9 {}"
-   start_meta="systemctl start yrfs-meta@mds0 yrfs-meta@mds1"
+   #start_meta="systemctl start yrfs-meta@mds0 yrfs-meta@mds1"
+   start_meta="systemctl start yrfs-meta@mds0"
    #ips=`yrcli --osd --type=mds|grep master|awk '{print $2}'`
 
    if [[ $1 == 1 ]]
@@ -201,19 +203,18 @@ run(){
     #fio init test data
     #./fio.sh run 2>&1 | tee -a $log 
     while true;do
-        check_status
+        #check_status
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         log "run test loops $time"
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-        	
-        cases=(kill_meta kill_mgmt kill_oss crash_node)
-        #cases=("kill_meta 2" kill_mgmt "kill_oss 1")
-        cases=(kill_mgmt)
-	for cas in "${cases[@]}";do
-	    $cas &
+        #cases=(kill_meta kill_mgmt kill_oss crash_node)
+        cases=("kill_meta 2" kill_mgmt "kill_oss 2" crash_node)
+	    for cas in "${cases[@]}";do
+            check_status
+	        $cas 
             #Sleep 3600
         done
-	wait
+	    #wait
         ((time++))
     done 
 }

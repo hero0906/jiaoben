@@ -1,4 +1,4 @@
-mount_dir=/mnt/yrfs
+mount_dir=/mnt/yrfs3
 client=(192.168.48.17 192.168.48.18)
 #client=(192.168.48.17)
 #client2=192.168.48.18
