@@ -1,0 +1,23 @@
+<title>Vdbench output.201201.192115/hd2-0.stdout.html</title><pre>
+stdout/stderr for slave=hd2-0
+
+19:21:15.933 06:22:55.167 SlaveJvm execution parameter:  '-m 192.168.48.17'
+19:21:15.933 06:22:55.168 SlaveJvm execution parameter:  '-n 192.168.48.18-11-201201-19.21.15.041'
+19:21:15.933 06:22:55.168 SlaveJvm execution parameter:  '-l hd2-0'
+19:21:15.933 06:22:55.168 SlaveJvm execution parameter:  '-p 5570'
+19:21:15.933 06:22:55.168 SlaveJvm positional parameter: 'SlaveJvm'
+19:21:16.039 06:22:55.281 successfully connected to master 192.168.48.17
+19:21:16.039 06:22:55.282 Connection to 192.168.48.17 using port 5570 successful
+19:21:16.343 06:22:55.583 ticks_per_second: 100
+19:21:16.391 
+19:21:16.391 Abort requested: java.io.FileNotFoundException /mnt/yrfs3/test64KB/no_dismount.txt (Disk quota exceeded)
+19:21:16.392 java.io.FileNotFoundException: /mnt/yrfs3/test64KB/no_dismount.txt (Disk quota exceeded)
+19:21:16.392 	at java.io.FileOutputStream.open0(Native Method)
+19:21:16.392 	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+19:21:16.392 	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+19:21:16.392 	at Utils.Fput.<init>(Fput.java:61)
+19:21:16.392 	at Utils.Fput.<init>(Fput.java:34)
+19:21:16.392 	at Vdb.InfoFromHost.checkAutoMount(InfoFromHost.java:1008)
+19:21:16.399 	at Vdb.InfoFromHost.getInfoForMaster(InfoFromHost.java:327)
+19:21:16.399 	at Vdb.SlaveJvm.getMessagesFromMaster(SlaveJvm.java:229)
+19:21:16.399 	at Vdb.SlaveJvm.main(SlaveJvm.java:413)

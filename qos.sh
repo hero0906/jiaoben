@@ -6,8 +6,8 @@ add(){
     if [[ ! -d $dirs ]];then
         mkdir -p $dirs
     fi
-    bps=200M
-    iops=5000
+    bps=20M
+    iops=100
     ops=5000
 
     # tbps=50M

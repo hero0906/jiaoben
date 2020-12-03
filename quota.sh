@@ -22,8 +22,10 @@ update(){
     dir=$1
     echo -e "`date` $1"
     #limit=$(echo $RANDOM)
-    limit=100
-    yrcli --setprojectquota --unmounted --path=$dir --spacelimit=${limit}G --inodelimit=$limit --update
+    limit=$(echo $RANDOM)
+    #limit=`expr $(echo $RANDOM) \* 1000`
+    inode=`expr $limit \* 10000` 
+    yrcli --setprojectquota --unmounted --path=$dir --spacelimit=${limit}G --inodelimit=$inode --update
 }
 
 del(){

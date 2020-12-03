@@ -1,0 +1,51 @@
+2020-12-03 10:19:54: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-03 10:19:54: run test loops 1
+2020-12-03 10:19:54: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-03 10:19:54: 192::11 mgmt service status health.
+2020-12-03 10:19:54: 192::12 mgmt service status health.
+2020-12-03 10:19:55: 192::13 mgmt service status health.
+2020-12-03 10:19:55: cluster present status record
+   osd         name   id   group       role        state   mode                  space|inode<free/total> 
+   101   node1-stor  101       1      slave     up/clean     L0        <169.1GiB/219.5GiB|222.5M/223.6M> 
+   201   node2-stor  201       1     master     up/clean     L0        <219.1GiB/219.5GiB|222.5M/223.6M> 
+   301   node3-stor  301       2      slave     up/clean     L0        <442.6GiB/443.0GiB|446.0M/447.1M> 
+   401   node4-stor  401       2     master     up/clean     L0        <219.1GiB/219.5GiB|222.5M/223.6M> 
+   osd         name   id   group       role        state   mode                  space|inode<free/total>    type  vol 
+  1001   node1-stor  101       1     master     up/clean     L1        <320.4GiB/838.0GiB|418.8M/419.2M>   local    1 
+  1002   node1-stor  101       3     master     up/clean     L1        <296.9GiB/838.0GiB|418.8M/419.2M>   local    1 
+  1003   node1-stor  101       5     master     up/clean     L1        <353.3GiB/838.0GiB|418.8M/419.2M>   local    1 
+  2001   node2-stor  201       1      slave     up/clean     L1        <320.4GiB/838.0GiB|418.8M/419.2M>   local    1 
+  2002   node2-stor  201       3      slave     up/clean     L1        <296.7GiB/838.0GiB|418.8M/419.2M>   local    1 
+  2003   node2-stor  201       5      slave     up/clean     L1        <353.4GiB/838.0GiB|418.8M/419.2M>   local    1 
+  3001   node3-stor  301       2      slave     up/clean     L1        <321.5GiB/838.0GiB|418.8M/419.2M>   local    1 
+  3002   node3-stor  301       4      slave     up/clean     L1        <353.1GiB/838.0GiB|418.8M/419.2M>   local    1 
+  3003   node3-stor  301       6      slave     up/clean     L1        <346.2GiB/838.0GiB|418.8M/419.2M>   local    1 
+  4001   node4-stor  401       2     master     up/clean     L1        <321.5GiB/838.0GiB|418.8M/419.2M>   local    1 
+  4002   node4-stor  401       4     master     up/clean     L1        <353.1GiB/838.0GiB|418.8M/419.2M>   local    1 
+  4003   node4-stor  401       6     master     up/clean     L1        <346.2GiB/838.0GiB|418.8M/419.2M>   local    1 
+192::11 slave
+192::12 slave
+192::13 master
+2020-12-03 10:19:55: 192::11 etcd service status:
+   Active: active (running) since Thu 2020-12-03 06:39:34 CST; 3h 42min ago
+2020-12-03 10:19:55: 192::11 mgmtd service status:
+   Active: active (running) since Thu 2020-12-03 06:39:34 CST; 3h 42min ago
+2020-12-03 10:19:55: 192::12 etcd service status:
+   Active: active (running) since Thu 2020-12-03 07:36:59 CST; 2h 44min ago
+2020-12-03 10:19:55: 192::12 mgmtd service status:
+   Active: active (running) since Thu 2020-12-03 07:36:59 CST; 2h 44min ago
+2020-12-03 10:19:55: 192::13 etcd service status:
+   Active: active (running) since Thu 2020-12-03 10:11:52 CST; 9min ago
+2020-12-03 10:19:56: 192::13 mgmtd service status:
+   Active: active (running) since Thu 2020-12-03 10:11:52 CST; 9min ago
+2020-12-03 10:19:56: kill meta test running.....
+2020-12-03 10:19:56: mds node node2-stor stop
+2020-12-03 10:19:57: mds node node4-stor stop
+Sleep 30s:
+2020-12-03 10:20:27: mds node node2-stor start
+2020-12-03 10:20:28: mds node node4-stor start
+2020-12-03 10:20:28: 192::11 mgmt service status health.
+2020-12-03 10:20:28: 192::12 mgmt service status health.
+2020-12-03 10:20:29: 192::13 mgmt service status health.
+2020-12-03 10:20:29: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:

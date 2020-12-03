@@ -1,0 +1,98 @@
+<title>Vdbench output.201202.145845/hd2-0.stdout.html</title><pre>
+stdout/stderr for slave=hd2-0
+
+14:58:45.849 02:00:29.722 SlaveJvm execution parameter:  '-m 192.168.48.17'
+14:58:45.849 02:00:29.723 SlaveJvm execution parameter:  '-n 192.168.48.18-11-201202-14.58.45.083'
+14:58:45.854 02:00:29.724 SlaveJvm execution parameter:  '-l hd2-0'
+14:58:45.854 02:00:29.724 SlaveJvm execution parameter:  '-p 5570'
+14:58:45.855 02:00:29.724 SlaveJvm positional parameter: 'SlaveJvm'
+14:58:45.949 02:00:29.823 successfully connected to master 192.168.48.17
+14:58:45.949 02:00:29.824 Connection to 192.168.48.17 using port 5570 successful
+14:58:46.131 02:00:30.006 ticks_per_second: 100
+14:59:08.315 02:00:52.191 execute(): ls -l /mnt/yrfs3/test64KB
+14:59:08.342 02:00:52.218 Configuration interpretation took 22.21 seconds
+
+Link to Run Definitions:         <A HREF="#_1490180672">format_for_rd1 For loops: None</A>
+                                 <A HREF="#_460332449">rd1 For loops: None</A>
+
+14:59:08.504 02:00:52.380 Beginning of run setup
+14:59:08.504 02:00:52.381 **********************
+14:59:08.505 
+14:59:08.505 
+14:59:08.573 02:00:52.449 Starting initializeFileAnchor for fsd1
+14:59:08.596 02:00:52.473 Completed the creation of the directory list for /mnt/yrfs3/test64KB: 10 directories.
+15:03:28.477 02:05:12.370 Generated 500,000 file names; total anchor size: 30.518g (32,768,000,000)
+15:03:28.477 02:05:12.370 Message to master: Completing the creation of internal file structure for anchor=/mnt/yrfs3/test64KB: 500,000 files.
+15:03:28.478 02:05:12.371 During anchor creation for anchor=/mnt/yrfs3/test64KB there were 10 directories and 500000 files
+15:03:28.478 02:05:12.371 Completed initializeFileAnchor for fsd1: 259.92
+15:03:28.496 02:05:12.389 Started 8 threads for fwd=format,fsd=fsd1
+15:03:28.497 02:05:12.389 Started 8 FwgThreads
+15:03:28.497 02:05:12.390 Waiting for task synchronization
+15:03:28.497 02:05:12.390 Requesting full garbage collection
+15:03:28.498 02:05:12.391 GcTracker: cum:  93 intv:  7 ms:      35 mss:  0.00% Heap_MB max:   911 curr:   138 used:    94 free:    44 
+15:03:28.699 02:05:12.592 GcTracker: cum:  95 intv:  2 ms:     200 mss:  0.00% Heap_MB max:   911 curr:   138 used:    69 free:    68 
+15:03:28.699 02:05:12.592 task_wait_start_complete() end
+
+<a name="_1490180672"></a><i><b>15:03:29.001 Starting RD=format_for_rd1</b></i>
+
+15:03:29.047 02:05:12.940 task_run_all(): 9 tasks
+15:03:29.497 02:05:13.390 Message to master: anchor=/mnt/yrfs3/test64KB mkdir complete.
+15:04:38.310 02:06:22.207 Message to master: anchor=/mnt/yrfs3/test64KB: Created 500000 of 500000 files (100.00%)
+15:04:40.357 02:06:24.254 Message to master: anchor=/mnt/yrfs3/test64KB create complete.
+15:04:40.461 02:06:24.359 
+15:04:40.462 02:06:24.359 Miscellaneous statistics:
+15:04:40.462 02:06:24.359 WRITE_OPENS         Files opened for write activity:                  6
+15:04:40.462 02:06:24.359 DIR_EXISTS          Directory may not exist (yet):                    8
+15:04:40.462 02:06:24.359 FILE_MAY_NOT_EXIST  File may not exist (yet):                   248,733
+15:04:40.462 02:06:24.360 FILE_CLOSES         Close requests:                                   6
+15:04:40.462 02:06:24.360 
+15:04:40.462 02:06:24.360 Java Heap in MB. max:  910.500; current:  137.500; used:   83.751; free:   53.749
+15:04:40.462 02:06:24.360 Maximum native memory allocation:      262,144; Current allocation:      262,144
+15:04:41.091 02:06:24.988 End of run
+15:04:41.091 02:06:24.988 **********
+15:04:41.091 
+15:04:41.091 
+15:04:41.245 02:06:25.142 Beginning of run setup
+15:04:41.245 02:06:25.143 **********************
+15:04:41.245 
+15:04:41.245 
+15:04:41.294 02:06:25.191 Starting initializeFileAnchor for fsd1
+15:04:41.296 02:06:25.193 Completed the creation of the directory list for /mnt/yrfs3/test64KB: 10 directories.
+15:09:39.045 02:11:22.961 FileEntry queries: 1000000 999999 99
+15:09:39.045 02:11:22.962 Generated 500,000 file names; total anchor size: 30.518g (32,768,000,000)
+15:09:39.046 02:11:22.962 Message to master: Completing the creation of internal file structure for anchor=/mnt/yrfs3/test64KB: 500,000 files.
+15:09:39.046 02:11:22.963 During anchor creation for anchor=/mnt/yrfs3/test64KB there were 10 directories and 500000 files
+15:09:39.046 02:11:22.963 Completed initializeFileAnchor for fsd1: 297.77
+15:09:39.059 02:11:22.976 Started 8 threads for fwd=fwd2,fsd=fsd1,operation=read
+15:09:39.059 02:11:22.976 Started 8 FwgThreads
+15:09:39.059 02:11:22.976 Waiting for task synchronization
+15:09:39.060 02:11:22.976 Requesting full garbage collection
+15:09:39.060 02:11:22.977 GcTracker: cum: 191 intv: 14 ms:      74 mss:  0.00% Heap_MB max:   911 curr:   133 used:    87 free:    46 
+15:09:39.351 02:11:23.268 GcTracker: cum: 193 intv:  2 ms:     290 mss:  0.00% Heap_MB max:   911 curr:   134 used:    69 free:    65 
+15:09:39.351 02:11:23.268 task_wait_start_complete() end
+
+<a name="_460332449"></a><i><b>15:09:40.001 Starting RD=rd1; elapsed=6000000; fwdrate=max. For loops: None</b></i>
+
+15:09:40.043 02:11:23.960 task_run_all(): 9 tasks
+15:38:28.772 02:40:12.801 Invalid byte count. Expecting 32768
+15:38:28.772 02:40:12.802 but read only 0 bytes.
+15:38:28.776 02:40:12.805 02:40:12.805 02:40:12.803 op: read   lun: /mnt/yrfs3/test64KB/vdb.1_3.dir/vdb_f95634.file lba:        32768 0x00008000 xfer:    32768 errno: INCORRECT_SIZE: 'Vdbench determined that not enough bytes were read or written' 
+15:38:28.776 02:40:12.806 Read error using file /mnt/yrfs3/test64KB/vdb.1_3.dir/vdb_f95634.file
+15:38:28.776 Error:         INCORRECT_SIZE: 'Vdbench determined that not enough bytes were read or written'
+15:38:28.776 lba:           32768
+15:38:28.776 xfersize:      32768
+15:38:28.776 blocks_done:   1
+15:38:28.776 bytes_done:    32768
+15:38:28.776 open_for_read: false
+15:38:28.776 fhandle:       22
+15:42:49.489 02:44:33.536 
+15:42:49.489 02:44:33.536 Trying to read beyond EOF: /mnt/yrfs3/test64KB/vdb.1_3.dir/vdb_f85918.file 0x00008000 (32768) 32768 65536
+15:42:49.489 02:44:33.536 
+15:42:49.490 java.lang.RuntimeException: Trying to read beyond EOF: /mnt/yrfs3/test64KB/vdb.1_3.dir/vdb_f85918.file 0x00008000 (32768) 32768 65536
+15:42:49.490 	at Vdb.common.failure(common.java:335)
+15:42:49.490 	at Vdb.common.failure(common.java:284)
+15:42:49.490 	at Vdb.ActiveFile.readBlock(ActiveFile.java:752)
+15:42:49.490 	at Vdb.OpRead.doRandomRead(OpRead.java:121)
+15:42:49.490 	at Vdb.OpRead.doOperation(OpRead.java:54)
+15:42:49.490 	at Vdb.OpReadWrite.doOperation(OpReadWrite.java:73)
+15:42:49.490 	at Vdb.FwgThread.run(FwgThread.java:205)

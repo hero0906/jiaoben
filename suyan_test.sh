@@ -1,5 +1,6 @@
 mount_dir=/mnt/yrfs3
 client=(192.168.48.17 192.168.48.18)
+logs=logs
 #client=(192.168.48.17)
 #client2=192.168.48.18
 
@@ -33,6 +34,7 @@ vdbench(){
      threads=8
      elapsed=6000000
      len=${#client[@]}
+
      config1="
          messagescan=no
          \nhd=default,vdbench=$rootdir,user=root,shell=ssh\n"
@@ -58,7 +60,7 @@ vdbench(){
      config=$config1$config2$config3$config4$config5
 
      echo -e $config > 64k-demo
-     ${rootdir}/vdbench  -f 64k-demo -o output/output.tod
+     ${rootdir}/vdbench  -f 64k-demo -o $logs/output.tod
 
 #    /home/vdbench/vdbench -f 200m-demo-read -o 200m-demo-read-output
 
@@ -97,8 +99,8 @@ MDtest(){
 
 }
 
-if [[ ! -d "output" ]];then
-    mkdir output
+if [[ ! -d "logs" ]];then
+    mkdir logs
 fi
 
 #FIO

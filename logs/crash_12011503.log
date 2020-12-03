@@ -1,0 +1,166 @@
+2020-12-01 15:03:39: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-01 15:03:39: run test loops 1
+2020-12-01 15:03:39: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-01 15:03:40: 192::11 mgmt service status health.
+2020-12-01 15:03:40: 192::12 mgmt service status health.
+2020-12-01 15:03:40: 192::13 mgmt service status health.
+2020-12-01 15:03:40: cluster present status record
+   osd         name   id   group       role        state   mode                  space|inode<free/total> 
+   101   node1-stor  101       1     master     up/clean     L0        <218.2GiB/219.5GiB|223.0M/223.6M> 
+   201   node2-stor  201       1      slave     up/clean     L0        <219.1GiB/219.5GiB|223.0M/223.6M> 
+   301   node3-stor  301       2      slave     up/clean     L0        <442.6GiB/443.0GiB|446.4M/447.1M> 
+   401   node4-stor  401       2     master     up/clean     L0        <219.1GiB/219.5GiB|222.9M/223.6M> 
+   osd         name   id   group       role        state   mode                  space|inode<free/total>    type  vol 
+  1001   node1-stor  101       1     master     up/clean     L1        <329.8GiB/838.0GiB|419.0M/419.2M>   local    1 
+  1002   node1-stor  101       3     master     up/clean     L1        <306.6GiB/838.0GiB|419.0M/419.2M>   local    1 
+  1003   node1-stor  101       5     master     up/clean     L1        <362.6GiB/838.0GiB|419.0M/419.2M>   local    1 
+  2001   node2-stor  201       1      slave     up/clean     L1        <329.9GiB/838.0GiB|419.0M/419.2M>   local    1 
+  2002   node2-stor  201       3      slave     up/clean     L1        <306.4GiB/838.0GiB|419.0M/419.2M>   local    1 
+  2003   node2-stor  201       5      slave     up/clean     L1        <362.7GiB/838.0GiB|419.0M/419.2M>   local    1 
+  3001   node3-stor  301       2      slave     up/clean     L1        <333.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+  3002   node3-stor  301       4      slave     up/clean     L1        <365.1GiB/838.0GiB|419.0M/419.2M>   local    1 
+  3003   node3-stor  301       6      slave     up/clean     L1        <356.2GiB/838.0GiB|419.0M/419.2M>   local    1 
+  4001   node4-stor  401       2     master     up/clean     L1        <333.5GiB/838.0GiB|419.0M/419.2M>   local    1 
+  4002   node4-stor  401       4     master     up/clean     L1        <365.1GiB/838.0GiB|419.0M/419.2M>   local    1 
+  4003   node4-stor  401       6     master     up/clean     L1        <356.2GiB/838.0GiB|419.0M/419.2M>   local    1 
+192::11 master
+192::12 slave
+192::13 slave
+2020-12-01 15:03:41: 192::11 etcd service status:
+   Active: active (running) since Mon 2020-11-30 20:14:14 CST; 18h ago
+2020-12-01 15:03:41: 192::11 mgmtd service status:
+   Active: active (running) since Mon 2020-11-30 20:14:14 CST; 18h ago
+2020-12-01 15:03:41: 192::12 etcd service status:
+   Active: active (running) since Tue 2020-12-01 10:51:01 CST; 4h 14min ago
+2020-12-01 15:03:42: 192::12 mgmtd service status:
+   Active: active (running) since Tue 2020-12-01 10:51:01 CST; 4h 14min ago
+2020-12-01 15:03:42: 192::13 etcd service status:
+   Active: active (running) since Mon 2020-11-30 19:30:58 CST; 19h ago
+2020-12-01 15:03:42: 192::13 mgmtd service status:
+   Active: active (running) since Mon 2020-11-30 19:30:58 CST; 19h ago
+2020-12-01 15:03:43: kill meta test running.....
+2020-12-01 15:03:43: mds node node1-stor stop
+2020-12-01 15:03:43: mds node node4-stor stop
+Sleep 30s:
+2020-12-01 15:04:14: mds node node1-stor start
+2020-12-01 15:04:14: mds node node4-stor start
+2020-12-01 15:04:16: 192::11 mgmt service status health.
+2020-12-01 15:04:16: 192::12 mgmt service status health.
+2020-12-01 15:04:16: 192::13 mgmt service status health.
+2020-12-01 15:04:16: cluster rebuilding,mds dirty: 2,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:04:47: 192::11 mgmt service status health.
+2020-12-01 15:04:48: 192::12 mgmt service status health.
+2020-12-01 15:04:48: 192::13 mgmt service status health.
+2020-12-01 15:04:48: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:05:19: 192::11 mgmt service status health.
+2020-12-01 15:05:20: 192::12 mgmt service status health.
+2020-12-01 15:05:20: 192::13 mgmt service status health.
+2020-12-01 15:05:20: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:05:51: 192::11 mgmt service status health.
+2020-12-01 15:05:51: 192::12 mgmt service status health.
+2020-12-01 15:05:52: 192::13 mgmt service status health.
+2020-12-01 15:05:52: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:06:23: 192::11 mgmt service status health.
+2020-12-01 15:06:24: 192::12 mgmt service status health.
+2020-12-01 15:06:24: 192::13 mgmt service status health.
+2020-12-01 15:06:24: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:06:55: 192::11 mgmt service status health.
+2020-12-01 15:06:55: 192::12 mgmt service status health.
+2020-12-01 15:06:56: 192::13 mgmt service status health.
+2020-12-01 15:06:56: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:07:27: 192::11 mgmt service status health.
+2020-12-01 15:07:27: 192::12 mgmt service status health.
+2020-12-01 15:07:27: 192::13 mgmt service status health.
+2020-12-01 15:07:27: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:07:59: 192::11 mgmt service status health.
+2020-12-01 15:07:59: 192::12 mgmt service status health.
+2020-12-01 15:07:59: 192::13 mgmt service status health.
+2020-12-01 15:07:59: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:08:30: 192::11 mgmt service status health.
+2020-12-01 15:08:31: 192::12 mgmt service status health.
+2020-12-01 15:08:31: 192::13 mgmt service status health.
+2020-12-01 15:08:31: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:09:02: 192::11 mgmt service status health.
+2020-12-01 15:09:02: 192::12 mgmt service status health.
+2020-12-01 15:09:03: 192::13 mgmt service status health.
+2020-12-01 15:09:03: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:09:34: 192::11 mgmt service status health.
+2020-12-01 15:09:34: 192::12 mgmt service status health.
+2020-12-01 15:09:35: 192::13 mgmt service status health.
+2020-12-01 15:09:35: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:10:06: 192::11 mgmt service status health.
+2020-12-01 15:10:06: 192::12 mgmt service status health.
+2020-12-01 15:10:06: 192::13 mgmt service status health.
+2020-12-01 15:10:06: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:10:37: 192::11 mgmt service status health.
+2020-12-01 15:10:37: 192::12 mgmt service status health.
+2020-12-01 15:10:38: 192::13 mgmt service status health.
+2020-12-01 15:10:38: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:11:09: 192::11 mgmt service status health.
+2020-12-01 15:11:09: 192::12 mgmt service status health.
+2020-12-01 15:11:10: 192::13 mgmt service status health.
+2020-12-01 15:11:10: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:11:41: 192::11 mgmt service status health.
+2020-12-01 15:11:41: 192::12 mgmt service status health.
+2020-12-01 15:11:41: 192::13 mgmt service status health.
+2020-12-01 15:11:41: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:12:12: 192::11 mgmt service status health.
+2020-12-01 15:12:13: 192::12 mgmt service status health.
+2020-12-01 15:12:13: 192::13 mgmt service status health.
+2020-12-01 15:12:13: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:12:44: 192::11 mgmt service status health.
+2020-12-01 15:12:44: 192::12 mgmt service status health.
+2020-12-01 15:12:44: 192::13 mgmt service status health.
+2020-12-01 15:12:44: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:13:15: 192::11 mgmt service status health.
+2020-12-01 15:13:16: 192::12 mgmt service status health.
+2020-12-01 15:13:16: 192::13 mgmt service status health.
+2020-12-01 15:13:16: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:13:47: 192::11 mgmt service status health.
+2020-12-01 15:13:48: 192::12 mgmt service status health.
+2020-12-01 15:13:48: 192::13 mgmt service status health.
+2020-12-01 15:13:48: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:14:19: 192::11 mgmt service status health.
+2020-12-01 15:14:19: 192::12 mgmt service status health.
+2020-12-01 15:14:20: 192::13 mgmt service status health.
+2020-12-01 15:14:20: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:14:51: 192::11 mgmt service status health.
+2020-12-01 15:14:51: 192::12 mgmt service status health.
+2020-12-01 15:14:51: 192::13 mgmt service status health.
+2020-12-01 15:14:51: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:15:23: 192::11 mgmt service status health.
+2020-12-01 15:15:23: 192::12 mgmt service status health.
+2020-12-01 15:15:23: 192::13 mgmt service status health.
+2020-12-01 15:15:23: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:15:54: 192::11 mgmt service status health.
+2020-12-01 15:15:55: 192::12 mgmt service status health.
+2020-12-01 15:15:55: 192::13 mgmt service status health.
+2020-12-01 15:15:55: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:
+2020-12-01 15:16:26: 192::11 mgmt service status health.
+2020-12-01 15:16:26: 192::12 mgmt service status health.
+2020-12-01 15:16:27: 192::13 mgmt service status health.
+2020-12-01 15:16:27: cluster rebuilding,mds dirty: 1,oss dirty: 0,mgmt offline: 0
+Sleep 30s:

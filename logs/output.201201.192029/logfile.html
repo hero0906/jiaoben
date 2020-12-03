@@ -1,0 +1,59 @@
+<title>Vdbench output.201201.192029/logfile.html</title><pre>
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50406
+
+19:20:29.194 input argument scanned: '-f64k-demo'
+19:20:29.194 input argument scanned: '-ologs/output.tod'
+19:20:29.194 java.vendor                   Oracle Corporation
+19:20:29.194 java.home                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.262.b10-0.el7_8.x86_64/jre
+19:20:29.194 java.vm.specification.version 1.8
+19:20:29.195 java.vm.version               25.262-b10
+19:20:29.195 java.vm.vendor                Oracle Corporation
+19:20:29.195 java.specification.version    1.8
+19:20:29.195 java.class.version            52.0
+19:20:29.195 user.name                     root
+19:20:29.195 user.dir                      /home/cy/jiaoben
+19:20:29.195 java.io.tmpdir                /tmp
+19:20:29.195 java.class.path               /home/vdbench/:/home/vdbench/classes:/home/vdbench/vdbench.jar
+19:20:29.195 os.name                       Linux
+19:20:29.195 os.arch                       amd64
+19:20:29.196 os.version                    3.10.0-957.el7.x86_64
+19:20:29.196 sun.arch.data.model           64
+19:20:29.256 Creating anchor for /mnt/yrfs3/test64KB,fsd=fsd1
+19:20:29.268 'fwd=format' will be used only for 'format=' workloads.
+19:20:29.268 Only the 'threads=' and 'openflags=' and the first 'xfersize=' will be used.
+19:20:29.305 rd1 fsd to format: fsd1
+19:20:29.306 rd1 format on host: hd1
+19:20:29.306 rd1 format on host: hd2
+19:20:29.335 Anchor size: anchor=/mnt/yrfs3/test64KB: dirs:           10; files:    1,000,000; bytes:    61.035g (65,536,000,000)
+19:20:29.512 Starting slave: /home/vdbench/vdbench SlaveJvm -m 192.168.48.17 -n 192.168.48.17-10-201201-19.20.29.131 -l hd1-0 -p 5570   
+19:20:29.521 Starting slave: ssh 192.168.48.18 -l root /home/vdbench/vdbench SlaveJvm -m 192.168.48.17 -n 192.168.48.18-11-201201-19.20.29.131 -l hd2-0 -p 5570   
+19:20:30.053 Slave hd1-0 (pid  23227) connected to master 23181
+19:20:30.228 Clock synchronization warning: slave hd2-0 is 99 seconds out of sync. This can lead to heartbeat issues.
+19:20:30.309 Slave hd2-0 (pid  22708) connected to master 23181
+19:20:30.357 All slaves are now connected
+19:20:30.403 Slow getMessage: hd1-0          2 99184 HEARTBEAT_MESSAGE         
+19:20:30.507 
+19:20:30.507 Receiving unexpected EOFException from slave: hd2-0
+19:20:30.507 This means that this slave terminated prematurely.
+19:20:30.507 This thread will go to sleep for 5 seconds to allow 
+19:20:30.507 slave termination to be properly recognized.
+19:20:30.507 
+19:20:30.508 
+19:20:30.508 Receiving unexpected EOFException from slave: hd1-0
+19:20:30.508 This means that this slave terminated prematurely.
+19:20:30.509 This thread will go to sleep for 5 seconds to allow 
+19:20:30.509 slave termination to be properly recognized.
+19:20:30.509 
+19:20:31.509 
+19:20:31.509 Slave hd1-0 prematurely terminated. 
+19:20:31.509 Look at file hd1-0.stdout.html for more information.
+19:20:31.509 HTML link: <A HREF="hd1-0.stdout.html">hd1-0.stdout.html</A>
+19:20:32.015 Exception from slave: hd1-0
+19:20:32.017 common.failure(): System.exit(-99)
+19:20:32.017 ==> where: Vdb.common.failure(common.java:232)
+19:20:32.017            Vdb.SlaveSocket.putMessage(SlaveSocket.java:399)
+19:20:32.017            Vdb.SlaveList.shutdownAllSlaves(SlaveList.java:131)
+19:20:32.017            Vdb.common.failure(common.java:305)
+19:20:32.018            Vdb.SlaveStarter.startSlave(SlaveStarter.java:198)
+19:20:32.018            Vdb.SlaveStarter.run(SlaveStarter.java:47)

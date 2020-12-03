@@ -1,14 +1,48 @@
 #!/bin/bash
 
+USER=root
 PASSWORD="Passw0rd"
 SSHP="sshpass -p $password ssh -o StrictHostKeyChecking=no"
 LOG="logs/crash"_`date +%m%d%H%M`".log"
+IPMI_USER="ADMIN"
+IPMI_PASSWD="ADMIN"
+
+ssh_no_key(){
+    NET=$1
+    if [[ ! -f ~/.ssh/id_rsa ]];then
+        ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa &> /dev/null
+    fi
+
+    expect <<EOF
+    spawn ssh-copy-id -i ${USER}@${NET}
+        expect {
+        "yes/no" { send "yes\r";exp_continue }
+        "password:" { send "${PASSWORD}\r" }
+        }
+    expect eof
+EOF
+}
+
+create_test_env(){
+    yrcli --osd --type=mds
+    if [[ $? != 0 ]];then
+        log "this machine have no acl permission"
+        exit
+    fi
+    ips=`yrcli --node --type=mgmt|awk '{print $1}'`
+    for ip in ips;do
+        ssh_no_key $ip
+    done
+
+}
+
 
 if [[ ! -d "logs" ]];then
     mkdir logs
 fi
+
 log(){
-    echo -e "`date "+%Y-%m-%d %H:%M:%S"`: $1" | tee -a $LOG        
+    echo -e "`date "+%Y-%m-%d %H:%M:%S"`: $1" | tee -a $LOG
 }
 
 Sleep(){
@@ -101,7 +135,7 @@ kill_meta(){
        ips=`yrcli --osd --type=mds|grep master|awk '{print $2}'|uniq|shuf -n 1`
    elif [[ $1 == 2 ]]
    then
-       #ips=`yrcli --osd --type=mds|grep master|awk '{print $2}'|uniq|shuf -n 2` 
+       #ips=`yrcli --osd --type=mds|grep master|awk '{print $2}'|uniq|shuf -n 2`
        ips=`yrcli --osd --type=mds|grep master|sort -k 4,4 -u|awk '{print $2}'|sort -u`
    else
        log "kill_meta parameter error test exit"
@@ -110,9 +144,9 @@ kill_meta(){
 
    for ip in $ips;do
        log "mds node $ip stop"
-       ssh $ip $stop_meta 
+       ssh $ip $stop_meta
    done
-   Sleep 30 
+   Sleep 30
    for ip in $ips;do
        log "mds node $ip start"
        ssh $ip $start_meta
@@ -124,16 +158,16 @@ kill_mgmt(){
 
    log "kill mgmt test running....."
 
-   stop_mgmt="ps axu|grep yrfs-mgmtd|grep -v grep|awk '{print \$2}'|xargs kill -11" 
+   stop_mgmt="ps axu|grep yrfs-mgmtd|grep -v grep|awk '{print \$2}'|xargs kill -11"
    start_mgmt="systemctl start yrfs-mgmtd"
    ip=`yrcli --node --type=mgmt|grep master|awk '{print $1}'`
 
    log "mgmt node $ip stop"
 
-   ssh $ip $stop_mgmt  
+   ssh $ip $stop_mgmt
    Sleep 30
    log "mgmt node $ip start"
-   ssh $ip $start_mgmt 
+   ssh $ip $start_mgmt
 }
 
 kill_oss(){
@@ -144,7 +178,7 @@ kill_oss(){
 
    if [[ $1 == 1 ]]
    then
-       ips=`yrcli --osd --type=oss|grep master|sort -k 4,4 -u|awk '{print $2}'|sort -u|shuf -n 1` 
+       ips=`yrcli --osd --type=oss|grep master|sort -k 4,4 -u|awk '{print $2}'|sort -u|shuf -n 1`
    elif [[ $1 == 2 ]]
    then
        ips=`yrcli --osd --type=oss|grep master|sort -k 4,4 -u|awk '{print $2}'|sort -u`
@@ -168,16 +202,18 @@ kill_oss(){
 crash_node(){
 
    log "crash node test running......"
-   crash="echo \"c\" > /proc/sysrq-trigger"  
+   crash="echo \"c\" > /proc/sysrq-trigger"
    #ip=`yrcli --osd --type=mds|awk 'NR>=2{print $2}'|shuf -n 1|uniq`
    ips=`yrcli --node --type=mgmt|grep master|awk '{print $1}'`
    #ips="$ip 172.17.74.78"
    #ssh -o ServerAliveInterval=2 $ip $crash
    for ip in $ips;do
        log "node $ip crashed"
-       ssh -o ServerAliveInterval=2 $ip $crash
+       ipmi_ip=$(ssh $ip ipmitool lan print|grep "IP Address"|awk -F ':' 'NR>1{print $2}')
+       ipmitool -H $ipmi_ip -U $IPMI_USER -P $IPMI_PASSWD power reset
+       #ssh -o ServerAliveInterval=2 $ip $crash
    done
-   Sleep 60
+   Sleep 30
 
 }
 
@@ -192,31 +228,32 @@ fsck_test(){
    for ip in $ips;
    do
        log "node:$ip fsck running."
-       ssh $ip $fsck 2>&1 | tee -a $log 
+       ssh $ip $fsck 2>&1 | tee -a $log
    done
-}    
+}
 
 
 run(){
 
     time=1
     #fio init test data
-    #./fio.sh run 2>&1 | tee -a $log 
+    #./fio.sh run 2>&1 | tee -a $log
     while true;do
         #check_status
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         log "run test loops $time"
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         #cases=(kill_meta kill_mgmt kill_oss crash_node)
-        cases=("kill_meta 2" kill_mgmt "kill_oss 2" crash_node)
+        cases=("kill_meta 2" kill_mgmt "kill_oss 2")
 	    for cas in "${cases[@]}";do
             check_status
-	        $cas 
+	        $cas
             #Sleep 3600
         done
 	    #wait
         ((time++))
-    done 
+    done
 }
 #fsck_test
 run
+#ssh_no_key

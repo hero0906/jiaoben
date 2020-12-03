@@ -1,0 +1,14 @@
+<title>Vdbench output.201201.192008/parmfile.html</title><pre>
+
+* Contents of parameter file: /home/cy/jiaoben/64k-demo
+
+messagescan=no 
+hd=default,vdbench=/home/vdbench,user=root,shell=ssh
+hd=hd1,system=192.168.48.17
+hd=hd2,system=192.168.48.18
+fsd=fsd1,anchor=/mnt/yrfs3/test64KB,depth=1,width=10,openflag=o_direct,files=100000,size=64KB,shared=yes 
+fwd=format,threads=8,xfersize=32k 
+fwd=default,xfersize=32k,fileio=random,fileselect=random,rdpct=60,threads=8
+fwd=fwd1,fsd=fsd1,host=hd1
+fwd=fwd2,fsd=fsd1,host=hd2
+rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=6000000,interval=1

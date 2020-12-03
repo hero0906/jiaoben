@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!env /usr/bin/python3
 # coding=utf-8
 import re
 import threading
@@ -98,7 +98,7 @@ if __name__ == '__main__':
             systemctl stop yrfs-meta@mds0.service;systemctl stop yrfs-storage"
     update = "yum clean;yum makecache;yum -y update"
     etcd = "etcdctl del /yrcf/mgmt/datadir/meta.nodes;etcdctl del /yrcf/mgmt/datadir/storage.nodes;etcdctl del /yrcf/mgmt/datadir/client.nodes"
-    update_client = "systemctl stop yrfs-client;yum clean;yum makecache;yum -y update;systemctl start yrfs-client"
+    update_client = "systemctl stop yrfs-client;yum clean;yum makecache;yum -y update;systemctl daemon-reload;systemctl start yrfs-client"
 
     parser = OptionParser(description="upadate yrfs version", usage="%prog [-t] <server|client|all>", version="%prog 1.0")
     parser.add_option('-t', '--type', dest='type', type='string', help="server type to update")
