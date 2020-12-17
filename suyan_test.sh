@@ -1,39 +1,70 @@
-mount_dir=/mnt/yrfs3
-client=(192.168.48.17 192.168.48.18)
-logs=logs
+mount_dir=/mnt/yrfs2
+client=(192.168.48.12)
+logs="logs"
 #client=(192.168.48.17)
 #client2=192.168.48.18
 
+findmnt $mount_dir 2>&1 /dev/null
+echo $?
+if [[ $? != 0 ]];then
+    echo -e "\n \033[31m mount dir $mount_dir not exist! test quit!!! \033[0m\n"
+    exit
+fi
+
 FIO(){
 
-    size=50G
-    runtime=6000
-    path=$mount_dir"/1.file"
-    log_path="output/"`date +%m%d%H%M`"_"
-    for rw in randread randwrite;do
-        for numjobs in 4 8 16;do
-	    fio -filename=$path -iodepth=1 -direct=0 -bs=4K -size=$size --rw=${rw} -numjobs=${numjobs} \
-	     -time_based -runtime=$runtime -ioengine=psync -group_reporting -name=test -output=${log_path}4K_${rw}_jobs_${numjobs}
+    log_path="$logs/fio_run.log"
+    path=$mount_dir"/cy_fio_test_file"
+
+    size=500G
+    runtime=60
+    RW=(write read randwrite randread rw randrw)
+    Numjobs=(1 4 8 16)
+    Iodepth=(1 4 8 16)
+    Ioengine=(sync psync libaio)
+    Bs=(4K)
+    Direct=(0 1) 
+    for rw in "${RW[@]}" ;do
+        for numjobs in "${Numjobs[@]}";do
+	    for ioengine in "${Ioengine[@]}";do 
+		for bs in "${Bs[@]}";do
+                    for direct in "${Direct[@]}";do    
+ 			for iodepth in "${Iodepth[@]}";do
+	                    #config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -output=${log_path}${rw}${numjobs}${ioengine}${bs}${iodepth}${direct}${bs}"
+	                    config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test"
+  			    echo -e "[`date`]test running >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"|tee -a $log_path
+  			    echo -e $config|tee -a $log_path
+			    $config 2>&1 |tee -a $log_path
+			done
+                    done
+                done
+            done
         done
      done
 
-    for rw in read write;do
-        for numjobs in 4 8 16;do
-	    fio -filename=$path -iodepth=1 -direct=0 -bs=512K -size=$size --rw=${rw} -numjobs=${numjobs} \
-            -time_based -runtime=$runtime -ioengine=psync -group_reporting -name=test -output=${log_path}512K_${rw}_jobs_${numjobs}
-        done
-    done
+#    for rw in read write;do
+#        for numjobs in 4 8 16;do
+#	    fio -filename=$path -iodepth=1 -direct=0 -bs=512K -size=$size --rw=${rw} -numjobs=${numjobs} \
+#            -time_based -runtime=$runtime -ioengine=psync -group_reporting -name=test -output=${log_path}512K_${rw}_jobs_${numjobs}
+#        done
+#    done
 
 }
 
 vdbench(){
 
      rootdir=/home/vdbench
-     files=100000
-     size="64KB"
-     threads=8
+     files=10000
+     size=400K
+     bs=4k
+     threads=32
      elapsed=6000000
+     testdir=${mount_dir}/vdbench/`uuidgen`
      len=${#client[@]}
+     
+     if [[ ! -d $testdir ]];then 
+         mkdir -p $testdir
+     fi
 
      config1="
          messagescan=no
@@ -45,9 +76,9 @@ vdbench(){
          config2=$config2$tmp"\n"
      done
 
-     config3="fsd=fsd1,anchor=$mount_dir/test64KB,depth=1,width=10,openflag=o_direct,files=$files,size=$size,shared=yes
-         \nfwd=format,threads=$threads,xfersize=32k
-         \nfwd=default,xfersize=32k,fileio=random,fileselect=random,rdpct=60,threads=$threads\n"
+     config3="fsd=fsd1,anchor=$testdir,depth=4,width=5,files=$files,size=$size,shared=yes
+         \nfwd=format,threads=$threads,xfersize=$bs
+         \nfwd=default,xfersize=$bs,fileio=random,fileselect=random,rdpct=0,threads=$threads\n"
 
      config4=""
      for hd in `seq $len`;do
@@ -55,12 +86,12 @@ vdbench(){
          config4=$config4$tmp"\n"
      done
 
-     config5="rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=$elapsed,interval=1"
+     config5="rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=$elapsed,interval=5"
 
      config=$config1$config2$config3$config4$config5
 
-     echo -e $config > 64k-demo
-     ${rootdir}/vdbench  -f 64k-demo -o $logs/output.tod
+     echo -e $config > vdbench_config
+     ${rootdir}/vdbench  -f vdbench_config -o $logs/output.tod
 
 #    /home/vdbench/vdbench -f 200m-demo-read -o 200m-demo-read-output
 
@@ -103,6 +134,18 @@ if [[ ! -d "logs" ]];then
     mkdir logs
 fi
 
-#FIO
-vdbench
+if [[ $# == 1 ]];then
+    if [[ $1 == "mdtest" ]];then
+        MDtest
+    elif [[ $1 == "vdbench" ]];then
+        vdbench
+    elif [[ $1 == "fio" ]];then
+        FIO
+    fi
+else
+    echo -e "Usage $0 <mdtest|vdbench|fio>\n"
+fi
+#while true;do
+#    FIO
+#done
 #MDtest

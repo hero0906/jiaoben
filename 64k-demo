@@ -2,7 +2,7 @@ messagescan=no
 hd=default,vdbench=/home/vdbench,user=root,shell=ssh
 hd=hd1,system=192.168.48.17
 hd=hd2,system=192.168.48.18
-fsd=fsd1,anchor=/mnt/yrfs3/test64KB,depth=1,width=10,openflag=o_direct,files=100000,size=64KB,shared=yes 
+fsd=fsd1,anchor=/mnt/yrfs3/test64KB_two,depth=4,width=4,openflag=o_direct,files=10000,size=64K,shared=yes 
 fwd=format,threads=8,xfersize=32k 
 fwd=default,xfersize=32k,fileio=random,fileselect=random,rdpct=60,threads=8
 fwd=fwd1,fsd=fsd1,host=hd1

@@ -158,7 +158,7 @@ kill_mgmt(){
 
    log "kill mgmt test running....."
 
-   stop_mgmt="ps axu|grep yrfs-mgmtd|grep -v grep|awk '{print \$2}'|xargs kill -11"
+   stop_mgmt="ps axu|grep yrfs-mgmtd|grep -v grep|awk '{print \$2}'|xargs kill -9"
    start_mgmt="systemctl start yrfs-mgmtd"
    ip=`yrcli --node --type=mgmt|grep master|awk '{print $1}'`
 
@@ -198,6 +198,12 @@ kill_oss(){
    done
 
 }
+
+down_oss_net(){
+
+    log "down oss netcard test running......"
+    random_ip=""
+    }
 
 crash_node(){
 
