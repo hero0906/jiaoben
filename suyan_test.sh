@@ -1,4 +1,4 @@
-mount_dir=/mnt/yrfs2
+mount_dir=/mnt/yrfs1/posixtest
 client=(192.168.48.12)
 logs="logs"
 #client=(192.168.48.17)
@@ -17,9 +17,9 @@ FIO(){
     path=$mount_dir"/cy_fio_test_file"
 
     size=500G
-    runtime=60
+    runtime=3600
     RW=(write read randwrite randread rw randrw)
-    Numjobs=(1 4 8 16)
+    Numjobs=(1)
     Iodepth=(1 4 8 16)
     Ioengine=(sync psync libaio)
     Bs=(4K)
@@ -31,7 +31,7 @@ FIO(){
                     for direct in "${Direct[@]}";do    
  			for iodepth in "${Iodepth[@]}";do
 	                    #config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -output=${log_path}${rw}${numjobs}${ioengine}${bs}${iodepth}${direct}${bs}"
-	                    config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test"
+	                    config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -verify=crc64 --allrandrepeat=1"
   			    echo -e "[`date`]test running >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"|tee -a $log_path
   			    echo -e $config|tee -a $log_path
 			    $config 2>&1 |tee -a $log_path
@@ -54,11 +54,11 @@ FIO(){
 vdbench(){
 
      rootdir=/home/vdbench
-     files=10000
-     size=400K
+     files=1200
+     size=200K
      bs=4k
-     threads=32
-     elapsed=6000000
+     threads=16
+     elapsed=600
      testdir=${mount_dir}/vdbench/`uuidgen`
      len=${#client[@]}
      
