@@ -89,33 +89,60 @@ def ssh2(ip, cmd):
 if __name__ == '__main__':
 
     PASSWORD = "Passw0rd"
-    SERVER = ["192.168.45.11","192.168.45.12","192.168.45.13","192.168.45.14"]
-    CLIENT = ["192.168.48.17","192.168.48.18"]
 
-    start = "systemctl daemon-reload;systemctl start yrfs-mgmtd;systemctl start yrfs-meta@mds0.service;\
-            systemctl start yrfs-storage;systemctl start yrfs-client"
-    stop = "systemctl daemon-reload;systemctl stop yrfs-client;systemctl stop yrfs-mgmtd;\
-            systemctl stop yrfs-meta@mds0.service;systemctl stop yrfs-storage"
+    #SERVER = ["192.168.45.11","192.168.45.12","192.168.45.13","192.168.45.14"]
+    #CLIENT = ["192.168.48.17","192.168.48.18"]
+
+    SERVER = ["192.168.14.32","192.168.14.36","192.168.14.37","192.168.14.38"]
+    CLIENT = ["192.168.14.71","192.168.14.72"]
+    #SERVER = ["192.168.15.121","192.168.15.123","192.168.15.125","192.168.15.126"]
+    #CLIENT = ["192.168.15.250"]
+
+    #SERVER = ["192.168.15.101","192.168.15.102","192.168.15.103","192.168.15.104"]
+    #CLIENT = ["192.168.15.105"]
+
+    start = "systemctl daemon-reload;systemctl start yrfs-mgmtd;systemctl start yrfs-meta@mds0.service yrfs-meta@mds1.service;systemctl start yrfs-storage;systemctl start yrfs-client"
+    stop = "systemctl stop yrfs-client;systemctl stop yrfs-mgmtd;systemctl stop yrfs-meta@mds0.service yrfs-meta@mds1.service;systemctl stop yrfs-storage"
     update = "yum clean;yum makecache;yum -y update"
-    etcd = "etcdctl del /yrcf/mgmt/datadir/meta.nodes;etcdctl del /yrcf/mgmt/datadir/storage.nodes;etcdctl del /yrcf/mgmt/datadir/client.nodes"
     update_client = "systemctl stop yrfs-client;yum clean;yum makecache;yum -y update;systemctl daemon-reload;systemctl start yrfs-client"
 
-    parser = OptionParser(description="upadate yrfs version", usage="%prog [-t] <server|client|all>", version="%prog 1.0")
+    clean_etcd = "etcdctl del /yrcf/mgmt/datadir/meta.nodes;etcdctl del /yrcf/mgmt/datadir/storage.nodes;etcdctl del /yrcf/mgmt/datadir/client.nodes"
+
+    #repo_bak = 'mkdir -p /etc/yum.repos.d/bak;mv /etc/yum.repos.d/* /etc/yum.repos.d/bak;echo -e "[yrcf-6.4]\nname=yrcf-6.4\nenabled=1\nbaseurl=http://192.168.0.22:17283\ngpgcheck=0" > /etc/yum.repos.d/yrcf.repo'
+    repo_bak = 'mkdir -p /etc/yum.repos.d/bak;mv /etc/yum.repos.d/* /etc/yum.repos.d/bak;echo -e "[yrcf-6.4]\nname=yrcf-6.4\nenabled=1\nbaseurl=http://192.168.0.22:17285\ngpgcheck=0" > /etc/yum.repos.d/yrcf.repo'
+    client_ver = ('grep "yrfs client version" /var/log/messages|tail -n 1',)
+    storage_ver = ('grep Version /var/log/yrfs-storage.log |tail -n 1',)
+    meta_ver = ('grep Version /var/log/yrfs-meta@mds*.log|tail -n 1',)
+
+    parser = OptionParser(description="upadate yrfs version", usage="%prog [-t] <server|client|all> -c <command>", version="%prog 1.0")
     parser.add_option('-t', '--type', dest='type', type='string', help="server type to update")
+    parser.add_option('-c', '--command', dest='command', type='string',  help="linux shell command")
     options ,args = parser.parse_args(args=sys.argv[1:])
 
     assert options.type, "please enter the server type!!!"
     if options.type not in ('server', 'client', 'all'):
         raise ValueError
     #for cmd in (stop,update,start):
-    if options.type == "client":
-        for cmd in (update_client,):
-            multi_threads(ssh2, CLIENT)
-    if options.type == "server":
-        for cmd in (stop,update,start):
-            multi_threads(ssh2, SERVER)
-    if options.type == "all":
-        for cmd in (stop,update,start):
-            multi_threads(ssh2, SERVER)
-        for cmd in (update_client,):
-            multi_threads(ssh2, CLIENT)
+
+    if options.command:
+        cmd = options.command
+        if options.type == "client":
+                multi_threads(ssh2, CLIENT)
+        if options.type == "server":
+                multi_threads(ssh2, SERVER)
+        if options.type == "all":
+                HOST = SERVER + CLIENT
+                multi_threads(ssh2, HOST)
+
+    else: 
+        if options.type == "client":
+            for cmd in (repo_bak,update_client,):
+                multi_threads(ssh2, CLIENT)
+        if options.type == "server":
+            for cmd in (repo_bak,stop,update,start):
+                multi_threads(ssh2, SERVER)
+        if options.type == "all":
+            for cmd in (repo_bak,stop,update,start):
+                multi_threads(ssh2, SERVER)
+            for cmd in (repo_bak,update_client,):
+                multi_threads(ssh2, CLIENT)
