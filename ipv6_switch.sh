@@ -12,8 +12,8 @@ elif [[ $1 == "stop" ]];then
     sysctl -w net.ipv6.conf.all.disable_ipv6=1
     sysctl -w net.ipv6.conf.default.disable_ipv6=1
 else
-    echo -e "Usage: $0 <start|stop>\n
+    echo -e "\033[35m\nUsage: $0 <start|stop>.\n
 	    start: ipv6 service\n
-            stop:  ipv6 service\n"
+            stop:  ipv6 service\n\033[0m"
 fi
 
