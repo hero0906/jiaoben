@@ -1,12 +1,9 @@
-mount_dir=/mnt/yrfs1/posixtest
-client=(192.168.48.12)
-logs="logs"
-#client=(192.168.48.17)
-#client2=192.168.48.18
+mount_dir=/mnt/yrfs
+client=(192.168.48.18)
+logs="/tmp/cy_test_logs"
 
-findmnt $mount_dir 2>&1 /dev/null
-echo $?
-if [[ $? != 0 ]];then
+findmnt $mount_dir 1> /dev/null
+if [[ $? -ne 0 ]];then
     echo -e "\n \033[31m mount dir $mount_dir not exist! test quit!!! \033[0m\n"
     exit
 fi
@@ -14,10 +11,15 @@ fi
 FIO(){
 
     log_path="$logs/fio_run.log"
-    path=$mount_dir"/cy_fio_test_file"
+    path=$mount_dir"/fiotest/cy_fio_test_file"
+    if [[ ! -d $path ]];then
+        mkdir -p $path
+    fi
 
-    size=500G
-    runtime=3600
+    testfile=$path"/testfile"
+
+    size=50G
+    runtime=600
     RW=(write read randwrite randread rw randrw)
     Numjobs=(1)
     Iodepth=(1 4 8 16)
@@ -31,10 +33,14 @@ FIO(){
                     for direct in "${Direct[@]}";do    
  			for iodepth in "${Iodepth[@]}";do
 	                    #config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -output=${log_path}${rw}${numjobs}${ioengine}${bs}${iodepth}${direct}${bs}"
-	                    config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -verify=crc64 --allrandrepeat=1"
+	                    config="fio -filename=$testfile -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -verify=crc64 --allrandrepeat=1"
   			    echo -e "[`date`]test running >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"|tee -a $log_path
-  			    echo -e $config|tee -a $log_path
+  			    echo -e "[`date`] $config"|tee -a $log_path
 			    $config 2>&1 |tee -a $log_path
+			    if [[ $? -ne 0 ]];then
+			        echo -e "`date` fio test run error"|tee -a $log_path
+                                exit
+                            fi
 			done
                     done
                 done
@@ -42,23 +48,16 @@ FIO(){
         done
      done
 
-#    for rw in read write;do
-#        for numjobs in 4 8 16;do
-#	    fio -filename=$path -iodepth=1 -direct=0 -bs=512K -size=$size --rw=${rw} -numjobs=${numjobs} \
-#            -time_based -runtime=$runtime -ioengine=psync -group_reporting -name=test -output=${log_path}512K_${rw}_jobs_${numjobs}
-#        done
-#    done
-
 }
 
 vdbench(){
 
      rootdir=/home/vdbench
-     files=1200
-     size=200K
+     files=120
+     size=20K
      bs=4k
      threads=16
-     elapsed=600
+     elapsed=600000
      testdir=${mount_dir}/vdbench/`uuidgen`
      len=${#client[@]}
      
@@ -78,7 +77,7 @@ vdbench(){
 
      config3="fsd=fsd1,anchor=$testdir,depth=4,width=5,files=$files,size=$size,shared=yes
          \nfwd=format,threads=$threads,xfersize=$bs
-         \nfwd=default,xfersize=$bs,fileio=random,fileselect=random,rdpct=0,threads=$threads\n"
+         \nfwd=default,xfersize=$bs,fileio=random,fileselect=random,rdpct=50,threads=$threads\n"
 
      config4=""
      for hd in `seq $len`;do
@@ -101,37 +100,107 @@ vdbench(){
 MDtest(){
 
     nodes_file=nodeslist
+    if [[ -e $nodes_file ]];then  
+        > $nodes_file
+    fi
 
     for ip in ${client[@]};do
-        echo $ip > $nodes_file
+        echo $ip >> $nodes_file
     done
 
-#    echo $client2 >> $nodes_file
     DEPTH=1
     WIDTH=10
-    num_files=400000
-    log_path=output/mdtest.log
+    num_files=4000000
+    num_files_ls=200000
 
-    rm -fr $mount_dir/mdtest-4y
-    mkdir -p $mount_dir/mdtest-4y
+    log_path=$logs/mdtest.log
+    testdir="${mount_dir}/mdtest_client18/cy-mdtest-4y/"
+    testdir_ls="${mount_dir}/mdtest_client18/mdtest_ls_test/"
 
     num_procs=`cat /proc/cpuinfo | grep "cpu cores" | uniq|awk '{print $4}'`
 
     files_per_dir=$(($num_files/$WIDTH/$num_procs))
-    mpirun --allow-run-as-root --mca btl_tcp_if_include 172.17.0.0/16 -hostfile $nodes_file --map-by node -np ${num_procs} mdtest -C -d $mount_dir/mdtest-4y -i 1 \
-	       -I ${files_per_dir} -z ${DEPTH} -b ${WIDTH} -L -T  -F -u -w 0 |tee -a $log_path
 
-    rm -fr $mount_dir/abc
-    mkdir -p mkdir $mount_dir/abc
-    date;mdtest -C -d $mount_dir/abc/ -i 1 -I 200000 -z 1 -b 1 -L -T  -F -u -w 0|tee -a tee -a $log_path
+    while true;do
 
-    date;(time ls -f -1 $mount_dir/abc | wc -l) 2>&1|tee -a $log_path
-    date;(time find $mount_dir/abc/ | wc -l) 2>&1|tee -a $log_path
+	 if [[ -d $testdir ]];then
+   	     rm -fr $testdir
+             if [[ $? -ne 0 ]];then
+		 echo -e "`date` remove $testdir failed"|tee -a $log_path
+                 exit
+             else
+		 echo -e "`date` remove $testdir"|tee -a $log_path
+             fi
+         fi
+
+   	 mkdir -p $testdir
+         if [[ $? -ne 0 ]];then
+	     echo -e "`date` mkdir $testdir failed"|tee -a $log_path
+             exit
+         else
+	     echo -e "`date` mkdir $testdir"|tee -a $log_path
+             
+         fi
+
+	 echo -e "`date` mdtest running."|tee -a $log_path
+   	 #mpirun --allow-run-as-root --mca btl_tcp_if_include 192.145.12.0/24 -hostfile $nodes_file --map-by node -np ${num_procs} mdtest -C -d $testdir -i 1 \
+   	 mpirun --allow-run-as-root --mca -hostfile $nodes_file --map-by node -np ${num_procs} mdtest -C -d $testdir -i 1 \
+   	            -I ${files_per_dir} -z ${DEPTH} -b ${WIDTH} -L -T  -F -u -w 0 |tee -a $log_path
+
+         if [[ $? -ne 0 ]];then
+	     echo "`date` mpirun mdtest run error"|tee -a $log_path
+             exit
+         else
+             echo "`date` mpirun mdtest run over"|tee -a $log_path
+         fi
+
+		
+	 if [[ -d $testdir_ls ]];then
+   	     rm -fr $testdir_ls
+             if [[ $? -ne 0 ]];then
+                 echo -e "`date` remove $testdir_ls failed"|tee -a $log_path
+                 exit
+             else
+                 echo -e "`date` remove $testdir_ls"|tee -a $log_path
+             fi
+	 fi
+
+   	 mkdir -p $testdir_ls
+         if [[ $? -ne 0 ]];then
+             echo -e "`date` mkdir $testdir_ls failed"|tee -a $log_path
+             exit
+         else
+	     echo -e "`date` mkdir $testdir_ls"|tee -a $log_path
+         fi
+        
+
+	 echo -e "`date` mdtest running"|tee -a $log_path
+   	 mdtest -C -d $testdir_ls -i 1 -I $num_files_ls -z 1 -b 1 -L -T  -F -u -w 0|tee -a $log_path
+         if [[ $? -ne 0 ]];then
+             echo "`date` mpirun mdtest run error"|tee -a $log_path
+             exit
+         fi
+
+	 echo -e "`date` ls $testdir_ls running."|tee -a $log_path
+   	 (time ls -f -1 $testdir_ls | wc -l) 2>&1|tee -a $log_path
+         if [[ $? -ne 0 ]];then
+             echo "`date` ls $testdir_ls command run error"|tee -a $log_path
+             exit
+         fi
+
+	 echo -e "`date` find $testdir_ls running."|tee -a $log_path
+   	 (time find $testdir_ls | wc -l) 2>&1|tee -a $log_path
+         if [[ $? -ne 0 ]];then
+             echo "`date` find $testdir_ls command run error"|tee -a $log_path
+             exit
+         fi
+
+    done
 
 }
 
-if [[ ! -d "logs" ]];then
-    mkdir logs
+if [[ ! -d $logs ]];then
+    mkdir $logs
 fi
 
 if [[ $# == 1 ]];then
@@ -141,9 +210,14 @@ if [[ $# == 1 ]];then
         vdbench
     elif [[ $1 == "fio" ]];then
         FIO
+    else
+        echo -e "paramter error!!!"
     fi
 else
-    echo -e "Usage $0 <mdtest|vdbench|fio>\n"
+    echo -e "\033[35m \nUsage:\n
+        $0 <mdtest|vdbench|fio>\n
+	please input you want run test type:\n
+	for example: $0 mdtest\n\033[0m"
 fi
 #while true;do
 #    FIO

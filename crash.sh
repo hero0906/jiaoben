@@ -7,6 +7,9 @@ LOG="logs/crash"_`date +%m%d%H%M`".log"
 IPMI_USER="ADMIN"
 IPMI_PASSWD="ADMIN"
 
+STORAGE_PORT="ens5f0"
+BUS_PORT="ens2f0"
+
 ssh_no_key(){
     NET=$1
     if [[ ! -f ~/.ssh/id_rsa ]];then
@@ -69,7 +72,7 @@ Sleep(){
 check_status(){
 
    start_mgmt="systemctl restart yrfs-mgmtd"
-   ips=`yrcli --node --type=mgmt|awk '{print $1}'`
+   ips=`yrcli --node --type=mgmt|grep -v "<"|awk '{print $1}'`
 
    while true;
    do
@@ -109,7 +112,7 @@ check_status(){
            date;yrcli --osd --type=mds |tee -a $LOG
            date;yrcli --osd --type=oss |tee -a $LOG
            date;yrcli --node --type=mgmt |tee -a  $LOG
-           for ip in `yrcli --node --type=mgmt|awk '{print $1}'`;do
+           for ip in $ips;do
 	       log "$ip etcd service status:"
                ssh $ip systemctl status yrfs-mgmtd|grep Active 2>&1 |tee -a $LOG
                #ssh $ip etcdctl --endpoints=$ip:2379 endpoint health 2>&1 | tee -a $LOG
@@ -160,7 +163,7 @@ kill_mgmt(){
 
    stop_mgmt="ps axu|grep yrfs-mgmtd|grep -v grep|awk '{print \$2}'|xargs kill -9"
    start_mgmt="systemctl start yrfs-mgmtd"
-   ip=`yrcli --node --type=mgmt|grep master|awk '{print $1}'`
+   ip=`yrcli --node --type=mgmt|grep -v "<"|grep master|awk '{print $1}'`
 
    log "mgmt node $ip stop"
 
@@ -210,7 +213,7 @@ crash_node(){
    log "crash node test running......"
    crash="echo \"c\" > /proc/sysrq-trigger"
    #ip=`yrcli --osd --type=mds|awk 'NR>=2{print $2}'|shuf -n 1|uniq`
-   ips=`yrcli --node --type=mgmt|grep master|awk '{print $1}'`
+   ips=`yrcli --node --type=mgmt|grep -v "<"|grep master|awk '{print $1}'`
    #ips="$ip 172.17.74.78"
    #ssh -o ServerAliveInterval=2 $ip $crash
    for ip in $ips;do
@@ -220,6 +223,24 @@ crash_node(){
        #ssh -o ServerAliveInterval=2 $ip $crash
    done
    Sleep 30
+}
+
+down_mgmt_net(){
+
+    check_status
+
+    log "down mgmtd netcard test running......"
+    ip=`yrcli --node --type=mgmt|grep -v "<"|grep master|awk '{print $1}'`
+    bus_ip=$(ssh ${ip} "ifconfig $BUS_PORT|grep -w inet|awk '{print \$2}'")
+
+    down_net="ifdown $STORAGE_PORT"
+    up_net="ifup $STORAGE_PORT"
+
+    log "mgmt node $ip storage netcard down."
+    ssh -o ServerAliveInterval=2 $bus_ipip $down_net
+    Sleep 30
+    log "mgmt node $ip storage netcard up."
+    ssh $bus_ip $up_net
 
 }
 
@@ -230,7 +251,8 @@ fsck_test(){
 
    ips=`yrcli --osd --type=mds|awk 'NR>=2{print $2}'`
    #fsck="yrcli --fsck /data/mds --thread=8"
-   fsck="yrcli --fsck /data/mds0/replica  --cfg=/etc/yrfs/mds0.d/yrfs-meta.conf  --thread=8&&yrcli --fsck /data/mds1/replica  --cfg=/etc/yrfs/mds1.d/yrfs-meta.conf  --thread=8"
+   #fsck="yrcli --fsck /data/mds0/replica  --cfg=/etc/yrfs/mds0.d/yrfs-meta.conf  --thread=8&&yrcli --fsck /data/mds1/replica  --cfg=/etc/yrfs/mds1.d/yrfs-meta.conf  --thread=8"
+   fsck="yrcli --fsck /data/mds0/replica  --cfg=/etc/yrfs/mds0.d/yrfs-meta.conf  --thread=8"
    for ip in $ips;
    do
        log "node:$ip fsck running."
@@ -250,7 +272,7 @@ run(){
         log "run test loops $time"
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         #cases=(kill_meta kill_mgmt kill_oss crash_node)
-        cases=("kill_meta 2" kill_mgmt "kill_oss 2")
+        cases=("kill_meta 1" kill_mgmt "kill_oss 1" down_mgmt_net)
 	    for cas in "${cases[@]}";do
             check_status
 	        $cas
@@ -260,6 +282,6 @@ run(){
         ((time++))
     done
 }
-#fsck_test
-run
+fsck_test
+#run
 #ssh_no_key

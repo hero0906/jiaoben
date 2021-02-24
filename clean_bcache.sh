@@ -18,7 +18,7 @@ for disk in $disks;do
      if [[ -f '/sys/fs/bcache/'$cset_uuid'/stop'  ]];then
         echo 1 > /sys/fs/bcache/$cset_uuid/stop
      fi
-     expect -c "spawn mkfs.ext4 /dev/$disk;expect *anyway*;send \"y\r\";expect eof" >> /dev/null
+     #expect -c "spawn mkfs.ext4 /dev/$disk;expect *anyway*;send \"y\r\";expect eof" >> /dev/null
      
 done
 echo "=================================="
