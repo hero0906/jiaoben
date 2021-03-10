@@ -1,6 +1,6 @@
 mount_dir=/mnt/yrfs
 client=(192.168.48.18)
-logs="/tmp/cy_test_logs"
+logs="/home/caoyi/log"
 
 findmnt $mount_dir 1> /dev/null
 if [[ $? -ne 0 ]];then
@@ -57,7 +57,7 @@ vdbench(){
      size=50G
      bss=("4K" "1M")
      threads=1
-     elapsed=300
+     elapsed=600
      #fileio={"random","sequential")
      operations=("write" "read")
      testdir=${mount_dir}/vdbench/
@@ -99,7 +99,7 @@ vdbench(){
                  config4=$config4$tmp"\n"
              done
 
-             config5="rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=$elapsed,interval=5"
+             config5="rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=$elapsed,interval=20"
 
              config=$config1$config2$config3$config4$config5
 
