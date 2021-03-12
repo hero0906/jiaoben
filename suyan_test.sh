@@ -53,7 +53,7 @@ FIO(){
 vdbench(){
 
      rootdir=/home/vdbench
-     files=120
+     files=12000
      size=20K
      bs=4k
      threads=16
@@ -110,7 +110,7 @@ MDtest(){
 
     DEPTH=1
     WIDTH=10
-    num_files=4000000
+    num_files=1000000
     num_files_ls=200000
 
     log_path=$logs/mdtest.log
@@ -121,7 +121,7 @@ MDtest(){
 
     files_per_dir=$(($num_files/$WIDTH/$num_procs))
 
-    while true;do
+    for((i=1;i<=1;i++));do
 
 	 if [[ -d $testdir ]];then
    	     rm -fr $testdir

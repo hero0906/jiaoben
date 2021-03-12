@@ -1,7 +1,10 @@
-rm -fr /mnt/yrfs/quota_autotest/
-mkdir -p /mnt/yrfs/quota_autotest/  
-yrcli --setprojectquota --unmounted --path=quota_autotest --spacelimit=1M --inodelimit=8
-sleep 10
-dd if=/dev/zero of=/mnt/yrfs/quota_autotest/quota_autotest bs=1200K count=1 oflag=dsync
-sleep 10
-dd if=/dev/zero of=/mnt/yrfs/quota_autotest/quota_autotest1M bs=1200K count=1 oflag=dsync
+bs="4K"
+if [[ bs -eq "4K" ]];then
+    fileio="random"
+elif [[ bs == "1M" ]];then
+    fileio="sequential"
+else
+    echo -e "bs not 4k or 1m test quit!"
+    exit
+fi
+
