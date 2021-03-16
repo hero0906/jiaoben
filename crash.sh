@@ -7,8 +7,8 @@ LOG="logs/crash"_`date +%m%d%H%M`".log"
 IPMI_USER="ADMIN"
 IPMI_PASSWD="ADMIN"
 
-STORAGE_PORT="ens5f0"
-BUS_PORT="ens2f0"
+STORAGE_PORT="ens192"
+BUS_PORT="ens160"
 
 ssh_no_key(){
     NET=$1
@@ -130,7 +130,7 @@ kill_meta(){
    log "kill meta test running....."
    stop_meta="ps axu|grep -w yrfs-meta|grep -v grep|awk '{print \$2}'|xargs -I {} kill -9 {}"
    #start_meta="systemctl start yrfs-meta@mds0 yrfs-meta@mds1"
-   start_meta="systemctl start yrfs-meta@mds0"
+   start_meta="systemctl start yrfs-meta"
    #ips=`yrcli --osd --type=mds|grep master|awk '{print $2}'`
 
    if [[ $1 == 1 ]]
@@ -272,7 +272,7 @@ run(){
         log "run test loops $time"
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         #cases=(kill_meta kill_mgmt kill_oss crash_node)
-        cases=("kill_meta 1" kill_mgmt "kill_oss 1" down_mgmt_net)
+        cases=("kill_meta 1")
 	    for cas in "${cases[@]}";do
             check_status
 	        $cas
@@ -282,6 +282,6 @@ run(){
         ((time++))
     done
 }
-fsck_test
-#run
+#fsck_test
+run
 #ssh_no_key
