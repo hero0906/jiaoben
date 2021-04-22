@@ -1,0 +1,6 @@
+home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.272.b10-1.el7_9.x86_64/jre
+home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.272.b10-1.el7_9.x86_64
+jstack: null
+jstack: null
+Jstack completed successfully
+Jstack ended at Thu Mar 11 16:13:12 CST 2021

@@ -1,0 +1,7 @@
+messagescan=no
+hd=default,vdbench=/home/vdbench,user=root,shell=ssh
+hd=hd0,system=192.168.48.18
+fsd=fsd1,anchor=/mnt/yrfs/vdbench/,depth=1,width=1,files=1,size=50m,shared=yes
+fwd=default,operation=write,xfersize=4K,fileio=random,fileselect=random,threads=1
+fwd=fwd0,fsd=fsd1,host=hd0
+rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=20,interval=1

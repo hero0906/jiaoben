@@ -1,0 +1,86 @@
+<title>Vdbench output/hd0-0.stdout.html</title><pre>
+stdout/stderr for slave=hd0-0
+
+09:10:22.171 09:10:22.169 SlaveJvm execution parameter:  '-m 192.168.48.18'
+09:10:22.171 09:10:22.170 SlaveJvm execution parameter:  '-n 192.168.48.18-10-210311-09.10.21.708'
+09:10:22.171 09:10:22.170 SlaveJvm execution parameter:  '-l hd0-0'
+09:10:22.171 09:10:22.171 SlaveJvm execution parameter:  '-p 5570'
+09:10:22.171 09:10:22.171 SlaveJvm positional parameter: 'SlaveJvm'
+09:10:22.270 09:10:22.269 successfully connected to master 192.168.48.18
+09:10:22.271 09:10:22.270 Connection to 192.168.48.18 using port 5570 successful
+09:10:22.461 09:10:22.461 ticks_per_second: 100
+09:10:22.493 09:10:22.493 execute(): ls -l /var/lib/mysql
+09:10:22.509 09:10:22.509 Configuration interpretation took 0.05 seconds
+
+Link to Run Definitions:         <A HREF="#_1607460018">format_for_rd1 For loops: None</A>
+                                 <A HREF="#_1811075214">rd1 For loops: None</A>
+
+09:10:22.680 09:10:22.680 Beginning of run setup
+09:10:22.681 09:10:22.680 **********************
+09:10:22.681 
+09:10:22.681 
+09:10:22.749 09:10:22.749 Starting initializeFileAnchor for fsd1
+09:10:22.753 09:10:22.753 Completed the creation of the directory list for /var/lib/mysql: 1 directories.
+09:10:22.755 09:10:22.755 Generated 1 file names; total anchor size: 50m (52,428,800)
+09:10:22.755 09:10:22.755 Completed initializeFileAnchor for fsd1: 0.01
+09:10:22.773 09:10:22.773 Started 8 threads for fwd=format,fsd=fsd1
+09:10:22.774 09:10:22.773 Started 8 FwgThreads
+09:10:22.774 09:10:22.773 Waiting for task synchronization
+09:10:22.774 09:10:22.773 Requesting full garbage collection
+09:10:22.774 09:10:22.774 GcTracker: cum:   0 intv:  0 ms:       0 mss:  0.00% Heap_MB max:   911 curr:   123 used:    30 free:    93 
+09:10:22.818 09:10:22.818 GcTracker: cum:   2 intv:  2 ms:      41 mss:  0.00% Heap_MB max:   911 curr:   123 used:    17 free:   106 
+09:10:22.818 09:10:22.818 task_wait_start_complete() end
+
+<a name="_1607460018"></a><i><b>09:10:23.001 Starting RD=format_for_rd1</b></i>
+
+09:10:23.003 09:10:23.002 task_run_all(): 9 tasks
+09:10:23.274 09:10:23.273 Message to master: anchor=/var/lib/mysql mkdir complete.
+09:10:23.525 09:10:23.525 Message to master: anchor=/var/lib/mysql create complete.
+09:10:23.629 09:10:23.629 
+09:10:23.629 09:10:23.629 Miscellaneous statistics:
+09:10:23.629 09:10:23.629 FILE_CREATES        Files created:                                    1
+09:10:23.629 09:10:23.629 DIRECTORY_CREATES   Directories created:                              1
+09:10:23.629 09:10:23.629 WRITE_OPENS         Files opened for write activity:                  1
+09:10:23.630 09:10:23.630 DIR_BUSY_MKDIR      Directory busy (mkdir):                           2
+09:10:23.630 09:10:23.630 DIR_EXISTS          Directory may not exist (yet):                    2
+09:10:23.630 09:10:23.630 FILE_CLOSES         Close requests:                                   1
+09:10:23.630 09:10:23.630 
+09:10:23.631 09:10:23.630 Java Heap in MB. max:  910.500; current:  123.000; used:   22.002; free:  100.998
+09:10:23.631 09:10:23.631 Maximum native memory allocation:    1,048,576; Current allocation:    1,048,576
+09:10:24.130 09:10:24.130 End of run
+09:10:24.130 09:10:24.130 **********
+09:10:24.130 
+09:10:24.130 
+09:10:24.306 09:10:24.305 Beginning of run setup
+09:10:24.306 09:10:24.305 **********************
+09:10:24.306 
+09:10:24.306 
+09:10:24.352 09:10:24.352 Starting initializeFileAnchor for fsd1
+09:10:24.357 09:10:24.356 Completed the creation of the directory list for /var/lib/mysql: 1 directories.
+09:10:24.358 09:10:24.358 Generated 1 file names; total anchor size: 50m (52,428,800)
+09:10:24.358 09:10:24.358 During anchor creation for anchor=/var/lib/mysql there were 1 directories and 1 files
+09:10:24.358 09:10:24.358 Completed initializeFileAnchor for fsd1: 0.01
+09:10:24.359 09:10:24.359 Started 1 threads for fwd=fwd0,fsd=fsd1,operation=read
+09:10:24.359 09:10:24.359 Started 1 FwgThreads
+09:10:24.359 09:10:24.359 Waiting for task synchronization
+09:10:24.359 09:10:24.359 Requesting full garbage collection
+09:10:24.360 09:10:24.360 GcTracker: cum:   2 intv:  0 ms:       0 mss:  0.00% Heap_MB max:   911 curr:   123 used:    25 free:    98 
+09:10:24.393 09:10:24.393 GcTracker: cum:   4 intv:  2 ms:      32 mss:  0.00% Heap_MB max:   911 curr:   123 used:    16 free:   107 
+09:10:24.394 09:10:24.393 task_wait_start_complete() end
+
+<a name="_1811075214"></a><i><b>09:10:25.001 Starting RD=rd1; elapsed=20; fwdrate=max. For loops: None</b></i>
+
+09:10:25.002 09:10:25.002 task_run_all(): 2 tasks
+09:10:45.193 09:10:45.193 
+09:10:45.193 09:10:45.193 Miscellaneous statistics:
+09:10:45.193 09:10:45.193 READ_OPENS          Files opened for read activity:                  19
+09:10:45.193 09:10:45.193 FILE_CLOSES         Close requests:                                  19
+09:10:45.193 09:10:45.193 
+09:10:45.194 09:10:45.194 Java Heap in MB. max:  910.500; current:  123.000; used:   38.161; free:   84.839
+09:10:45.194 09:10:45.194 Maximum native memory allocation:    1,052,672; Current allocation:        4,096
+09:10:45.194 09:10:45.194 End of run
+09:10:45.194 09:10:45.194 **********
+09:10:45.194 
+09:10:45.194 
+09:10:45.543 09:10:45.543 Master is requesting slave shutdown
+09:10:45.544 09:10:45.544 Java Heap in MB. max:  910.500; current:  123.000; used:   38.372; free:   84.628

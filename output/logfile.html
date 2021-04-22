@@ -1,0 +1,99 @@
+<title>Vdbench output/logfile.html</title><pre>
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+Vdbench distribution: vdbench50406
+
+09:10:21.753 input argument scanned: '-fvdbench_config'
+09:10:21.753 java.vendor                   Red Hat, Inc.
+09:10:21.753 java.home                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.272.b10-1.el7_9.x86_64/jre
+09:10:21.753 java.vm.specification.version 1.8
+09:10:21.753 java.vm.version               25.272-b10
+09:10:21.753 java.vm.vendor                Red Hat, Inc.
+09:10:21.753 java.specification.version    1.8
+09:10:21.753 java.class.version            52.0
+09:10:21.753 user.name                     root
+09:10:21.753 user.dir                      /home/caoyi/jiaoben
+09:10:21.753 java.io.tmpdir                /tmp
+09:10:21.754 java.class.path               /home/vdbench/:/home/vdbench/classes:/home/vdbench/vdbench.jar
+09:10:21.754 os.name                       Linux
+09:10:21.754 os.arch                       amd64
+09:10:21.754 os.version                    4.12.14.20200820
+09:10:21.754 sun.arch.data.model           64
+09:10:21.799 Creating anchor for /var/lib/mysql,fsd=fsd1
+09:10:21.837 rd1 fsd to format: fsd1
+09:10:21.837 rd1 format on host: hd0
+09:10:21.843 Anchor size: anchor=/var/lib/mysql: dirs:            1; files:            1; bytes:    50.000m (52,428,800)
+09:10:21.972 Starting slave: /home/vdbench/vdbench SlaveJvm -m 192.168.48.18 -n 192.168.48.18-10-210311-09.10.21.708 -l hd0-0 -p 5570   
+09:10:22.388 Slave hd0-0 (pid  25813) connected to master 25768
+09:10:22.390 All slaves are now connected
+
+Link to Run Definitions:         <A HREF="#_1607460018">format_for_rd1 For loops: None</A>
+                                 <A HREF="#_1811075214">rd1 For loops: None</A>
+
+09:10:22.541 Flushing all reports
+09:10:22.542 slv=hd0-0 fwd=format fsd=fsd1 anchor=/var/lib/mysql threads= 8 skew= 0.00 operation=read 
+09:10:22.573 Waiting for synchronization of all slaves
+09:10:22.874 Synchronization of all slaves complete
+09:10:23.001 Starting RD=format_for_rd1
+
+<a name="_1607460018"></a><i><b>09:10:23.001 Starting RD=format_for_rd1</b></i>
+
+09:10:23.274 hd0-0: anchor=/var/lib/mysql mkdir complete.
+09:10:23.526 hd0-0: anchor=/var/lib/mysql create complete.
+Mar 11, 2021 .Interval. .ReqstdOps... ...cpu%...  read ....read..... ....write.... ..mb/sec... mb/sec .xfer.. ...mkdir.... ...rmdir.... ...create... ....open.... ...close.... ...delete...
+                          rate   resp total  sys   pct   rate   resp   rate   resp  read write  total    size  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp
+09:10:24.061          1  400.0  0.598   4.4 0.65   0.0    0.0  0.000  400.0  0.598  0.00 50.00  50.00  131072   1.0  3.297   0.0  0.000   1.0 250.62   1.0  2.797   1.0  0.954   0.0  0.000
+09:10:24.090    avg_2-1  400.0  0.598   4.4 0.65   0.0    0.0  0.000  400.0  0.598  0.00 50.00  50.00  131072   1.0  3.297   0.0  0.000   1.0 250.62   1.0  2.797   1.0  0.954   0.0  0.000
+09:10:24.224 
+09:10:24.224 Miscellaneous statistics:
+09:10:24.224 (These statistics do not include activity between the last reported interval and shutdown.)
+09:10:24.224 FILE_CREATES        Files created:                                    1          1/sec
+09:10:24.224 DIRECTORY_CREATES   Directories created:                              1          1/sec
+09:10:24.224 WRITE_OPENS         Files opened for write activity:                  1          1/sec
+09:10:24.224 DIR_BUSY_MKDIR      Directory busy (mkdir):                           2          2/sec
+09:10:24.225 DIR_EXISTS          Directory may not exist (yet):                    2          2/sec
+09:10:24.225 FILE_CLOSES         Close requests:                                   1          1/sec
+09:10:24.225 
+09:10:24.225 Flushing all reports
+09:10:24.225 Java Heap in MB. max:  455.500; current:   77.500; used:   18.731; free:   58.769
+09:10:24.254 slv=hd0-0 fwd=fwd0 fsd=fsd1 anchor=/var/lib/mysql threads= 1 skew= 0.00 operation=read 
+09:10:24.258 Waiting for synchronization of all slaves
+09:10:24.458 Synchronization of all slaves complete
+09:10:25.000 Starting RD=rd1; elapsed=20; fwdrate=max. For loops: None
+
+<a name="_1811075214"></a><i><b>09:10:25.001 Starting RD=rd1; elapsed=20; fwdrate=max. For loops: None</b></i>
+
+Mar 11, 2021 .Interval. .ReqstdOps... ...cpu%...  read ....read..... ....write.... ..mb/sec... mb/sec .xfer.. ...mkdir.... ...rmdir.... ...create... ....open.... ...close.... ...delete...
+                          rate   resp total  sys   pct   rate   resp   rate   resp  read write  total    size  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp  rate   resp
+09:10:26.021          1 7361.0  0.079   5.6 1.32 100.0 7361.0  0.079    0.0  0.000 28.76  0.00  28.76    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.665   0.0  0.000   0.0  0.000
+09:10:27.057          2  11514  0.080   5.1 3.56 100.0  11514  0.080    0.0  0.000 44.98  0.00  44.98    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.026   1.0  0.687   0.0  0.000
+09:10:28.056          3  11348  0.082   4.8 3.56 100.0  11348  0.082    0.0  0.000 44.33  0.00  44.33    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.075   1.0  0.617   0.0  0.000
+09:10:29.055          4  11477  0.081   5.3 3.43 100.0  11477  0.081    0.0  0.000 44.83  0.00  44.83    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.264   1.0  0.657   0.0  0.000
+09:10:30.051          5  11464  0.081   5.3 3.91 100.0  11464  0.081    0.0  0.000 44.78  0.00  44.78    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.028   1.0  0.656   0.0  0.000
+09:10:31.054          6  11514  0.081   5.0 4.21 100.0  11514  0.081    0.0  0.000 44.98  0.00  44.98    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.573   1.0  0.831   0.0  0.000
+09:10:32.054          7  11754  0.080   4.2 3.69 100.0  11754  0.080    0.0  0.000 45.91  0.00  45.91    4096   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000
+09:10:33.054          8  11747  0.080   4.2 3.43 100.0  11747  0.080    0.0  0.000 45.89  0.00  45.89    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.009   1.0  0.608   0.0  0.000
+09:10:34.054          9  11748  0.080   4.3 3.68 100.0  11748  0.080    0.0  0.000 45.89  0.00  45.89    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.158   1.0  0.695   0.0  0.000
+09:10:35.050         10  11717  0.080   9.9 4.15 100.0  11717  0.080    0.0  0.000 45.77  0.00  45.77    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.066   1.0  0.891   0.0  0.000
+09:10:36.053         11  11770  0.080   5.8 3.79 100.0  11770  0.080    0.0  0.000 45.98  0.00  45.98    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  0.993   1.0  0.630   0.0  0.000
+09:10:37.053         12  11816  0.080   5.7 3.67 100.0  11816  0.080    0.0  0.000 46.16  0.00  46.16    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  0.838   1.0  0.604   0.0  0.000
+09:10:38.053         13  11787  0.080   4.1 3.39 100.0  11787  0.080    0.0  0.000 46.05  0.00  46.05    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.025   1.0  0.623   0.0  0.000
+09:10:39.053         14  11832  0.080   4.0 3.26 100.0  11832  0.080    0.0  0.000 46.21  0.00  46.21    4095   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.036   1.0  0.777   0.0  0.000
+09:10:40.054         15  11760  0.080   6.2 3.83 100.0  11760  0.080    0.0  0.000 45.94  0.00  45.94    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  0.990   1.0  0.826   0.0  0.000
+09:10:41.054         16  11740  0.080   5.5 3.80 100.0  11740  0.080    0.0  0.000 45.86  0.00  45.86    4095   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.040   1.0  0.811   0.0  0.000
+09:10:42.049         17  11760  0.080   5.2 3.79 100.0  11760  0.080    0.0  0.000 45.94  0.00  45.94    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.010   1.0  0.649   0.0  0.000
+09:10:43.052         18  11827  0.080   4.0 3.32 100.0  11827  0.080    0.0  0.000 46.20  0.00  46.20    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.075   1.0  0.641   0.0  0.000
+09:10:44.048         19  11734  0.080   5.2 3.81 100.0  11734  0.080    0.0  0.000 45.84  0.00  45.84    4096   0.0  0.000   0.0  0.000   0.0  0.000   1.0  1.030   1.0  0.722   0.0  0.000
+09:10:45.048         20  11756  0.080   4.2 3.67 100.0  11756  0.080    0.0  0.000 45.92  0.00  45.92    4096   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000   0.0  0.000
+09:10:45.052   avg_2-20  11471  0.080   5.2 3.46 100.0  11471  0.080    0.0  0.000 44.81  0.00  44.81    4096   0.0  0.000   0.0  0.000   0.0  0.000   0.9  1.106   0.9  0.701   0.0  0.000
+09:10:45.277 
+09:10:45.277 Miscellaneous statistics:
+09:10:45.277 (These statistics do not include activity between the last reported interval and shutdown.)
+09:10:45.277 READ_OPENS          Files opened for read activity:                  18          0/sec
+09:10:45.277 FILE_CLOSES         Close requests:                                  17          0/sec
+09:10:45.277 
+09:10:45.278 Flushing all reports
+09:10:45.278 Java Heap in MB. max:  455.500; current:   77.500; used:   41.804; free:   35.696
+09:10:45.319 Ending Reporter
+09:10:45.643 Vdbench execution completed successfully. Output directory: /home/caoyi/jiaoben/output 
+
+09:10:46.647 Java Heap in MB. max:  455.500; current:   77.500; used:   16.442; free:   61.058

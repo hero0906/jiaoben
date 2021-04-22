@@ -1,6 +1,6 @@
 mount_dir=/mnt/yrfs
 client=(192.168.48.18)
-logs="/tmp/cy_test_logs"
+logs="/home/caoyi/log"
 
 findmnt $mount_dir 1> /dev/null
 if [[ $? -ne 0 ]];then
@@ -53,44 +53,64 @@ FIO(){
 vdbench(){
 
      rootdir=/home/vdbench
-     files=12000
-     size=20K
-     bs=4k
-     threads=16
-     elapsed=600000
-     testdir=${mount_dir}/vdbench/`uuidgen`
+     files=1
+     size=50G
+     bss=("4K" "1M")
+     threads=1
+     elapsed=600
+     #fileio={"random","sequential")
+     operations=("write" "read")
+     testdir=${mount_dir}/vdbench/
      len=${#client[@]}
      
      if [[ ! -d $testdir ]];then 
          mkdir -p $testdir
      fi
 
-     config1="
-         messagescan=no
-         \nhd=default,vdbench=$rootdir,user=root,shell=ssh\n"
+     for bs in ${bss[@]};do 
+         echo -e "$bs"
+         if [[ $bs == "4K" ]];then
+             fileio="random"
+         elif [[ $bs == "1M" ]];then
+	     fileio="sequential"
+         else
+	     echo -e "bs not 4k or 1m test quit!"
+	     exit
+ 	 fi
 
-     config2=""
-     for hd in `seq $len`;do
-         tmp="hd=hd$hd,system=${client[(($hd-1))]}"
-         config2=$config2$tmp"\n"
+         for operation in ${operations[@]};do
+             echo -e "vdbench $bs $operation $fileio test running."
+             config1="
+                 messagescan=no
+                 \nhd=default,vdbench=$rootdir,user=root,shell=ssh\n"
+
+             config2=""
+             for hd in `seq $len`;do
+                 tmp="hd=hd$hd,system=${client[(($hd-1))]}"
+                 config2=$config2$tmp"\n"
+             done
+
+             config3="fsd=fsd1,anchor=$testdir,depth=1,width=1,files=$files,size=$size,shared=yes
+                 \nfwd=default,operation=$operation,xfersize=$bs,fileio=$fileio,fileselect=random,threads=$threads\n"
+
+             config4=""
+             for hd in `seq $len`;do
+                 tmp="fwd=fwd$hd,fsd=fsd1,host=hd$hd"
+                 config4=$config4$tmp"\n"
+             done
+
+             config5="rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=$elapsed,interval=20"
+
+             config=$config1$config2$config3$config4$config5
+
+             echo -e $config > vdbench_config
+             logpath="$logs/$bs$operation$fileio"
+             if [[ ! -d $logpath ]];then
+                 mkdir -p $logpath
+	     fi
+             ${rootdir}/vdbench  -f vdbench_config -o $logpath/output.tod	
+        done
      done
-
-     config3="fsd=fsd1,anchor=$testdir,depth=4,width=5,files=$files,size=$size,shared=yes
-         \nfwd=format,threads=$threads,xfersize=$bs
-         \nfwd=default,xfersize=$bs,fileio=random,fileselect=random,rdpct=50,threads=$threads\n"
-
-     config4=""
-     for hd in `seq $len`;do
-         tmp="fwd=fwd$hd,fsd=fsd1,host=hd$hd"
-         config4=$config4$tmp"\n"
-     done
-
-     config5="rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=$elapsed,interval=5"
-
-     config=$config1$config2$config3$config4$config5
-
-     echo -e $config > vdbench_config
-     ${rootdir}/vdbench  -f vdbench_config -o $logs/output.tod
 
 #    /home/vdbench/vdbench -f 200m-demo-read -o 200m-demo-read-output
 
@@ -155,45 +175,45 @@ MDtest(){
          fi
 
 		
-	 if [[ -d $testdir_ls ]];then
-   	     rm -fr $testdir_ls
-             if [[ $? -ne 0 ]];then
-                 echo -e "`date` remove $testdir_ls failed"|tee -a $log_path
-                 exit
-             else
-                 echo -e "`date` remove $testdir_ls"|tee -a $log_path
-             fi
-	 fi
+	# if [[ -d $testdir_ls ]];then
+   	#     rm -fr $testdir_ls
+        #     if [[ $? -ne 0 ]];then
+        #         echo -e "`date` remove $testdir_ls failed"|tee -a $log_path
+        #         exit
+        #     else
+        #         echo -e "`date` remove $testdir_ls"|tee -a $log_path
+        #     fi
+	# fi
 
-   	 mkdir -p $testdir_ls
-         if [[ $? -ne 0 ]];then
-             echo -e "`date` mkdir $testdir_ls failed"|tee -a $log_path
-             exit
-         else
-	     echo -e "`date` mkdir $testdir_ls"|tee -a $log_path
-         fi
-        
+   	# mkdir -p $testdir_ls
+        # if [[ $? -ne 0 ]];then
+        #     echo -e "`date` mkdir $testdir_ls failed"|tee -a $log_path
+        #     exit
+        # else
+	#     echo -e "`date` mkdir $testdir_ls"|tee -a $log_path
+        # fi
+        #
 
-	 echo -e "`date` mdtest running"|tee -a $log_path
-   	 mdtest -C -d $testdir_ls -i 1 -I $num_files_ls -z 1 -b 1 -L -T  -F -u -w 0|tee -a $log_path
-         if [[ $? -ne 0 ]];then
-             echo "`date` mpirun mdtest run error"|tee -a $log_path
-             exit
-         fi
+	# echo -e "`date` mdtest running"|tee -a $log_path
+   	# mdtest -C -d $testdir_ls -i 1 -I $num_files_ls -z 1 -b 1 -L -T  -F -u -w 0|tee -a $log_path
+        # if [[ $? -ne 0 ]];then
+        #     echo "`date` mpirun mdtest run error"|tee -a $log_path
+        #     exit
+        # fi
 
-	 echo -e "`date` ls $testdir_ls running."|tee -a $log_path
-   	 (time ls -f -1 $testdir_ls | wc -l) 2>&1|tee -a $log_path
-         if [[ $? -ne 0 ]];then
-             echo "`date` ls $testdir_ls command run error"|tee -a $log_path
-             exit
-         fi
+	# echo -e "`date` ls $testdir_ls running."|tee -a $log_path
+   	# (time ls -f -1 $testdir_ls | wc -l) 2>&1|tee -a $log_path
+        # if [[ $? -ne 0 ]];then
+        #     echo "`date` ls $testdir_ls command run error"|tee -a $log_path
+        #     exit
+        # fi
 
-	 echo -e "`date` find $testdir_ls running."|tee -a $log_path
-   	 (time find $testdir_ls | wc -l) 2>&1|tee -a $log_path
-         if [[ $? -ne 0 ]];then
-             echo "`date` find $testdir_ls command run error"|tee -a $log_path
-             exit
-         fi
+	# echo -e "`date` find $testdir_ls running."|tee -a $log_path
+   	# (time find $testdir_ls | wc -l) 2>&1|tee -a $log_path
+        # if [[ $? -ne 0 ]];then
+        #     echo "`date` find $testdir_ls command run error"|tee -a $log_path
+        #     exit
+        # fi
 
     done
 
