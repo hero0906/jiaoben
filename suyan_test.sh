@@ -1,11 +1,13 @@
 mount_dir=/mnt/yrfs
-client=(192.168.48.18)
+#client=(192.168.12.90 192.168.12.91 192.168.12.92 192.168.12.93 192.168.12.94 192.168.12.95 192.168.12.96 192.168.12.98)
+client=(10.16.2.17)
+#client=(192.168.12.90 192.168.12.91 192.168.12.92 192.168.12.93)
 logs="/tmp/cy_test_logs"
 
 findmnt $mount_dir 1> /dev/null
 if [[ $? -ne 0 ]];then
     echo -e "\n \033[31m mount dir $mount_dir not exist! test quit!!! \033[0m\n"
-    exit
+    #exit
 fi
 
 FIO(){
@@ -16,51 +18,58 @@ FIO(){
         mkdir -p $path
     fi
 
-    testfile=$path"/testfile"
 
-    size=50G
+    size=50M
     runtime=600
-    RW=(write read randwrite randread rw randrw)
+    RW=(write randwrite rw randrw)
     Numjobs=(1)
     Iodepth=(1 4 8 16)
     Ioengine=(sync psync libaio)
-    Bs=(4K)
+    Bs=(1K 3K 5K 16K 31K 101K 1025K 2049K 4097K)
     Direct=(0 1) 
+    verifys=(md5 crc32 crc64 sha256 sha512)
     for rw in "${RW[@]}" ;do
         for numjobs in "${Numjobs[@]}";do
-	    for ioengine in "${Ioengine[@]}";do 
-		for bs in "${Bs[@]}";do
+	        for ioengine in "${Ioengine[@]}";do 
+		        for bs in "${Bs[@]}";do
                     for direct in "${Direct[@]}";do    
- 			for iodepth in "${Iodepth[@]}";do
-	                    #config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -output=${log_path}${rw}${numjobs}${ioengine}${bs}${iodepth}${direct}${bs}"
-	                    config="fio -filename=$testfile -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -verify=crc64 --allrandrepeat=1"
-  			    echo -e "[`date`]test running >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"|tee -a $log_path
-  			    echo -e "[`date`] $config"|tee -a $log_path
-			    $config 2>&1 |tee -a $log_path
-			    if [[ $? -ne 0 ]];then
-			        echo -e "`date` fio test run error"|tee -a $log_path
-                                exit
-                            fi
-			done
+ 			            for iodepth in "${Iodepth[@]}";do
+                            for verify in "${verifys[@]}";do
+                                testfile=$path"`uuidgen`"
+	                            #config="fio -filename=$path -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -output=${log_path}${rw}${numjobs}${ioengine}${bs}${iodepth}${direct}${bs}"
+	                            #config="fio -filename=$testfile -iodepth=$iodepth -direct=$direct -bs=$bs -size=$size --rw=${rw} -numjobs=${numjobs} -time_based -runtime=$runtime -ioengine=$ioengine -group_reporting -name=test -verify=crc64 --allrandrepeat=1"
+                                config="fio -filename=$testfile -rw=$rw -ioengine=$ioengine -bs=$bs -size=$size -numjobs=$numjobs --iodepth=$iodepth --direct=$direct\
+                                -runtime=$runtime -group_reporting -name=test -thread  -loops=1 -verify_backlog=10 -verify_dump=1 -continue_on_error=none -verify=$verify"
+
+  			                    echo -e "[`date`]test running >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"|tee -a $log_path
+  			                    echo -e "[`date`] $config"|tee -a $log_path
+			                    $config 2>&1 |tee -a $log_path
+			                    if [[ $? -ne 0 ]];then
+			                        echo -e "`date` fio test run error"|tee -a $log_path
+                                        exit
+                                fi
+                            done
+			            done
                     done
                 done
             done
         done
-     done
+    done
 
 }
 
 vdbench(){
 
      rootdir=/home/vdbench
-     files=12000
-     size=20K
-     bs=4k
-     threads=16
-     elapsed=600000
+     files=100
+     size=200m
+     bs=1M
+     threads=8
+     elapsed=72000
      testdir=${mount_dir}/vdbench/`uuidgen`
+     #testdir=${mount_dir}/vdbench/
      len=${#client[@]}
-     
+
      if [[ ! -d $testdir ]];then 
          mkdir -p $testdir
      fi
@@ -75,7 +84,7 @@ vdbench(){
          config2=$config2$tmp"\n"
      done
 
-     config3="fsd=fsd1,anchor=$testdir,depth=4,width=5,files=$files,size=$size,shared=yes
+     config3="fsd=fsd1,anchor=$testdir,depth=2,width=5,files=$files,size=$size,shared=yes
          \nfwd=format,threads=$threads,xfersize=$bs
          \nfwd=default,xfersize=$bs,fileio=random,fileselect=random,rdpct=50,threads=$threads\n"
 
@@ -91,6 +100,9 @@ vdbench(){
 
      echo -e $config > vdbench_config
      ${rootdir}/vdbench  -f vdbench_config -o $logs/output.tod
+     if [[ $? -ne 0 ]];then
+         exit
+     fi
 
 #    /home/vdbench/vdbench -f 200m-demo-read -o 200m-demo-read-output
 
@@ -110,18 +122,19 @@ MDtest(){
 
     DEPTH=1
     WIDTH=10
-    num_files=1000000
+    num_files=400000
     num_files_ls=200000
+    loops=900000
 
     log_path=$logs/mdtest.log
-    testdir="${mount_dir}/mdtest_client18/cy-mdtest-4y/"
-    testdir_ls="${mount_dir}/mdtest_client18/mdtest_ls_test/"
+    testdir="${mount_dir}/mdtest_client18/cy-mdtest-4y/`uuidgen`"
+    testdir_ls="${mount_dir}/mdtest_client18/mdtest_ls_test/`uuidgen`"
 
     num_procs=`cat /proc/cpuinfo | grep "cpu cores" | uniq|awk '{print $4}'`
 
     files_per_dir=$(($num_files/$WIDTH/$num_procs))
 
-    for((i=1;i<=1;i++));do
+    while true;do
 
 	 if [[ -d $testdir ]];then
    	     rm -fr $testdir
@@ -145,7 +158,7 @@ MDtest(){
 	 echo -e "`date` mdtest running."|tee -a $log_path
    	 #mpirun --allow-run-as-root --mca btl_tcp_if_include 192.145.12.0/24 -hostfile $nodes_file --map-by node -np ${num_procs} mdtest -C -d $testdir -i 1 \
    	 mpirun --allow-run-as-root --mca -hostfile $nodes_file --map-by node -np ${num_procs} mdtest -C -d $testdir -i 1 \
-   	            -I ${files_per_dir} -z ${DEPTH} -b ${WIDTH} -L -T  -F -u -w 0 |tee -a $log_path
+   	            -I ${files_per_dir} -z ${DEPTH} -b ${WIDTH} -i $loops -L -T  -F -u -w 0|tee -a $log_path
 
          if [[ $? -ne 0 ]];then
 	     echo "`date` mpirun mdtest run error"|tee -a $log_path
@@ -207,9 +220,13 @@ if [[ $# == 1 ]];then
     if [[ $1 == "mdtest" ]];then
         MDtest
     elif [[ $1 == "vdbench" ]];then
-        vdbench
+	    while true;do
+            vdbench
+	    done
     elif [[ $1 == "fio" ]];then
-        FIO
+        while true;do
+            FIO
+        done
     else
         echo -e "paramter error!!!"
     fi
