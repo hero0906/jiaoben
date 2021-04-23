@@ -1,19 +1,19 @@
 [global]
 ioengine=libaio 
 #filename=/test/test 
-ramp_time=10
+#ramp_time=10
 #direct=1
 group_reporting 
 #--client=192.168.48.12
 #verify=crc32c
 #loops=900000000
-runtime=300
-time_based
+#runtime=30
+#time_based
 #eta-newline=1
 #fallocate=none
-numjobs=1 
+numjobs=8 
 iodepth=64 
-log_avg_msec=5
+#log_avg_msec=5
 
 #[test-4k]
 #nrfiles=30000
@@ -25,8 +25,8 @@ log_avg_msec=5
 
 [test-1M]
 #nrfiles=16
-filesize=50G
-filename=/mnt/yrfs/file_test001
+filesize=100G
+filename=/mnt/yrfs/myfile
 write_bw_log
-rw=randwrite
-bs=16K
+rw=write
+bs=1M

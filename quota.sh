@@ -10,7 +10,8 @@ add(){
     #limit=`expr $(echo $RANDOM) \* 1000`
     inode=`expr $limit \* 100` 
     #limit=100
-    yrcli --setprojectquota --unmounted --path=$dir --spacelimit=${limit}G --inodelimit=$inode
+    #yrcli --setprojectquota --unmounted --path=$dir --spacelimit=${limit}G --inodelimit=$inode
+    yrcli --projectquota --op=set --path=$dir -u --spacelimit=${limit}G --inodelimit=$inode
 }
 
 list(){

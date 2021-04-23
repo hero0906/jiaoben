@@ -4,10 +4,10 @@ import subprocess
 from time import ctime
 import re
 
-filename = "/mnt/yrfs/testfile"
+filename = "/mnt/yrfs/myfile"
 mountdir = "/mnt/yrfs"
 sync = "sync;echo 3 > /proc/sys/vm/drop_caches"
-clientip = ["192.168.48.18"]
+clientip = ["10.16.2.18"]
 logpath = "/home/caoyi/log"
 
 def shell(cmd):
@@ -26,6 +26,8 @@ def shell(cmd):
 
 def fio_run():
     numjobs = 1
+    runtime = 100
+    iodepth = 128
 
     for bs in ("4k","1M"):
         if bs == "4k":
@@ -33,8 +35,8 @@ def fio_run():
         else:
             rws = ("write","read")
         for rw in rws:
-            fio_cmd = "fio --ioengine=libaio --name=test --filename={0} --ramp_time=10 --size=50M --runtime=10 --group_reporting\
-                    --bs={1} --rw={2} --numjobs={3} --iodepth=64".format(filename, bs, rw, numjobs)
+            fio_cmd = "fio --ioengine=libaio --name=test --filename={0} --ramp_time=10 --size=50G --runtime={runtime} --group_reporting\
+                    --bs={1} --rw={2} --numjobs={3} --iodepth={iodepth}".format(filename, bs, rw, numjobs,runtime=runtime, iodepth=iodepth)
             print(ctime() + "|\tdrop cache")
             shell("sync;echo 3 > /proc/sys/vm/drop_caches")
             print(ctime() + "|\tfio test bs:%s rw:%s, numjobs:1" % (bs,rw))
@@ -50,9 +52,9 @@ def dd_run():
 
     for bs in ("4K","1M"):
             if bs == "4K":
-                count = 200
+                count = 200000
             else:
-                count = 50
+                count = 50000
 
             shell("sync;echo 3 > /proc/sys/vm/drop_caches")
             dd_write = "dd if=/dev/zero of={0} bs={1} count={2}".format(filename, bs, count)
@@ -70,11 +72,11 @@ def dd_run():
 
 def vdbench_run():
     rootdir = "/home/vdbench"
-    files = "1"
-    size = "50m"
-    bss = ("4K","1M")
-    threads = 1
-    elapsed = 20
+    files = "10000"
+    sizes = ("4K", "16K", "16M", "32M", "128M")
+    bss = ("4K")
+    threads = 4
+    elapsed = 300
     operations=("write","read")
     testdir = mountdir + "/vdbench/"
 
@@ -88,38 +90,41 @@ def vdbench_run():
             fileio = "sequential"
 
         for operation in operations:
-            config = []
-            config.append("messagescan=no")
-            config.append("hd=default,vdbench=%s,user=root,shell=ssh" % rootdir)
-            for hd in range(len(clientip)):
-                config.append("hd=hd%s,system=%s" % (hd,clientip[hd]))
-            config.append("fsd=fsd1,anchor=%s,depth=1,width=1,files=%s,size=%s,shared=yes" % (testdir,files,size))
-            config.append("fwd=default,operation=%s,xfersize=%s,fileio=%s,fileselect=random,threads=%s" % (operation,bs,fileio,threads))
-            for hd in range(len(clientip)):
-                config.append("fwd=fwd{hd},fsd=fsd1,host=hd{hd}".format(hd=hd))
-            config.append("rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=%s,interval=1" % elapsed)
 
-            with open("vdbench_config","w+") as f:
-                for line in config:
-                    f.write(line)
-                    f.write("\n")
+            for size in sizes:
+                config = []
+                config.append("messagescan=no")
+                config.append("hd=default,vdbench=%s,user=root,shell=ssh" % rootdir)
+                for hd in range(len(clientip)):
+                    config.append("hd=hd%s,system=%s" % (hd,clientip[hd]))
+                config.append("fsd=fsd1,anchor=%s,depth=1,width=1,files=%s,size=%s,shared=yes" % (testdir,files,size))
+                config.append("fwd=default,operation=%s,xfersize=%s,fileio=%s,fileselect=random,threads=%s" % (operation,bs,fileio,threads))
+                for hd in range(len(clientip)):
+                    config.append("fwd=fwd{hd},fsd=fsd1,host=hd{hd}".format(hd=hd))
+                config.append("rd=rd1,fwd=fwd*,fwdrate=max,format=restart,elapsed=%s,interval=5" % elapsed)
 
-            logdir = logpath + "/" + bs + operation + fileio
-            if not os.path.exists(logdir):
-                os.makedirs(logdir)
+                with open("vdbench_config","w+") as f:
+                    for line in config:
+                        f.write(line)
+                        f.write("\n")
 
-            print(ctime() + "|\tvdbench test %s %s %s" % (bs,fileio,operation))
-            res = shell("%s/vdbench -f vdbench_config -o %s" % (rootdir,logdir)) 
+                logdir = logpath + "/" + bs + operation + fileio + size
+                if not os.path.exists(logdir):
+                    os.makedirs(logdir)
 
-            try:
-                #avg_res = res.split("\n")[-8]
-                #avg = avg_res.split()[13]
-                avg_res = re.findall("(avg.*)",res)
-                bw_res = avg_res[-1].split()[12]
-                print(ctime() + "|\tRESULT:\t%s MB/s" % bw_res)
-            except Exception,e:
-                print(ctime() + "|\tget result failed.")
-                print(res)
+                print(ctime() + "|\tvdbench test %s %s %s %s" % (bs,fileio,operation,size))
+                res = shell("%s/vdbench -f vdbench_config -o %s" % (rootdir,logdir)) 
+
+                try:
+                    #avg_res = res.split("\n")[-8]
+                    #avg = avg_res.split()[13]
+                    avg_res = re.findall("(avg.*)",res)
+                    bw_res = avg_res[-1].split()[12]
+                    print(ctime() + "|\tRESULT:\t%s MB/s" % bw_res)
+                    print(ctime() + "|\tRESULT:\n%s" % avg_res[-1])
+                except Exception,e:
+                    print(ctime() + "|\tget result failed.")
+                    print(res)
 
 def mdtest_run():
 
@@ -128,9 +133,10 @@ def mdtest_run():
             f.write(ip)
             f.write("\n")
 
-    DEPTH=1
+    DEPTH=5
     WIDTH=10
-    num_files=100
+    num_files=100000000
+    size=0
     testdir = mountdir + "/cy-mdtest"
     num_procs = shell("cat /proc/cpuinfo | grep \"cpu cores\" | uniq|awk '{print $4}'")
     files_per_dir = int(num_files / int(num_procs) / WIDTH) 
@@ -141,7 +147,7 @@ def mdtest_run():
 
     cmd = "mpirun --allow-run-as-root --mca -hostfile nodelist --map-by node -np " + num_procs + \
           " mdtest -C -d " + testdir + " -i 1 -I " + str(files_per_dir) + " -z " + str(DEPTH) + " -b " + str(WIDTH) + \
-          " -L -T  -F -u -w 0"
+          " -L -T  -F -u -w " + str(size)
     print(ctime() + "|\t mdtest test files: %s numprocs: %s" % (num_files,num_procs))
     res = shell(cmd)
     try:
@@ -160,5 +166,5 @@ def mdtest_run():
 #os.system(fio_run("4K","randread",32))
 #dd_run()
 #fio_run()
-vdbench_run()
-#mdtest_run()
+#vdbench_run()
+mdtest_run()

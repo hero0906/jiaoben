@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cluster_ip=`cat /etc/hosts|grep node|awk '{print $1}'`
-USER=root
-PASSWORD=#@!1qaz@WSX3edc!@#
+USER="root"
+PASSWORD="Passw0rd"
 
 Usage(){
     echo -e "\nUsage: $0 <OPTION>"

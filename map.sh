@@ -1,4 +1,4 @@
-HOSTS=(`yrcli --node --type=mgmt|awk '{print $1}'`)
+HOSTS=(`yrcli --node --type=mgmt|grep -v "<"|awk '{print $1}'`)
 echo ${HOSTS[@]}
 
 ENDPOINTS=${HOSTS[0]}:2379,${HOSTS[1]}:2379,${HOSTS[2]}:2379
