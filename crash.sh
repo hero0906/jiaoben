@@ -252,7 +252,7 @@ fsck_test(){
    ips=`yrcli --osd --type=mds|awk 'NR>=2{print $2}'`
    #fsck="yrcli --fsck /data/mds --thread=8"
    #fsck="yrcli --fsck /data/mds0/replica  --cfg=/etc/yrfs/mds0.d/yrfs-meta.conf  --thread=8&&yrcli --fsck /data/mds1/replica  --cfg=/etc/yrfs/mds1.d/yrfs-meta.conf  --thread=8"
-   fsck="yrcli --fsck /data/mds0/replica  --cfg=/etc/yrfs/mds0.d/yrfs-meta.conf  --thread=8"
+   fsck="yrcli --fsck /data/mds0/replica  --cfg=/etc/yrfs/mds0.d/yrfs-meta.conf  --thread=8|tail -n 10"
    for ip in $ips;
    do
        log "node:$ip fsck running."
