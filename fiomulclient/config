@@ -1,0 +1,16 @@
+[global]
+iodepth=128 
+numjobs=1 
+size=50M 
+time_based 
+runtime=60
+#loops=90000
+direct=1 
+directory=/mnt/nfs/ 
+ioengine=libaio 
+sync=1
+group_reporting 
+name=test
+[test]
+bs=4k
+rw=randwrite
