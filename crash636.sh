@@ -4,6 +4,8 @@ PASSWORD="Passw0rd"
 SSHP="sshpass -p $password ssh -o StrictHostKeyChecking=no"
 LOG="logs/crash"_`date +%m%d%H%M`".log"
 
+HOSTS=(`yrfs-ctl --listnodes --nodetype=storage|awk {'print $1'}`)
+
 if [[ ! -d "logs" ]];then
     mkdir logs
 fi
@@ -43,10 +45,10 @@ check_status(){
    while true;
    do
        #status_mds=`yrcli --osd --type=mds|grep -v "up/clean"|awk 'NR>1'|wc -l`
-       status_mds=`yrfs-ctl --listtargets --nodetype=meta --state|awk 'NR>2'|grep "Online"|grep -v "Good"|wc -l`
+       status_mds=`yrfs-ctl --listtargets --nodetype=meta --state|awk 'NR>2{if(\$3!="Good"||\$2!="Online")print}'|wc -l`
 
        #status_oss=`yrcli --osd --type=oss|grep -v "up/clean"|awk 'NR>1'|wc -l`
-       status_oss=`yrfs-ctl --listtargets --nodetype=storage --state|awk 'NR>2'|grep -v "Online"|grep -v "Good"|wc -l`
+       status_oss=`yrfs-ctl --listtargets --nodetype=storage --state|awk 'NR>2{if(\$3!="Good"||\$2!="Online")print}'|wc -l`
 
        status_mgmtcmd="systemctl status yrfs-mgmtd.service |grep running|wc -l"
        status_mgmt=0
@@ -116,14 +118,19 @@ kill_meta(){
   #     log "kill_meta parameter error test exit"
   #     exit
   # fi
-   ips=`yrfs-ctl --listnodes --nodetype=mgmt|shuf -n 1|awk '{print $1}'|uniq`
+   #ips=`yrfs-ctl --listnodes --nodetype=mgmt|shuf -n 1|awk '{print $1}'|uniq`
+   meta_ids=(`yrfs-ctl --listmirrorgroups --nodetype=meta|awk 'NR>2{print $2}'`)
 
-   for ip in $ips;do
+   for id in meta_ids;do
+       ip=${HOSTS[$((id-1))]}
        log "mds node $ip stop"
        ssh $ip $stop_meta 
    done
+
    Sleep 30 
-   for ip in $ips;do
+
+   for id in meta_ids;do
+       ip=${HOSTS[$((id-1))]}
        log "mds node $ip start"
        ssh $ip $start_meta
    done
@@ -163,16 +170,18 @@ kill_oss(){
   #     log "kill_oss test parameter error test exit"
   #     exit
   # fi
-  ips=`yrfs-ctl --listnodes --nodetype=mgmt|shuf -n 1|awk '{print $1}'|uniq`
+  #ips=`yrfs-ctl --listnodes --nodetype=mgmt|shuf -n 1|awk '{print $1}'|uniq`
+   meta_ids=(`yrfs-ctl --listmirrorgroups --nodetype=meta|awk 'NR>2{print $2}'`)
 
-   for ip in $ips;do
+   for id in ${meta_ids[@]};do
+       ip=${HOSTS[$((id-1))]}
        log "oss node $ip stop"
        ssh $ip $stop_oss
    done
 
    Sleep 30
-
-   for ip in $ips;do
+   for id in ${meta_ids[@]};do
+       ip=${HOSTS[$((id-1))]}
        log "oss node $ip start"
        ssh $ip $start_oss
    done
@@ -258,15 +267,15 @@ run(){
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         log "run test loops $time!!!!!!"
         log ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-        check_status
         #cases=(kill_meta kill_mgmt kill_oss crash_node)
-        cases=(kill_mgmt kill_oss kill_meta)
+        cases=(kill_oss)
         #cases=("kill_meta 2" kill_mgmt "kill_oss 1")
 	for cas in "${cases[@]}";do
-	    $cas & 
+            check_status
+	    $cas 
         done
-        Sleep 30
 	wait
+        #Sleep 30
         #fio_test
         ((time++))
     done 
