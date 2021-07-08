@@ -1,0 +1,11 @@
+virt-install -n vm1 \
+    -r 4196 \
+    --vcpus=4 \
+    --pxe \
+    --boot hd,network,cdrom,menu=on \
+    --os-type=linux \
+    --os-variant=rhel7 \
+    --disk /test/vm1.img,bus=virtio \
+    --network bridge=br2377 \
+    --network bridge=br2388 \
+    --graphics vnc,port=5901,listen=0.0.0.0
